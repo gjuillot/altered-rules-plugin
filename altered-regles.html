@@ -1,0 +1,3532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+<title>Règles rapides — Altered TCG | Altered Re:Union</title>
+<meta name="description" content="Règles complètes du jeu de cartes Altered TCG — Édition 3.0">
+
+<!-- Bootstrap 5 (utilisé par le site Altered Re:Union) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Font Altered Icons -->
+<link rel="stylesheet" href="https://altered.re/assets/font/alteredicons.css">
+<!-- Thème Azure du site Altered Re:Union -->
+<link rel="stylesheet" href="https://altered.re/themes/azure/style.css?v=1779034455">
+
+<style>
+  /* ===========================================
+     Compléments locaux à la page règles
+     =========================================== */
+
+  /* Logo Altered en tête d'article */
+  .altered-logo-hero {
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  /* Sommaire latéral collant */
+  .rules-toc {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    position: sticky;
+    top: 1.5rem;
+  }
+  .rules-toc h6 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--neutral-500);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .rules-toc h6 img { height: 26px; width: auto; }
+  .rules-toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding: 0;
+    margin: 0;
+  }
+  .rules-toc ol li {
+    counter-increment: toc-counter;
+    margin-bottom: 0.3rem;
+    position: relative;
+    padding-left: 1.8rem;
+  }
+  .rules-toc ol li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-400);
+  }
+  .rules-toc ol li a {
+    color: var(--neutral-700);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .rules-toc ol li a:hover {
+    color: var(--primary-500);
+    text-decoration: underline;
+  }
+
+  /* Section anchors avec offset header sticky */
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  /* Bloc de règle */
+  .rule-block {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  [data-theme="dark"] .rule-block {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+  .rule-block h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--neutral-800);
+    margin-bottom: 0.85rem;
+  }
+  .rule-block h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  [data-theme="dark"] .rule-block h4 { color: var(--primary-300); }
+
+  /* Figure (illustration + légende) */
+  .rule-figure {
+    margin: 1.25rem 0;
+    text-align: center;
+  }
+  .rule-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    border: 1px solid var(--sand-200);
+    background: var(--sand-100);
+    box-shadow: 0 2px 12px rgba(12, 26, 50, 0.08);
+  }
+  /* Exclure les marqueurs et cartes superposées du style générique (fond transparent, pas de bordure) */
+  .rule-figure .placed-marker,
+  .rule-figure .placed-first-player,
+  .rule-figure .setup-markers-scatter img,
+  .rule-figure .zone-pin img,
+  .rule-figure .cleanup-card,
+  .rule-figure .cleanup-marker {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  [data-theme="dark"] .rule-figure img {
+    border-color: var(--sand-300);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  [data-theme="dark"] .rule-figure .placed-marker,
+  [data-theme="dark"] .rule-figure .placed-first-player,
+  [data-theme="dark"] .rule-figure .setup-markers-scatter img {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+  .rule-figure figcaption {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+  .rule-figure.float-right {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+    max-width: 280px;
+  }
+  .rule-figure.float-right.wide { max-width: 380px; }
+  .rule-figure.small img { max-width: 320px; }
+  @media (max-width: 575px) {
+    .rule-figure.float-right,
+    .rule-figure.float-right.wide { float: none; margin: 1rem 0; max-width: 100%; }
+  }
+
+  /* Composition "Orbes de Mana" : 2 dos de carte (redressée + épuisée à 90°) */
+  .mana-orbs-composition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 10px 30px;
+  }
+  .mana-orb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .mana-orb .orb-wrap {
+    width: 110px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+  }
+  .mana-orb img {
+    width: 110px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  .mana-orb.epuisee img { transform: rotate(90deg); }
+  .mana-orb .orb-label {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--neutral-700);
+    font-size: 0.95rem;
+  }
+  @media (max-width: 575px) {
+    .mana-orbs-composition { gap: 24px; }
+    .mana-orb .orb-wrap { width: 90px; height: 120px; }
+    .mana-orb img { width: 90px; }
+  }
+
+  /* === Composition "Exemple Crépuscule" === */
+  .dusk-composition {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 20px 20px 20px 60px;
+    max-width: 100%;
+  }
+
+  /* Rangée centrale : 2 cartes Aventure tournées de 90° anti-horaire */
+  .dusk-adventures {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 560px;
+    height: 220px;
+    justify-content: center;
+    margin-left: 0;
+	margin-top: -20px;
+	margin-bottom: 20px;
+  }
+  .dusk-adventures img.adv-card-dusk {
+    width: 190px;
+    height: auto;
+    display: block;
+    transform: rotate(-90deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    background: #fff;
+  }
+  .dusk-adventures .adv-slot {
+    width: 280px;
+    height: 220px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: visible;
+  }
+  /* Marqueurs Expédition posés sur les cartes Aventure : sans fond */
+  .dusk-adventures .dusk-marker {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 3;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .dusk-adventures .dusk-marker.center { top: 40%; left: 50%; transform: translate(-50%, -50%); }
+  .dusk-adventures .dusk-marker.first-quarter { top: 70%; left: 25%; transform: translate(-50%, -50%); }
+
+  /* Carte Personnage placée au-dessus (Pierre) — centrée dans la largeur de la rangée 2 */
+  .dusk-character-row {
+    display: flex;
+    justify-content: center;
+    width: 460px;
+  }
+  .dusk-character-row .dusk-character-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .dusk-character-row .dusk-character {
+    width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Rangée carte(s) + texte explicatif à droite */
+  .dusk-row-with-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .dusk-row-with-text > .dusk-character-row,
+  .dusk-row-with-text > .dusk-bottom-row {
+    flex: 0 0 auto;
+  }
+  .dusk-side-text {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+  .dusk-side-text p { margin: 0 0 0.6rem 0; }
+  .dusk-side-text p:last-child { margin-bottom: 0; }
+
+  /* Rangée du bas : 2 cartes superposées (Noémie) — centrée dans la largeur */
+  .dusk-bottom-row {
+    position: relative;
+    width: 460px;
+    height: 290px;
+  }
+  .dusk-bottom-row .dusk-character {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  /* Centrage : le groupe (back + front avec décalage 50px) fait 200px de large
+     → départ à (460-200)/2 = 130px */
+  .dusk-bottom-row .dusk-character.back  { top: 0; left: 130px; z-index: 1; }
+  .dusk-bottom-row .dusk-character.front { top: 0; left: 180px; z-index: 2; }
+
+  /* Carré jaune (à repositionner manuellement) */
+  .dusk-highlight {
+    position: absolute;
+    height: 24%;
+    border: 3px solid #f5c542;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 4;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+  .dusk-highlight.pierre {
+    top: 18%;
+    left: 2%;
+    width: 22%;
+    height: 24%;
+  }
+  .dusk-highlight.noemie {
+    top: 21%;
+    left: 29%;
+    width: 20%;
+    height: 28%;
+  }
+
+  /* Étiquettes joueur (rotation -90°) */
+  .dusk-player-label {
+    position: absolute;
+    left: 90px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    white-space: nowrap;
+  }
+  .dusk-player-label.pierre { top: 180px; color: #16a34a; }
+  .dusk-player-label.noemie { top: 690px; color: #92400e; }
+
+  @media (max-width: 575px) {
+    .dusk-composition { padding: 12px 12px 12px 40px; }
+    .dusk-adventures { width: 280px; height: 170px; }
+    .dusk-adventures img.adv-card-dusk { width: 170px; }
+    .dusk-adventures .adv-slot { width: 85px; height: 170px; }
+    .dusk-adventures .dusk-marker { width: 32px; height: 32px; }
+    .dusk-character-row { width: 280px; }
+    .dusk-character-row .dusk-character,
+    .dusk-bottom-row .dusk-character { width: 115px; }
+    .dusk-bottom-row { width: 280px; height: 170px; }
+    .dusk-bottom-row .dusk-character.front { left: 40px; }
+    .dusk-player-label { font-size: 1rem; left: 18px; }
+    .dusk-row-with-text { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .dusk-side-text { font-size: 0.9rem; }
+  }
+
+  /* === Composition "Mise en place" complète === */
+  .setup-composition {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    max-width: 100%;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+
+  /* Indicateur numéroté d'étape */
+  .step-marker {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #1a1306;
+    font-weight: 800;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border: 2px solid #fff;
+    z-index: 10;
+    line-height: 1;
+  }
+  @media (max-width: 575px) {
+    .step-marker { width: 24px; height: 24px; font-size: 0.78rem; border-width: 1.5px; }
+  }
+
+  /* Cadre jaune autour des 3 cartes Tumulte */
+  .tumult-frame {
+    position: absolute;
+    border: 3px solid #f5c542;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 5;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Illustration carte Tumulte tournée avec ses deux régions encadrées */
+  .tumulte-regions-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .tumulte-rotated-card {
+    position: relative;
+    width: 143px;
+    height: 200px;
+  }
+  .tumulte-rotated-card img {
+    position: absolute;
+    width: 200px;
+    height: 143px;
+    top: 29px;
+    left: -29px;
+    transform: rotate(90deg);
+    transform-origin: center center;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  }
+  .tumulte-region-box {
+    position: absolute;
+    border: 3px solid #f5c542;
+    border-radius: 4px;
+    pointer-events: none;
+    top: 60px;
+    bottom: 4px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f5c542;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  }
+  .tumulte-region-box.rgn-left  { left: -55px; }
+  .tumulte-region-box.rgn-right { left: 50px; }
+
+  /* Marqueurs Expédition posés sur les cartes Aventure Héros/Compagnon */
+  .adv-wrap { position: relative; }
+  .adv-wrap .placed-marker {
+    position: absolute;
+    width: 28%;
+    height: auto;
+    z-index: 6;
+    background: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .adv-wrap .placed-marker.top    { top: 12%; left: 50%; transform: translateX(-50%); }
+  .adv-wrap .placed-marker.bottom { bottom: 12%; left: 50%; transform: translateX(-50%); }
+  @media (max-width: 575px) {
+    .adv-wrap .placed-marker { width: 32%; }
+  }
+  .setup-main {
+    flex: 1 1 65%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  /* Rangée d'aventures : alignée sur la largeur du tapis, collée au tapis */
+  .setup-adventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    margin-bottom: -8px;
+    position: relative;
+    z-index: 1;
+  }
+  .setup-adventures .adv-wrap {
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .setup-adventures img {
+    /* L'image source est paysage (largeur > hauteur).
+       Après rotation 90°, sa hauteur visuelle devient sa largeur originale.
+       On veut que la carte tourne et tienne dans le carré du slot. */
+    width: 70%;
+    height: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    background: #fff;
+  }
+  .setup-adventures .adv-hero-card      { transform: rotate(-90deg); }
+  .setup-adventures .adv-tumult-card,
+  .setup-adventures .adv-companion-card { transform: rotate(90deg); }
+
+  /* Tapis avec cartes posées dessus */
+  .setup-playmat {
+    position: relative;
+    width: 100%;
+  }
+  .setup-playmat > img.playmat-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .setup-playmat .placed-card {
+    position: absolute;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    background: #fff;
+  }
+  .setup-playmat .placed-hero {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11%;
+  }
+  .setup-playmat .placed-first-player {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 9%;
+    height: auto;
+    z-index: 3;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .setup-playmat .placed-deck {
+    bottom: 7%;
+    right: 13%;
+    width: 11%;
+  }
+
+  /* Panneau latéral droit : marqueurs éparpillés + 3 piles de jetons */
+  .setup-side {
+    flex: 0 1 280px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 0;
+  }
+  .setup-markers-scatter {
+    position: relative;
+    width: 100%;
+    height: 140px;
+  }
+  .setup-markers-scatter img {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+  }
+  .setup-tokens-stacks {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .token-stack {
+    position: relative;
+    width: 70px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+  .token-stack img {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .token-stack img:nth-child(1) { top: 0;  left: 0; z-index: 1; }
+  .token-stack img:nth-child(2) { top: 4px; left: 4px; z-index: 2; }
+
+  @media (max-width: 767px) {
+    .setup-composition { padding: 10px; gap: 16px; }
+    .setup-main, .setup-side { flex: 1 1 100%; }
+    .setup-side { padding: 0; }
+    .token-stack { width: 60px; height: 95px; }
+    .token-stack img { width: 60px; }
+  }
+
+  /* === Illustration "Nettoyage de la Réserve" === */
+  .cleanup-illus {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .cleanup-playmat {
+    position: relative;
+    width: 86%;
+    flex: 0 0 86%;
+  }
+  .cleanup-playmat > img.playmat-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .cleanup-outside {
+    position: relative;
+    width: 14%;
+    flex: 0 0 14%;
+    align-self: stretch;
+  }
+  .cleanup-card {
+    position: absolute;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  }
+  .cleanup-card.cleanup-grayed {
+    filter: grayscale(100%) brightness(0.55);
+  }
+  /* Cartes dans les zones du tapis (positions en % du tapis) — taille calibrée
+     sur les rectangles Deck/Discard du tapis (~10% de largeur). */
+  .cl-hero   { top: 7%;   left: 45%;   width: 10%; }
+  .cl-deck   { top: 67%;  left: 76%;   width: 10%; }
+  .cl-exp-l1 { top: 8%;   left: 3%;    width: 10%; }
+  .cl-exp-l2 { top: 8%;   left: 14%;   width: 10%; }
+  .cl-exp-r  { top: 8%;   left: 77%;   width: 10%; }
+  .cl-exp-r2 { top: 8%;   left: 88%;   width: 10%; }
+  .cl-res-1  { top: 37%;  left: 1%;    width: 10%; }
+  .cl-res-2  { top: 37%;  left: 12%;   width: 10%; }
+  .cl-res-3  { top: 37%;  left: 23%;   width: 10%; }
+  .cl-lm-1   { top: 37%;  left: 67%;   width: 10%; }
+  .cl-lm-2   { top: 37%;  left: 78%;   width: 10%; }
+  .cl-lm-3   { top: 37%;  left: 89%;   width: 10%; }
+  /* Carte hors tapis (% du conteneur .cleanup-outside) */
+  .cl-outside-card { top: 11%; left: 18%; width: 64%; }
+
+  /* Marqueur posé sur une carte */
+  .cleanup-marker {
+    position: absolute;
+    height: auto;
+    z-index: 5;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .cl-fugace { top: 25%; left: 83%; width: 3.5%; }
+
+  .cleanup-arrows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: visible;
+  }
+  .cleanup-label {
+    position: absolute;
+    z-index: 11;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid;
+  }
+  .cleanup-label--repos {
+    color: #5c4400;
+    background: #ffe680;
+    border-color: #f5c542;
+    top: 30%;
+    left: 22%;
+  }
+  .cleanup-label--nettoyage {
+    color: #0b3d6e;
+    background: #cfe6ff;
+    border-color: #2196f3;
+    top: 62%;
+    left: 56%;
+  }
+  [data-theme="dark"] .cleanup-label--repos {
+    color: #1a1306;
+    background: #f5c542;
+    border-color: #ffe680;
+  }
+  [data-theme="dark"] .cleanup-label--nettoyage {
+    color: #fff;
+    background: #1565c0;
+    border-color: #6ec1ff;
+  }
+  @media (max-width: 575px) {
+    .cleanup-label { font-size: 0.7rem; padding: 2px 6px; letter-spacing: 0.3px; }
+  }
+
+  /* === Illustration "Jouer un Personnage" : tapis recadré sur la zone Héros === */
+  /* On affiche le tiers central horizontal et la moitié supérieure verticale du tapis. */
+  .play-character-illus {
+    position: relative;
+    width: 100%;
+    /* On affiche les 3/4 centraux horizontaux et les 3/4 supérieurs verticaux du tapis. */
+    /* (1024 × 3/4) : (588 × 3/4) = 1024 : 588 → ratio naturel du tapis 256/147 */
+    aspect-ratio: 256 / 147;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .play-character-illus > .playmat-bg {
+    position: absolute;
+    top: 0;
+    left: -16.6667%;
+    width: 133.3333%;
+    max-width: none;   /* contourne .rule-figure img { max-width: 100% } */
+    height: auto;
+    display: block;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .play-character-illus .pc-card {
+    position: absolute;
+    height: auto;
+    max-width: none;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    z-index: 2;
+  }
+  .play-character-illus .pc-hero {
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14%;
+  }
+  .play-character-illus .pc-played {
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.6);
+  }
+  .play-character-illus .pc-arrows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Composition "Cartes Aventure" : Héros+Compagnon empilés à gauche, 3 Tumulte en éventail à droite */
+  .adventure-composition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 20px 50px;
+    max-width: 100%;
+  }
+  /* Stack gauche : 2 cartes paysage en éventail horizontal */
+  .adventure-stack.left {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    flex-shrink: 0;
+  }
+  .adventure-stack.left img {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    top: 40px;
+  }
+  .adventure-stack.left .adv-hero {
+    left: 0;
+    z-index: 2;
+    transform: rotate(-6deg);
+  }
+  .adventure-stack.left .adv-companion {
+    left: 50px;
+    z-index: 1;
+    transform: rotate(6deg);
+  }
+
+  /* Stack droite : 3 cartes paysage en éventail horizontal */
+  .adventure-stack.right {
+    position: relative;
+    width: 220px;
+    height: 180px;
+    flex-shrink: 0;
+  }
+  .adventure-stack.right img {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    top: 40px;
+  }
+  .adventure-stack.right .tumult-1 { left: 0;   transform: rotate(-8deg); z-index: 1; }
+  .adventure-stack.right .tumult-2 { left: 40px; transform: rotate(0deg);  z-index: 2; }
+  .adventure-stack.right .tumult-3 { left: 80px; transform: rotate(8deg);  z-index: 3; }
+
+  @media (max-width: 575px) {
+    .adventure-composition { gap: 20px; padding: 20px 10px; }
+    .adventure-stack.left { width: 130px; height: 150px; }
+    .adventure-stack.left img { width: 115px; }
+    .adventure-stack.left .adv-companion { top: 55px; }
+    .adventure-stack.right { width: 180px; height: 150px; }
+    .adventure-stack.right img { width: 115px; top: 30px; }
+    .adventure-stack.right .tumult-2 { left: 32px; }
+    .adventure-stack.right .tumult-3 { left: 64px; }
+  }
+
+  /* Rangée d'exemples de cartes Héros (3 cartes côte à côte) */
+  .hero-examples {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .hero-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    max-width: 200px;
+  }
+  .hero-example img {
+    max-width: 100%;
+    width: 180px;
+    height: auto;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  .hero-example .hero-label {
+    font-size: 0.82rem;
+    color: var(--neutral-600);
+    text-align: center;
+    line-height: 1.3;
+  }
+  .hero-example .hero-faction {
+    font-weight: 700;
+    color: var(--primary-500);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  [data-theme="dark"] .hero-example .hero-faction { color: var(--primary-300); }
+  @media (max-width: 575px) {
+    .hero-example img { width: 140px; }
+  }
+
+  /* === Anatomie de carte avec annotations A-I === */
+  .card-anatomy {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+  }
+  .card-anatomy > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  .card-anatomy .anno {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #1a1306;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    z-index: 2;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 575px) {
+    .card-anatomy .anno { width: 22px; height: 22px; font-size: 0.72rem; border-width: 1.5px; }
+  }
+
+  /* === Section Zones du Jeu === */
+  .playmat-annotated {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+  }
+  .playmat-annotated img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .zone-pin {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .zone-pin:hover,
+  .zone-pin:focus {
+    background: #ffd966;
+    color: #fff;
+    transform: translate(-50%, -50%) scale(1.15);
+    outline: none;
+    text-decoration: none;
+  }
+  @media (max-width: 575px) {
+    .zone-pin { width: 24px; height: 24px; font-size: 0.78rem; border-width: 1.5px; }
+  }
+
+  /* Liste des zones avec mini-vignette du tapis recadré */
+  .zone-list {
+    margin-top: 1.5rem;
+  }
+  .zone-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.6rem;
+    scroll-margin-top: 5rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  [data-theme="dark"] .zone-item {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+  .zone-item:target {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(59, 142, 240, 0.15);
+  }
+  .zone-item .zone-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+  }
+  .zone-item .zone-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .zone-item .zone-name {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .zone-item .zone-desc {
+    font-size: 0.92rem;
+    color: var(--neutral-700);
+    line-height: 1.5;
+  }
+  .zone-item .zone-desc p:last-child { margin-bottom: 0; }
+
+  /* === Layout Section Matériel === */
+  .materiel-group {
+    margin-bottom: 1.5rem;
+  }
+  .materiel-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--sand-200);
+  }
+  [data-theme="dark"] .materiel-group-title {
+    color: var(--primary-300);
+    border-bottom-color: var(--sand-300);
+  }
+  .materiel-group-title i {
+    font-size: 1.3rem;
+  }
+
+  /* Ligne d'élément matériel — base commune */
+  .materiel-item {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    margin-bottom: 0.6rem;
+    overflow: hidden;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  [data-theme="dark"] .materiel-item {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+  .materiel-item:hover {
+    border-color: var(--primary-400);
+  }
+
+  /* Élément non développable : affichage direct (marqueurs petits) */
+  .materiel-item.static {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+  }
+  .materiel-item.static .item-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .materiel-item.static .item-text .item-title {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+  .materiel-item.static .item-text .item-desc {
+    font-size: 0.83rem;
+    color: var(--neutral-600);
+  }
+  .materiel-item.static .item-visual {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .materiel-item.static .item-visual img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  /* Élément développable : <details> avec en-tête cliquable */
+  .materiel-item details {
+    margin: 0;
+  }
+  .materiel-item summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background 0.15s ease;
+  }
+  .materiel-item summary::-webkit-details-marker { display: none; }
+  .materiel-item summary:hover {
+    background: rgba(59, 142, 240, 0.04);
+  }
+  .materiel-item summary .item-thumb {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--sand-100);
+    border-radius: 0.4rem;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .materiel-item summary .item-thumb {
+    background: var(--sand-200);
+  }
+  .materiel-item summary .item-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .materiel-item summary .item-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .materiel-item summary .item-text .item-title {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+  .badge-optional {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.1rem 0.5rem;
+    margin-left: 0.4rem;
+    background: rgba(217, 119, 6, 0.12);
+    color: #b45309;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+    border-radius: 0.7rem;
+    vertical-align: middle;
+  }
+  [data-theme="dark"] .badge-optional {
+    background: rgba(217, 119, 6, 0.18);
+    color: #f59e0b;
+  }
+  .materiel-item summary .item-text .item-desc {
+    font-size: 0.83rem;
+    color: var(--neutral-600);
+  }
+  .materiel-item summary .item-chevron {
+    flex-shrink: 0;
+    color: var(--primary-400);
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+  }
+  .materiel-item details[open] summary .item-chevron {
+    transform: rotate(180deg);
+  }
+  .materiel-item details[open] summary {
+    background: rgba(59, 142, 240, 0.06);
+    border-bottom: 1px solid var(--sand-200);
+  }
+  [data-theme="dark"] .materiel-item details[open] summary {
+    border-bottom-color: var(--sand-300);
+  }
+
+  .materiel-item .item-detail {
+    padding: 1rem 1.1rem 1.2rem;
+    text-align: center;
+  }
+  .materiel-item .item-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+  }
+  .materiel-item .item-detail .detail-caption {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    font-style: italic;
+    margin-top: 0.6rem;
+  }
+  /* Variante pour les compositions custom déjà stylées (cartes Aventure, jetons) */
+  .materiel-item .item-detail.composition-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  /* Composition "éventail" pour les cartes jeton (orientation portrait) */
+  .token-fan {
+    position: relative;
+    width: 140px;
+    height: 110px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+  }
+  .token-fan img {
+    position: absolute;
+    width: 65px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    top: 0;
+  }
+  .token-fan .token-1 { left: 0;   transform: rotate(-10deg); z-index: 1; }
+  .token-fan .token-2 { left: 35px; transform: rotate(0deg);   z-index: 2; }
+  .token-fan .token-3 { left: 70px; transform: rotate(10deg);  z-index: 3; }
+
+  @media (max-width: 575px) {
+    .token-fan { width: 120px; height: 95px; margin-left: 0; margin-top: 8px; display: block; }
+    .token-fan img { width: 55px; }
+    .token-fan .token-2 { left: 30px; }
+    .token-fan .token-3 { left: 60px; }
+  }
+
+  /* Rangées de marqueurs inline dans les listes Matériel */
+  .marker-inline-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  .marker-inline-row img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+  /* Variante centrée pour usage en figure */
+  .marker-row-figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+  .marker-row-figure .marker-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .marker-row-figure .marker-cell img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+  .marker-row-figure .marker-cell .label {
+    font-size: 0.72rem;
+    color: var(--neutral-600);
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  /* Callouts contextuels */
+  .rule-callout {
+    border-left: 4px solid var(--primary-400);
+    background: rgba(59, 142, 240, 0.06);
+    padding: 0.85rem 1.1rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  .rule-callout.warn {
+    border-left-color: #d97706;
+    background: rgba(217, 119, 6, 0.06);
+  }
+  .rule-callout.tip {
+    border-left-color: #10b981;
+    background: rgba(16, 185, 129, 0.06);
+  }
+  [data-theme="dark"] .rule-callout { background: rgba(59, 142, 240, 0.10); }
+  [data-theme="dark"] .rule-callout.warn { background: rgba(217, 119, 6, 0.10); }
+  [data-theme="dark"] .rule-callout.tip { background: rgba(16, 185, 129, 0.10); }
+
+  /* Grille des 5 phases du jour */
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 991px) { .phases-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .phases-grid { grid-template-columns: 1fr; } }
+
+  .phase-card {
+    background: linear-gradient(180deg, var(--sand-50), var(--sand-100));
+    border: 1px solid var(--sand-200);
+    border-radius: 0.6rem;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .phase-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-400);
+    box-shadow: 0 4px 12px rgba(59, 142, 240, 0.15);
+  }
+  [data-theme="dark"] .phase-card {
+    background: linear-gradient(180deg, var(--sand-100), var(--sand-200));
+    border-color: var(--sand-300);
+  }
+  .phase-card .phase-num {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.35rem;
+  }
+  .phase-card .phase-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary-500);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phase-card .phase-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  /* Icône image dans les titres h3 des phases */
+  .phase-title-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+  }
+  [data-theme="dark"] .phase-card .phase-icon { color: var(--primary-300); }
+  .phase-card .phase-name {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .phase-card .phase-desc {
+    font-size: 0.78rem;
+    color: var(--neutral-600);
+    line-height: 1.4;
+  }
+
+  /* Grille d'icônes / marqueurs */
+  .marker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .marker-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .marker-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(12, 26, 50, 0.08);
+  }
+  [data-theme="dark"] .marker-item {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .marker-item img {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+  .marker-item .m-label {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .marker-item .m-desc {
+    font-size: 0.8rem;
+    color: var(--neutral-600);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+  }
+  .marker-item .m-text { min-width: 0; display: flex; flex-direction: column; }
+
+  /* Galerie des 6 factions */
+  .factions-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 767px) { .factions-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 480px)  { .factions-grid { grid-template-columns: repeat(2, 1fr); } }
+  .faction-cell {
+    text-align: center;
+    padding: 0.65rem 0.5rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+  }
+  [data-theme="dark"] .faction-cell {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .faction-cell .faction-pair {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
+  }
+  .faction-cell .faction-pair img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+  }
+  .faction-cell .faction-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--neutral-700);
+  }
+
+  /* Badges de terrain (avec images de biome) */
+  .terrain-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem 0.2rem 0.3rem;
+    border-radius: 1rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    font-size: 0.85rem;
+    color: var(--neutral-700);
+    margin: 0.1rem 0.2rem 0.1rem 0;
+    font-weight: 600;
+  }
+  [data-theme="dark"] .terrain-badge {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .terrain-badge img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  /* Inline biome icon (in flowing text) */
+  .biome-ic {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: -4px;
+    margin: 0 1px;
+  }
+
+  /* Inline marker icon (in flowing text) — used next to a marker name */
+  .inline-marker-ic {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    vertical-align: -0.45em;
+    margin: 0 1px;
+  }
+
+  /* Couleurs de fond pour les cercles d'icônes (pictos Bootstrap restants) */
+  .ic-circle {
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  /* Icônes Altered Font dans les marker-item : noir, sans fond */
+  .ic-circle {
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: var(--neutral-800);
+    font-size: 1.8rem;
+  }
+  [data-theme="dark"] .ic-circle { color: #f0f0f0; }
+  /* Conserver les variantes de fond seulement pour compat — neutralisées */
+  .ic-bg-epuiser, .ic-bg-defausse, .ic-bg-anywhere, .ic-bg-hand, .ic-bg-reserve {
+    background: transparent;
+  }
+
+  /* Tableau d'exemple */
+  .example-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  .example-table th,
+  .example-table td {
+    padding: 0.6rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .example-table th {
+    background: var(--sand-200);
+    color: var(--neutral-700);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .example-table td.center { text-align: center; }
+  [data-theme="dark"] .example-table td,
+  [data-theme="dark"] .example-table th { border-bottom-color: var(--sand-300); }
+
+  /* Flow steps */
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .flow-step {
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-left: 4px solid var(--primary-400);
+    border-radius: 0.4rem;
+    padding: 0.85rem 1rem;
+  }
+  [data-theme="dark"] .flow-step {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+    border-left-color: var(--primary-400);
+  }
+  .flow-step .step-num {
+    color: var(--primary-500);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+  }
+  [data-theme="dark"] .flow-step .step-num { color: var(--primary-300); }
+  .flow-step .step-title {
+    font-weight: 700;
+    color: var(--neutral-800);
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+  }
+  .flow-step .step-text {
+    font-size: 0.85rem;
+    color: var(--neutral-600);
+    line-height: 1.45;
+  }
+
+  /* Badge circulaire jaune (étapes A/B/C) — utilisable inline ou en bloc */
+  .step-badge {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #1a1306;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .flow-step .step-badge { margin-bottom: 0.4rem; }
+  p > .step-badge:first-child,
+  .dusk-side-text p > .step-badge:first-child { margin-right: 0.5rem; }
+
+  /* Règles de construction de deck */
+  .deck-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .deck-rule-card {
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  [data-theme="dark"] .deck-rule-card {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .deck-rule-card .big {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-500);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  [data-theme="dark"] .deck-rule-card .big { color: var(--primary-300); }
+  .deck-rule-card .lbl {
+    font-size: 0.85rem;
+    color: var(--neutral-700);
+    font-weight: 600;
+  }
+  .deck-rule-card .lbl small {
+    display: block;
+    font-weight: 400;
+    color: var(--neutral-500);
+    margin-top: 0.15rem;
+    font-size: 0.78rem;
+  }
+
+  /* Note de source */
+  .source-note {
+    margin-top: 3rem;
+    padding: 1rem 1.25rem;
+    background: var(--sand-100);
+    border: 1px dashed var(--sand-300);
+    border-radius: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+  }
+  [data-theme="dark"] .source-note {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+
+  /* Petite icône symbole Altered en accent dans les titres */
+  .altered-bullet {
+    width: 18px;
+    height: 18px;
+    vertical-align: -3px;
+    margin-right: 0.3rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-wrapper">
+  <main class="container py-4">
+
+    <!-- En-tête article -->
+    <div class="news-detail-header">
+      <h1 class="news-detail-title">Règles rapides du jeu Altered TCG</h1>
+      <p class="news-detail-meta">
+        Transcription complète du livret de règles rapides — version française.
+      </p>
+    </div>
+
+    <div class="row">
+
+      <!-- Sommaire latéral (desktop) -->
+      <aside class="col-lg-3 d-none d-lg-block">
+        <nav class="rules-toc" aria-label="Sommaire">
+          <h6>
+            <img src="https://cdn.alteredcore.org/marketing/altered/altered-symbol-color.png" alt="">
+            Sommaire
+          </h6>
+          <ol>
+            <li><a href="#presentation">Présentation</a></li>
+            <li><a href="#materiel">Matériel</a></li>
+            <li><a href="#mise-en-place">Mise en place</a></li>
+            <li><a href="#carte">Détail d'une carte</a></li>
+            <li><a href="#zones">Les zones de jeu</a></li>
+            <li><a href="#jour">Un jour d'exploration</a></li>
+            <li><a href="#reserve">La Réserve</a></li>
+            <li><a href="#types-cartes">Types de cartes</a></li>
+            <li><a href="#fin-partie">Fin de la partie</a></li>
+            <li><a href="#regles-sup">Règles supplémentaires</a></li>
+            <li><a href="#marqueurs">Marqueurs &amp; icônes</a></li>
+            <li><a href="#construction">Construction de deck</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <!-- Contenu principal -->
+      <div class="col-lg-9">
+        <div class="news-detail-content">
+
+          <p class="lead">
+            Bienvenue dans <strong>Altered</strong>, un jeu de cartes à collectionner où vous menez
+            deux Expéditions à travers des terres transformées par le Tumulte. Votre objectif&nbsp;:
+            <strong>réunir vos deux Expéditions avant l'adversaire</strong>.
+          </p>
+
+          <!-- Sommaire mobile -->
+          <div class="d-lg-none mb-4">
+            <details class="rule-block">
+              <summary class="fw-bold" style="cursor:pointer;">📑 Voir le sommaire</summary>
+              <ol class="mt-3 mb-0">
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#materiel">Matériel</a></li>
+                <li><a href="#mise-en-place">Mise en place</a></li>
+                <li><a href="#carte">Détail d'une carte</a></li>
+                <li><a href="#zones">Les zones de jeu</a></li>
+                <li><a href="#jour">Un jour d'exploration</a></li>
+                <li><a href="#reserve">La Réserve</a></li>
+                <li><a href="#types-cartes">Types de cartes</a></li>
+                <li><a href="#fin-partie">Fin de la partie</a></li>
+                <li><a href="#regles-sup">Règles supplémentaires</a></li>
+                <li><a href="#marqueurs">Marqueurs &amp; icônes</a></li>
+                <li><a href="#construction">Construction de deck</a></li>
+              </ol>
+            </details>
+          </div>
+
+          <!-- ========== 1. PRÉSENTATION ========== -->
+          <section id="presentation">
+            <h2 class="section-title"><span>1. Présentation</span></h2>
+
+            <div class="rule-block">
+              <figure class="rule-figure float-right wide">
+                <!-- Les marqueurs PNG utilisent .dusk-marker (scoped à .dusk-adventures) qui
+                     neutralise le fond blanc imposé par le thème Azure.
+                     Le cadre jaune est un <svg> pour éviter tout fond CSS. -->
+                <div class="dusk-adventures"
+                     style="width: 224px; height: 160px; margin: 0 auto 50px;"
+                     role="img"
+                     aria-label="Carte Aventure Tumulte avec marqueurs Expédition : les deux marqueurs Axiom sont réunis, les marqueurs Muna sont séparés">
+                  <div class="adv-slot" style="width: 224px; height: 160px;">
+                    <!-- ADV_CARD_3 tournée +90° — width: 160px pour remplir exactement le container 224×160 -->
+                    <img class="adv-card-dusk" style="width: 160px; transform: rotate(90deg);"
+                         src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                         alt="" loading="lazy">
+                    <!-- Partie haute : marqueurs Muna séparés (taille et positions d'origine) -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 31%; left: 10%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Hero_Marker.png"
+                         alt="Marqueur Héros Muna" loading="lazy">
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 31%; right: 10%; left: auto;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Companion_Marker.png"
+                         alt="Marqueur Compagnon Muna" loading="lazy">
+                    <!-- Partie basse : marqueurs Axiom côte à côte à gauche -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; bottom: -5%; top: auto; left: 7%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                         alt="Marqueur Héros Axiom" loading="lazy">
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; bottom: -5%; top: auto; left: calc(7% + 47px);"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png"
+                         alt="Marqueur Compagnon Axiom" loading="lazy">
+                    <!-- Cadre jaune autour des marqueurs Axiom — SVG, aucun fond CSS possible -->
+                    <svg style="position: absolute; top: 11%; left: 3%; width: 100%; height: 100%;
+                                overflow: visible; pointer-events: none; z-index: 4;"
+                         viewBox="0 0 224 160">
+                      <!-- Axiom Hero: left≈16px, bottom 10%→top≈102px, 42×42px
+                           Axiom Companion: left≈63px — rect avec 5px de marge -->
+                      <rect x="11" y="97" width="99" height="52"
+                            fill="none" stroke="#f5c542" stroke-width="2.5" rx="6"/>
+                    </svg>
+                  </div>
+                </div>
+                <figcaption>Les marqueurs Expédition Axiom (marron) sont réunis à la fin du Jour&nbsp;: <strong>Axiom gagne la partie&nbsp;!</strong> Les marqueurs Muna (verts), eux, sont encore séparés.</figcaption>
+              </figure>
+
+              <p>
+                Altered est un <strong>jeu de cartes à collectionner</strong> dans lequel chaque
+                joueur·se utilise un deck dirigé par une carte <strong>Héros ou Héroïne</strong>.
+                Plusieurs decks de démarrage sont prêts à l'emploi, mais vous pouvez les personnaliser
+                ou créer un deck entièrement nouveau.
+              </p>
+
+              <h4>Aperçu du jeu</h4>
+              <p>Vous menez <strong>deux Expéditions</strong> qui explorent les terres transformées par le Tumulte&nbsp;:</p>
+              <ul>
+                <li>L'<strong>Expédition Héros</strong>, menée par votre Héros/Héroïne et représentée par le marqueur Expédition Héros.</li>
+                <li>L'<strong>Expédition Compagnon</strong>, représentée par le marqueur Expédition Compagnon.</li>
+              </ul>
+              <p>
+                Les Expéditions progressent l'une vers l'autre au fil de la partie. Votre objectif est
+                de <strong>les réunir avant l'adversaire</strong>.
+              </p>
+
+              <div style="clear:both"></div>
+
+              <h4>Les 6 factions</h4>
+              <p>Chaque Héros/Héroïne appartient à l'une des six factions du jeu&nbsp;:</p>
+              <div class="factions-grid">
+                <div class="faction-cell">
+                  <div class="faction-pair">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png" alt="Axiom Hero">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png" alt="Axiom Companion">
+                  </div>
+                  <div class="faction-name">Axiom</div>
+                </div>
+                <div class="faction-cell">
+                  <div class="faction-pair">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_BR_Hero_Marker.png" alt="Bravos Hero">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_BR_Companion_Marker.png" alt="Bravos Companion">
+                  </div>
+                  <div class="faction-name">Bravos</div>
+                </div>
+                <div class="faction-cell">
+                  <div class="faction-pair">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_LY_Hero_Marker.png" alt="Lyra Hero">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_LY_Companion_Marker.png" alt="Lyra Companion">
+                  </div>
+                  <div class="faction-name">Lyra</div>
+                </div>
+                <div class="faction-cell">
+                  <div class="faction-pair">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Hero_Marker.png" alt="Muna Hero">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Companion_Marker.png" alt="Muna Companion">
+                  </div>
+                  <div class="faction-name">Muna</div>
+                </div>
+                <div class="faction-cell">
+                  <div class="faction-pair">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_OR_Hero_Marker.png" alt="Ordis Hero">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_OR_Companion_Marker.png" alt="Ordis Companion">
+                  </div>
+                  <div class="faction-name">Ordis</div>
+                </div>
+                <div class="faction-cell">
+                  <div class="faction-pair">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_YZ_Hero_Marker.png" alt="Yzmir Hero">
+                    <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_YZ_Companion_Marker.png" alt="Yzmir Companion">
+                  </div>
+                  <div class="faction-name">Yzmir</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 2. MATÉRIEL ========== -->
+          <section id="materiel">
+            <h2 class="section-title"><span>2. Matériel</span></h2>
+
+            <p>
+              Voici tous les éléments fournis dans une boîte de démarrage Altered. Cliquez sur
+              chaque élément avec une vignette pour voir l'illustration en grand.
+            </p>
+
+            <!-- ===== Groupe 1 : Pour chaque joueur ===== -->
+            <div class="materiel-group">
+              <h3 class="materiel-group-title">
+                <i class="bi bi-person-fill"></i>
+                Pour chaque joueur
+              </h3>
+
+              <!-- Tapis de jeu (accordéon) -->
+              <div class="materiel-item">
+                <details>
+                  <summary>
+                    <div class="item-thumb">
+                      <img src="illus/playmat.jpg" alt="" loading="lazy">
+                    </div>
+                    <div class="item-text">
+                      <div class="item-title">1 tapis de jeu <span class="badge-optional">optionnel</span></div>
+                      <div class="item-desc">Recommandé pour les débutants&nbsp;: il aide à visualiser les différentes zones de jeu (Expédition, Héros, Réserve, Repères, Mana, Deck, Défausse).</div>
+                    </div>
+                    <i class="bi bi-chevron-down item-chevron"></i>
+                  </summary>
+                  <div class="item-detail">
+                    <img src="illus/playmat.jpg" alt="Tapis de jeu Altered avec ses zones">
+                    <div class="detail-caption">Le tapis de jeu et toutes ses zones.</div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Deck de 39 cartes (statique : pas d'illustration unique) -->
+              <div class="materiel-item static">
+                <div class="item-visual" aria-hidden="true">
+                  <i class="bi bi-stack" style="font-size:1.8rem; color: var(--primary-400);"></i>
+                </div>
+                <div class="item-text">
+                  <div class="item-title">1 deck de 39 cartes</div>
+                  <div class="item-desc">Le deck que vous utiliserez tout au long de la partie.</div>
+                </div>
+              </div>
+
+              <!-- Carte Héros (accordéon) -->
+              <div class="materiel-item">
+                <details>
+                  <summary>
+                    <div class="item-thumb">
+                      <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_01_C.webp"
+                           alt="" loading="lazy">
+                    </div>
+                    <div class="item-text">
+                      <div class="item-title">1 carte Héros ou Héroïne</div>
+                      <div class="item-desc">Détermine votre faction et votre stratégie de jeu.</div>
+                    </div>
+                    <i class="bi bi-chevron-down item-chevron"></i>
+                  </summary>
+                  <div class="item-detail">
+                    <div class="hero-examples">
+                      <div class="hero-example">
+                        <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_01_C.webp"
+                             alt="Carte Héros Sierra & Oddball, faction Axiom"
+                             loading="lazy">
+                        <div class="hero-label">
+                          <div class="hero-faction">Axiom</div>
+                          Sierra &amp; Oddball
+                        </div>
+                      </div>
+                      <div class="hero-example">
+                        <img src="https://cdn.alteredcore.org/cards/fr/DUSTER/ALT_DUSTER_B_MU_85_C.webp"
+                             alt="Carte Héros Turuun & Benih, faction Muna"
+                             loading="lazy">
+                        <div class="hero-label">
+                          <div class="hero-faction">Muna</div>
+                          Turuun &amp; Benih
+                        </div>
+                      </div>
+                      <div class="hero-example">
+                        <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_YZ_02_C.webp"
+                             alt="Carte Héroïne Lindiwe & Max, faction Yzmir"
+                             loading="lazy">
+                        <div class="hero-label">
+                          <div class="hero-faction">Yzmir</div>
+                          Lindiwe &amp; Max
+                        </div>
+                      </div>
+                    </div>
+                    <div class="detail-caption">Trois exemples de cartes Héros / Héroïne issus de différentes factions.</div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Marqueurs Expédition (statique) -->
+              <div class="materiel-item static">
+                <div class="item-visual" aria-hidden="true">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                       alt="" loading="lazy">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png"
+                       alt="" loading="lazy">
+                </div>
+                <div class="item-text">
+                  <div class="item-title">2 marqueurs Expédition</div>
+                  <div class="item-desc">Un marqueur Héros et un marqueur Compagnon, aux couleurs de votre faction.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== Groupe 2 : Pour les 2 joueurs ===== -->
+            <div class="materiel-group">
+              <h3 class="materiel-group-title">
+                <i class="bi bi-people-fill"></i>
+                Pour les 2 joueurs
+              </h3>
+
+              <!-- Marqueur Premier Joueur (statique) -->
+              <div class="materiel-item static">
+                <div class="item-visual" aria-hidden="true">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_First_Player_A_Marker.png"
+                       alt="" loading="lazy">
+                </div>
+                <div class="item-text">
+                  <div class="item-title">1 marqueur Premier Joueur</div>
+                  <div class="item-desc">Indique qui commence le tour. Change de camp chaque Matin.</div>
+                </div>
+              </div>
+
+              <!-- Cartes Aventure (accordéon avec composition) -->
+              <div class="materiel-item">
+                <details>
+                  <summary>
+                    <div class="item-thumb">
+                      <img src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                           alt="" loading="lazy">
+                    </div>
+                    <div class="item-text">
+                      <div class="item-title">5 cartes Aventure</div>
+                      <div class="item-desc">2 régions de départ (Héros et Compagnon) + 3 cartes Tumulte.</div>
+                    </div>
+                    <i class="bi bi-chevron-down item-chevron"></i>
+                  </summary>
+                  <div class="item-detail composition-wrap">
+                    <div class="adventure-composition" role="img"
+                         aria-label="Cartes Aventure : régions de départ Héros et Compagnon empilées, et 3 cartes Tumulte en éventail">
+                      <div class="adventure-stack left">
+                        <img class="adv-companion"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_5.png"
+                             alt="" loading="lazy">
+                        <img class="adv-hero"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_1.png"
+                             alt="" loading="lazy">
+                      </div>
+                      <div class="adventure-stack right">
+                        <img class="tumult-1"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_2.png"
+                             alt="" loading="lazy">
+                        <img class="tumult-2"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                             alt="" loading="lazy">
+                        <img class="tumult-3"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_4.png"
+                             alt="" loading="lazy">
+                      </div>
+                    </div>
+                    <div class="detail-caption">À gauche&nbsp;: régions de départ Héros et Compagnon. À droite&nbsp;: 3 cartes Tumulte qui forment le chemin à parcourir.</div>
+
+                    <div class="tumulte-regions-wrap">
+                      <div class="tumulte-rotated-card">
+                        <img src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                             alt="Carte Tumulte avec ses deux régions" loading="lazy">
+                        <div class="tumulte-region-box rgn-left">1</div>
+                        <div class="tumulte-region-box rgn-right">2</div>
+                      </div>
+                      <div class="detail-caption">Chacune des trois cartes Tumulte comporte deux régions que vous traverserez.</div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Cartes jeton (accordéon avec éventail) -->
+              <div class="materiel-item">
+                <details>
+                  <summary>
+                    <div class="item-thumb">
+                      <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_31_C.webp"
+                           alt="" loading="lazy">
+                    </div>
+                    <div class="item-text">
+                      <div class="item-title">Cartes jeton</div>
+                      <div class="item-desc">Scarabots, soldats, etc. — créées par d'autres cartes en cours de partie.</div>
+                    </div>
+                    <i class="bi bi-chevron-down item-chevron"></i>
+                  </summary>
+                  <div class="item-detail composition-wrap">
+                    <div class="token-fan" role="img" aria-label="Trois exemples de cartes jeton">
+                      <img class="token-1"
+                           src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_31_C.webp"
+                           alt="" loading="lazy">
+                      <img class="token-2"
+                           src="https://cdn.alteredcore.org/cards/fr/ALIZE/ALT_ALIZE_B_YZ_47_C.webp"
+                           alt="" loading="lazy">
+                      <img class="token-3"
+                           src="https://cdn.alteredcore.org/cards/fr/CYCLONE/ALT_CYCLONE_B_MU_83_C.webp"
+                           alt="" loading="lazy">
+                    </div>
+                    <div class="detail-caption">Exemples de jetons issus des différentes extensions.</div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Marqueurs Cartes (statique) -->
+              <div class="materiel-item static">
+                <div class="item-visual" aria-hidden="true">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost1_Marker.png"
+                       alt="" loading="lazy">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost2_Marker.png"
+                       alt="" loading="lazy">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png"
+                       alt="" loading="lazy">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Anchored_Marker.png"
+                       alt="" loading="lazy">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Asleep_Marker.png"
+                       alt="" loading="lazy">
+                </div>
+                <div class="item-text">
+                  <div class="item-title">Marqueurs Cartes</div>
+                  <div class="item-desc">Boost +1, Boost +2, Fugace, Ancré et Endormi — à poser sur les Personnages selon les effets.</div>
+                </div>
+              </div>
+
+              <!-- Marqueurs Terrains (statique, pas d'illustration disponible) -->
+              <div class="materiel-item static">
+                <div class="item-visual" aria-hidden="true">
+                  <img src="https://altered.re/assets/biome/F.webp"
+                       alt="" loading="lazy">
+                  <img src="https://altered.re/assets/biome/M.webp"
+                       alt="" loading="lazy">
+                  <img src="https://altered.re/assets/biome/O.webp"
+                       alt="" loading="lazy">
+                </div>
+                <div class="item-text">
+                  <div class="item-title">Marqueurs Terrains</div>
+                  <div class="item-desc">Forêt, Montagne et Eau — pour modifier les terrains d'une région en cours de partie.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 3. MISE EN PLACE ========== -->
+          <section id="mise-en-place">
+            <h2 class="section-title"><span>3. Mise en place</span></h2>
+
+            <div class="rule-block">
+              <figure class="rule-figure">
+                <div class="setup-composition" role="img"
+                     aria-label="Mise en place complète : cartes Aventure alignées en haut, tapis avec Héros et Deck, marqueurs et jetons sur le côté">
+
+                  <div class="setup-main">
+                    <!-- Rangée de cartes Aventure au-dessus du tapis -->
+                    <div class="setup-adventures" style="position: relative;">
+
+                      <!-- Étape 1 : cadre + numéro autour des 3 Tumulte -->
+                      <div class="tumult-frame" style="top: 8%; left: 20%; right: 20%; bottom: 8%;"></div>
+                      <div class="step-marker" style="top: -16px; left: 50%; transform: translateX(-50%);">1</div>
+
+                      <!-- Étape 2 : numéro dans les coins extérieurs des cartes Expédition -->
+                      <div class="step-marker" style="top: 0%; left: 0; transform: translate(-30%, 0);">2</div>
+                      <div class="step-marker" style="top: 0%; right: 0; transform: translate(30%, 0);">2</div>
+
+                      <!-- Étape 3 : marqueurs Expédition (entre Muna haut et Axiom bas) -->
+                      <div class="step-marker" style="top: 50%; left: 10%; transform: translate(-50%, -50%);">3</div>
+                      <div class="step-marker" style="top: 50%; left: 90%; transform: translate(-50%, -50%);">3</div>
+
+                      <div class="adv-wrap">
+                        <img class="adv-hero-card"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_1.png"
+                             alt="" loading="lazy">
+                        <img class="placed-marker top"
+                             src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Hero_Marker.png"
+                             alt="" loading="lazy">
+                        <img class="placed-marker bottom"
+                             src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                             alt="" loading="lazy">
+                      </div>
+                      <div class="adv-wrap">
+                        <img class="adv-tumult-card"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_BACK.png"
+                             alt="" loading="lazy">
+                      </div>
+                      <div class="adv-wrap">
+                        <img class="adv-tumult-card"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_BACK.png"
+                             alt="" loading="lazy">
+                      </div>
+                      <div class="adv-wrap">
+                        <img class="adv-tumult-card"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_BACK.png"
+                             alt="" loading="lazy">
+                      </div>
+                      <div class="adv-wrap">
+                        <img class="adv-companion-card"
+                             src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_5.png"
+                             alt="" loading="lazy">
+                        <img class="placed-marker top"
+                             src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Companion_Marker.png"
+                             alt="" loading="lazy">
+                        <img class="placed-marker bottom"
+                             src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png"
+                             alt="" loading="lazy">
+                      </div>
+                    </div>
+
+                    <!-- Tapis avec carte Héros et dos de carte sur la zone Deck -->
+                    <div class="setup-playmat">
+                      <img class="playmat-bg" src="illus/playmat.jpg" alt="Tapis de jeu Altered">
+
+                      <!-- Étape 3 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
+                      <!-- Étape 4 : le tapis lui-même -->
+                      <div class="step-marker" style="top: 50%; left: -16px; transform: translateY(-50%);">4</div>
+
+                      <!-- Étape 5 : Sierra sur zone Héros -->
+                      <div class="step-marker" style="top: 5%; left: 40%; transform: translate(0, -50%);">5</div>
+
+                      <!-- Étape 6 : marqueur Premier Joueur sur Sierra -->
+                      <div class="step-marker" style="top: 35%; left: 50%; transform: translate(-50%, -100%);">6</div>
+
+                      <!-- Étape 7 : deck face cachée -->
+                      <div class="step-marker" style="bottom: 7%; right: calc(13% + 11% + 6px); transform: translate(50%, 50%);">7</div>
+
+                      <img class="placed-card placed-hero"
+                           src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_01_C.webp"
+                           alt="Carte Héros Sierra & Oddball placée sur la zone Héros"
+                           loading="lazy">
+                      <img class="placed-first-player"
+                           src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_First_Player_A_Marker.png"
+                           alt="Marqueur Premier Joueur"
+                           loading="lazy">
+                      <img class="placed-card placed-deck"
+                           src="https://cdn.alteredcore.org/marketing/cardbacks/ALT_OFFICIAL_CARDBACK.png"
+                           alt="Deck face cachée sur la zone Deck"
+                           loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Panneau latéral droit : marqueurs éparpillés et piles de jetons -->
+                  <aside class="setup-side" style="position: relative;">
+				  <!-- Étape 8 : marqueurs et jetons à portée -->
+				  <div class="step-marker" style="top: 0; left: 50%; transform: translateX(-50%);">8</div>
+					  
+                    <div class="setup-markers-scatter" aria-label="Marqueurs disponibles">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost1_Marker.png" alt="" loading="lazy" style="top: 5%;   left: 8%;  transform: rotate(-12deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost1_Marker.png" alt="" loading="lazy" style="top: 18%;  left: 38%; transform: rotate(8deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost1_Marker.png" alt="" loading="lazy" style="top: 0;     left: 68%; transform: rotate(-5deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost2_Marker.png" alt="" loading="lazy" style="top: 30%;  left: 4%;  transform: rotate(15deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost2_Marker.png" alt="" loading="lazy" style="top: 38%;  left: 55%; transform: rotate(-8deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost2_Marker.png" alt="" loading="lazy" style="top: 22%;  left: 80%; transform: rotate(20deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="" loading="lazy" style="top: 55%;  left: 22%; transform: rotate(-15deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="" loading="lazy" style="top: 48%;  left: 70%; transform: rotate(10deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="" loading="lazy" style="top: 65%;  left: 45%; transform: rotate(5deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Anchored_Marker.png" alt="" loading="lazy" style="top: 72%;  left: 8%;  transform: rotate(7deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Anchored_Marker.png" alt="" loading="lazy" style="top: 80%;  left: 80%; transform: rotate(-10deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Asleep_Marker.png" alt="" loading="lazy" style="top: 85%;  left: 35%; transform: rotate(-3deg);">
+                      <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Asleep_Marker.png" alt="" loading="lazy" style="top: 90%;  left: 60%; transform: rotate(18deg);">
+                    </div>
+
+                    <div class="setup-tokens-stacks" aria-label="Cartes jetons" style="position: relative;">
+
+                      <div class="token-stack">
+                        <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_31_C.webp" alt="" loading="lazy">
+                        <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_31_C.webp" alt="" loading="lazy">
+                      </div>
+                      <div class="token-stack">
+                        <img src="https://cdn.alteredcore.org/cards/fr/ALIZE/ALT_ALIZE_B_YZ_47_C.webp" alt="" loading="lazy">
+                        <img src="https://cdn.alteredcore.org/cards/fr/ALIZE/ALT_ALIZE_B_YZ_47_C.webp" alt="" loading="lazy">
+                      </div>
+                      <div class="token-stack">
+                        <img src="https://cdn.alteredcore.org/cards/fr/CYCLONE/ALT_CYCLONE_B_MU_83_C.webp" alt="" loading="lazy">
+                        <img src="https://cdn.alteredcore.org/cards/fr/CYCLONE/ALT_CYCLONE_B_MU_83_C.webp" alt="" loading="lazy">
+                      </div>
+                    </div>
+                  </aside>
+
+                </div>
+                <figcaption>Mise en place complète&nbsp;: cartes Aventure alignées en haut, tapis avec carte Héros et Deck en place, marqueurs et jetons à portée.</figcaption>
+              </figure>
+
+              <ol>
+                <li>Mélangez les <strong>trois cartes Tumulte</strong> et alignez-les face cachée entre les deux camps opposés.</li>
+                <li>Placez la <strong>carte région de départ Héros</strong> à une extrémité de la ligne et la <strong>carte région de départ Compagnon</strong> à l'autre extrémité.</li>
+                <li>Chacun·e place son <strong>marqueur Expédition Héros</strong> et son <strong>marqueur Expédition Compagnon</strong> sur les régions de départ correspondantes.</li>
+                <li>Installez les <strong>deux tapis de jeu</strong> face à face de chaque côté du Tumulte.</li>
+                <li>Chaque joueur·se place sa <strong>carte Héros ou Héroïne</strong> dans la zone Héros du tapis de jeu.</li>
+                <li>Déterminez au hasard qui commencera la partie, et placez le <strong>marqueur Premier Joueur</strong> sur sa carte Héros/Héroïne.</li>
+                <li>Chaque joueur·se mélange sondeck et le place face cachée dans la zone Deck.</li>
+                <li>Gardez le reste des cartes jeton et marqueurs à portée de main.</li>
+              </ol>
+            </div>
+
+            <div class="rule-block">
+              <h3>Main de départ</h3>
+              <p>
+                <strong>Piochez 6 cartes</strong> dans votre deck, puis choisissez-en <strong>3</strong>
+                que vous placez dans votre zone de Mana, <strong>face cachée et redressées</strong>.
+                Les trois autres cartes constituent votre <strong>main de départ</strong>.
+              </p>
+
+              <h4>Orbes de Mana</h4>
+              <figure class="rule-figure">
+                <div class="mana-orbs-composition" role="img"
+                     aria-label="Orbes de Mana : redressée à gauche, épuisée (tournée à 90°) à droite">
+                  <div class="mana-orb">
+                    <div class="orb-wrap">
+                      <img src="https://cdn.alteredcore.org/marketing/cardbacks/ALT_OFFICIAL_CARDBACK.png"
+                           alt="Orbe de Mana redressée" loading="lazy">
+                    </div>
+                    <div class="orb-label">Redressée</div>
+                  </div>
+                  <div class="mana-orb epuisee">
+                    <div class="orb-wrap">
+                      <img src="https://cdn.alteredcore.org/marketing/cardbacks/ALT_OFFICIAL_CARDBACK.png"
+                           alt="Orbe de Mana épuisée" loading="lazy">
+                    </div>
+                    <div class="orb-label">Épuisée</div>
+                  </div>
+                </div>
+              </figure>
+              <ul>
+                <li>Les cartes dans la zone de Mana sont toujours <strong>face cachée</strong> et sont appelées <strong>Orbes de Mana</strong>.</li>
+                <li>Chaque Orbe de Mana donne <strong>1 Mana</strong> lorsqu'il est épuisé.</li>
+                <li>Redressez tous vos Orbes de Mana pendant la <strong>phase Matin</strong>.</li>
+                <li>Une carte face cachée dans la zone de Mana y reste <strong>jusqu'à la fin de la partie</strong>.</li>
+              </ul>
+              <div style="clear:both"></div>
+            </div>
+          </section>
+
+          <!-- ========== 4. DÉTAIL D'UNE CARTE ========== -->
+          <section id="carte">
+            <h2 class="section-title"><span>4. Détail d'une carte</span></h2>
+
+            <div class="rule-block">
+              <figure class="rule-figure float-right small">
+                <div class="card-anatomy">
+                  <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_YZ_14_C.webp"
+                       alt="Anatomie d'une carte Personnage : Flamel, avec les zones A à I annotées"
+                       loading="lazy">
+                  <span class="anno" style="top: 3%;  left: 50%;">A</span>
+                  <span class="anno" style="top: 17%; left: 50%;">B</span>
+                  <span class="anno" style="top: 5%;  left: 95%;">C</span>
+                  <span class="anno" style="top: 12%;  left: 7%;">D</span>
+                  <span class="anno" style="top: 15%; left: 26%;">E</span>
+                  <span class="anno" style="top: 63%; left: 58%;">F</span>
+                  <span class="anno" style="top: 82%; left:  7%;">G</span>
+                  <span class="anno" style="top: 30%; left: 24%;">H</span>
+                  <span class="anno" style="top: 66%; left:  7%;">I</span>
+                </div>
+                <figcaption>Anatomie d'une carte Personnage&nbsp;: zones A à I.</figcaption>
+              </figure>
+
+              <p>Il y a 4 types de cartes&nbsp;: <strong>Héros / Héroïnes</strong>, <strong>Personnages</strong>, <strong>Sorts</strong> et <strong>Permanents</strong>.</p>
+
+              <h4>Sur toutes les cartes</h4>
+              <ul>
+                <li><strong>A — Nom</strong> de la carte</li>
+                <li><strong>B — Type</strong> et sous-type(s)</li>
+                <li><strong>C — Faction</strong> : il existe 6 factions différentes</li>
+                <li><strong>D — Coût de Main</strong> : le coût en Mana lorsque la carte est jouée depuis votre main</li>
+                <li><strong>E — Coût de Réserve</strong> : le coût en Mana lorsqu'elle est jouée depuis la Réserve</li>
+                <li><strong>F — Capacités</strong> : les règles spéciales de la carte</li>
+                <li><strong>G — Capacité de Soutien</strong> : capacité utilisable depuis la Réserve, présente sur certaines cartes</li>
+              </ul>
+
+              <h4>Sur les cartes Personnage uniquement</h4>
+              <p>
+				<strong>H —</strong> Les Personnages ont des <strong>statistiques</strong> correspondant aux trois terrains&nbsp;:&nbsp;
+                <span class="terrain-badge"><img src="https://altered.re/assets/biome/F.webp" alt="">Forêt</span>
+                <span class="terrain-badge"><img src="https://altered.re/assets/biome/M.webp" alt="">Montagne</span>
+                <span class="terrain-badge"><img src="https://altered.re/assets/biome/O.webp" alt="">Eau</span>
+              </p>
+
+              <div style="clear:both"></div>
+
+              <h4>I — Capacités selon l'origine</h4>
+              <p>Les cartes ont divers effets selon l'endroit depuis lequel elles sont jouées&nbsp;:</p>
+
+              <div class="marker-grid">
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-anywhere"><i class="fak fa-altered-j"></i></div>
+                  <div class="m-text">
+                    <div class="m-desc"> Cet effet s'active <strong>quel que soit l'endroit</strong> depuis lequel la carte est jouée.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-hand"><i class="fak fa-altered-h"></i></div>
+                  <div class="m-text">
+                    <div class="m-desc"> Cet effet s'active lorsqu’elle est jouée <strong>depuis votre main</strong>.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-reserve"><i class="fak fa-altered-r"></i></div>
+                  <div class="m-text">
+                    <div class="m-desc">Cet effet s'active lorsqu’elle est jouée <strong>depuis votre Réserve</strong>.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 5. LES ZONES DE JEU ========== -->
+          <section id="zones">
+            <h2 class="section-title"><span>5. Les zones de jeu</span></h2>
+
+            <p>
+              Le tapis de jeu présente plusieurs zones, chacune avec un rôle précis pendant la partie.
+              Voici un aperçu de ces zones&nbsp;: cliquez sur les numéros du tapis pour aller à la description correspondante.
+            </p>
+
+            <figure class="rule-figure">
+              <div class="playmat-annotated">
+                <img src="illus/playmat.jpg" alt="Tapis de jeu Altered avec les zones numérotées de 1 à 7">
+                <a href="#zone-1" class="zone-pin" style="top: 11%; left: 50%;"
+                   aria-label="Zone Héros">1</a>
+                <a href="#zone-2" class="zone-pin" style="top: 14%; left: 12%;"
+                   aria-label="Zone Expédition Héros">2</a>
+                <a href="#zone-2" class="zone-pin" style="top: 14%; left: 88%;"
+                   aria-label="Zone Expédition Compagnon">2</a>
+                <a href="#zone-3" class="zone-pin" style="top: 47%; left: 17%;"
+                   aria-label="Zone Réserve">3</a>
+                <a href="#zone-4" class="zone-pin" style="top: 47%; left: 75%;"
+                   aria-label="Zone Repères">4</a>
+                <a href="#zone-5" class="zone-pin" style="top: 78%; left: 17%;"
+                   aria-label="Zone Mana">5</a>
+                <a href="#zone-6" class="zone-pin" style="top: 82%; left: 78%;"
+                   aria-label="Zone Deck">6</a>
+                <a href="#zone-7" class="zone-pin" style="top: 82%; left: 92%;"
+                   aria-label="Zone Défausse">7</a>
+              </div>
+              <figcaption>Les 7 zones du tapis de jeu, numérotées dans l'ordre des descriptions ci-dessous.</figcaption>
+            </figure>
+
+            <div class="zone-list">
+
+              <div class="zone-item" id="zone-1">
+                <div class="zone-num">1</div>
+                <div class="zone-content">
+                  <div class="zone-name">Zone Héros</div>
+                  <div class="zone-desc">
+                    <p>C'est là que vous placez votre carte <strong>Héros ou Héroïne</strong> au début de la partie. Cette carte y reste pendant toute la partie et peut être utilisée pour activer sa capacité spéciale.</p>
+                    <p>En début de partie, le <strong>marqueur Premier Joueur</strong> est posé sur la carte Héros du joueur qui commence.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="zone-item" id="zone-2">
+                <div class="zone-num">2</div>
+                <div class="zone-content">
+                  <div class="zone-name">Zones Expédition (×2)</div>
+                  <div class="zone-desc">
+                    <p>Deux zones, une pour l'<strong>Expédition Héros</strong> et une pour l'<strong>Expédition Compagnon</strong>. Lorsque vous jouez un Personnage, vous choisissez dans quelle Expédition le placer.</p>
+                    <p>Les Personnages présents dans ces zones contribuent aux statistiques de l'Expédition au Crépuscule pour faire avancer le marqueur Expédition correspondant.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="zone-item" id="zone-3">
+                <div class="zone-num">3</div>
+                <div class="zone-content">
+                  <div class="zone-name">Réserve</div>
+                  <div class="zone-desc">
+                    <p>Une zone <strong>face visible</strong> qui fonctionne comme une <strong>deuxième main</strong>. Les Personnages qui se reposent à la Nuit y arrivent, et les Sorts joués y sont envoyés après résolution.</p>
+                    <p>Une carte en Réserve peut être rejouée en payant son <strong>Coût de Réserve</strong>, mais gagne alors <strong>Fugace</strong>. En phase Nuit, la Réserve est nettoyée pour n'y conserver que 2 cartes.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="zone-item" id="zone-4">
+                <div class="zone-num">4</div>
+                <div class="zone-content">
+                  <div class="zone-name">Repères</div>
+                  <div class="zone-desc">
+                    <p>La zone où sont placés les <strong>Permanents de Repère</strong>. Contrairement aux Personnages, les Permanents restent en jeu d'un Jour à l'autre et continuent de produire leurs effets.</p>
+                    <p>En phase Nuit, la zone des Repères est elle aussi nettoyée pour ne conserver que 2 Permanents.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="zone-item" id="zone-5">
+                <div class="zone-num">5</div>
+                <div class="zone-content">
+                  <div class="zone-name">Mana</div>
+                  <div class="zone-desc">
+                    <p>La zone où sont placées les cartes utilisées comme <strong>Orbes de Mana</strong>. Une carte mise en Mana y reste <strong>face cachée jusqu'à la fin de la partie</strong>.</p>
+                    <p>Chaque Orbe de Mana fournit 1 Mana lorsqu'il est épuisé. Tous vos Orbes sont redressés pendant la phase Matin.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="zone-item" id="zone-6">
+                <div class="zone-num">6</div>
+                <div class="zone-content">
+                  <div class="zone-name">Deck</div>
+                  <div class="zone-desc">
+                    <p>Votre pioche, face cachée. Vous y piochez vos cartes au début de chaque Jour.</p>
+                    <p>Si votre Deck est vide et que vous devez piocher, mélangez votre Défausse&nbsp;: elle devient votre nouveau Deck.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="zone-item" id="zone-7">
+                <div class="zone-num">7</div>
+                <div class="zone-content">
+                  <div class="zone-name">Défausse</div>
+                  <div class="zone-desc">
+                    <p>Les cartes mises de côté en cours de partie&nbsp;: Personnages défaussés depuis la Réserve ou les Expéditions, Sorts Fugaces résolus, cartes excédentaires de la Réserve nettoyée à la Nuit, etc.</p>
+                    <p>La Défausse est une zone <strong>face visible</strong>&nbsp;: vous pouvez la consulter à tout moment.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========== 6. UN JOUR D'EXPLORATION ========== -->
+          <section id="jour">
+            <h2 class="section-title"><span>6. Un jour d'exploration</span></h2>
+
+            <div class="rule-block">
+              <p>
+                Une partie d'Altered se joue en plusieurs manches appelées <strong>Jours</strong>.
+                Chaque Jour est composé de <strong>cinq phases</strong>&nbsp;:
+              </p>
+
+              <div class="phases-grid">
+                <div class="phase-card">
+                  <div class="phase-num">Phase 1</div>
+                  <div class="phase-icon"><img src="https://cdn.alteredcore.org/bga/icons/dawn.png" alt="" loading="lazy"></div>
+                  <div class="phase-name">Matin</div>
+                  <div class="phase-desc">Premier joueur, redresser, piocher, mettre une carte en Mana.</div>
+                </div>
+                <div class="phase-card">
+                  <div class="phase-num">Phase 2</div>
+                  <div class="phase-icon"><img src="https://cdn.alteredcore.org/bga/icons/noon.png" alt="" loading="lazy"></div>
+                  <div class="phase-name">Midi</div>
+                  <div class="phase-desc">Appliquer les effets « À Midi ».</div>
+                </div>
+                <div class="phase-card">
+                  <div class="phase-num">Phase 3</div>
+                  <div class="phase-icon"><img src="https://cdn.alteredcore.org/bga/icons/afternoon.png" alt="" loading="lazy"></div>
+                  <div class="phase-name">Après-midi</div>
+                  <div class="phase-desc">Chacun votre tour, jouer une carte ou passer.</div>
+                </div>
+                <div class="phase-card">
+                  <div class="phase-num">Phase 4</div>
+                  <div class="phase-icon"><img src="https://cdn.alteredcore.org/bga/icons/dusk.png" alt="" loading="lazy"></div>
+                  <div class="phase-name">Crépuscule</div>
+                  <div class="phase-desc">Comparer les statistiques, faire avancer les Expéditions.</div>
+                </div>
+                <div class="phase-card">
+                  <div class="phase-num">Phase 5</div>
+                  <div class="phase-icon"><img src="https://cdn.alteredcore.org/bga/icons/night.png" alt="" loading="lazy"></div>
+                  <div class="phase-name">Nuit</div>
+                  <div class="phase-desc">Repos, nettoyage, vérification de la victoire.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PHASE 1 -->
+            <div class="rule-block">
+              <h3><img src="https://cdn.alteredcore.org/bga/icons/dawn.png" alt="" class="phase-title-icon" loading="lazy"> Phase 1 — Matin</h3>
+              <p>
+                S'il s'agit du <strong>premier Jour</strong> de la partie, passez directement à la phase
+                Midi. Sinon, suivez ces étapes&nbsp;:
+              </p>
+              <ol>
+                <li>Placez le marqueur <strong>Premier Joueur</strong> dans l'autre camp.</li>
+                <li>Redressez vos <strong>Orbes de Mana</strong> et vos cartes épuisées.</li>
+                <li><strong>Piochez deux cartes</strong> dans votre deck.</li>
+                <li>En commençant par le camp possédant le marqueur Premier Joueur, chaque joueur·se choisit de placer ou non <strong>une carte de sa main</strong> dans sa zone de Mana.</li>
+              </ol>
+            </div>
+
+            <!-- PHASE 2 -->
+            <div class="rule-block">
+              <h3><img src="https://cdn.alteredcore.org/bga/icons/noon.png" alt="" class="phase-title-icon" loading="lazy"> Phase 2 — Midi</h3>
+              <p>Activez toutes les cartes en jeu avec un effet <strong>« À Midi »</strong>.</p>
+              <div class="rule-callout">
+                Tous les decks de démarrage ne contiennent pas forcément de cartes avec un effet « À Midi ».
+              </div>
+            </div>
+
+            <!-- PHASE 3 -->
+            <div class="rule-block">
+              <h3><img src="https://cdn.alteredcore.org/bga/icons/afternoon.png" alt="" class="phase-title-icon" loading="lazy"> Phase 3 — Après-midi</h3>
+              <p>
+                En commençant par le détenteur du marqueur Premier Joueur, les deux camps jouent
+                <strong>chacun leur tour</strong>, <strong>une carte à la fois</strong>. 
+              </p>
+              <div class="rule-callout">
+				<div>Dans Altered, <strong>1 tour = 1 carte</strong></div>
+				<div>Dès qu'une cartea été jouée, l'autre joueur·se commence son tour.</div>
+              </div>
+
+              <h4>Structure d'un tour</h4>
+              <div class="flow">
+                <div class="flow-step">
+                  <div class="step-num">ÉTAPE 1</div>
+                  <div class="step-title">Actions rapides</div>
+                  <div class="step-text">Effectuez autant d'<strong>actions rapides</strong> que vous le souhaitez.</div>
+                </div>
+                <div class="flow-step">
+                  <div class="step-num">ÉTAPE 2</div>
+                  <div class="step-title">Jouer ou passer</div>
+                  <div class="step-text">Ensuite, <strong>jouez une carte</strong> OU <strong>passez</strong>.</div>
+                </div>
+              </div>
+
+              <h4>Actions rapides</h4>
+              <p>Il existe deux types d'actions rapides&nbsp;:</p>
+              <ul>
+                <li><strong>Capacité d'épuisement</strong> : présente sur certaines cartes Permanent ou Héros. <strong><i class="fak fa-altered-t"></i> Épuisez</strong> la carte pour activer son effet.</li>
+                <li><strong>Capacité de Soutien</strong> : utilisable si la carte se trouve en Réserve. Pour l'activer, <strong><i class="fak fa-altered-d"></i> défaussez</strong> la carte depuis votre Réserve.</li>
+              </ul>
+              <div class="rule-callout tip">
+                <strong>Rappel.</strong> Une action rapide ne compte pas comme une carte jouée et ne met
+                pas fin à votre tour.
+              </div>
+
+              <h4>Jouer une carte</h4>
+              <p>
+                Pour jouer une carte, vous devez <strong><i class="fak fa-altered-t"></i> épuiser le nombre d'Orbes de Mana</strong>
+                correspondant à son coût.
+              </p>
+              <ul>
+                <li><strong>Jouer un Personnage</strong> : vous décidez dans quelle Expédition le placer (Héros ou Compagnon).</li>
+
+				  <figure class="rule-figure" style="max-width: 380px; margin: 0.5rem auto 1.25rem;">
+					<div class="play-character-illus" role="img"
+						 aria-label="Jouer un Personnage : la carte peut rejoindre l'Expédition Héros ou l'Expédition Compagnon.">
+					  <img class="playmat-bg" src="illus/playmat.jpg" alt="" loading="lazy">
+					  <img class="pc-card pc-hero"
+						   src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_01_C.webp"
+						   alt="Carte Héros Sierra & Oddball" loading="lazy">
+					  <img class="pc-card pc-played"
+						   src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_08_C.webp"
+						   alt="Carte Personnage en cours d'être jouée" loading="lazy">
+					  <!-- viewBox aligné sur l'aspect du conteneur (256/147) pour éviter -->
+					  <!-- toute distorsion des pointes de flèches. -->
+					  <svg class="pc-arrows" viewBox="0 0 1024 588"
+						   xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<defs>
+						  <marker id="pc-arrow-head" viewBox="0 0 10 10" refX="8" refY="5"
+								  markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+							<path d="M 0 0 L 10 5 L 0 10 z" fill="#f5c542" />
+						  </marker>
+						</defs>
+						<!-- Sierra (w≈143, h≈215) centrée à (512, 143). AX (w≈205, h≈307) haut ≈ 269. -->
+						<!-- Départ : 15 % à l'intérieur des coins supérieurs de la carte AX_08. -->
+						<!-- Arrivée : 2 × largeur de Sierra à l'extérieur de chaque bord de Sierra. -->
+						<path d="M 440 315 C 270 295, 200 210, 154 143"
+							  stroke="#f5c542" stroke-width="12" fill="none"
+							  stroke-linecap="round"
+							  marker-end="url(#pc-arrow-head)" />
+						<path d="M 584 315 C 754 295, 824 210, 871 143"
+							  stroke="#f5c542" stroke-width="12" fill="none"
+							  stroke-linecap="round"
+							  marker-end="url(#pc-arrow-head)" />
+					  </svg>
+					</div>
+				  </figure>
+                <li><strong>Jouer un Sort ou un Permanent</strong> : voir <a href="#types-cartes">Types de cartes</a>.</li>
+                <li><strong>Jouer une carte depuis la Réserve</strong> : voir <a href="#reserve">La Réserve</a>.</li>
+              </ul>
+
+              <h4>Passer</h4>
+              <p>
+                Si vous ne pouvez pas ou ne souhaitez pas jouer de carte, vous pouvez <strong>passer</strong>.
+                Vous ne pourrez alors plus jouer de tours jusqu'à la prochaine phase d'Après-midi.
+                Quand vous passez, l'adversaire peut continuer à jouer. Une fois qu'il ou elle a
+                également passé, la phase Crépuscule commence.
+              </p>
+            </div>
+
+            <!-- PHASE 4 -->
+            <div class="rule-block">
+              <h3><img src="https://cdn.alteredcore.org/bga/icons/dusk.png" alt="" class="phase-title-icon" loading="lazy"> Phase 4 — Crépuscule</h3>
+              <p>
+                Pendant le Crépuscule, les deux camps <strong>comparent les statistiques</strong> des
+                Personnages en jeu pour déterminer quels marqueurs Expédition peuvent avancer.
+              </p>
+              <p>En commençant par une Expédition (Héros ou Compagnon), effectuez les étapes suivantes&nbsp;:</p>
+
+              <div class="flow">
+                <div class="flow-step">
+                  <div class="step-badge">A</div>
+                  <div class="step-title">Vérifier les terrains</div>
+                  <div class="step-text">Identifiez le ou les terrains
+                    (<img src="https://altered.re/assets/biome/F.webp" alt="Forêt" class="biome-ic">
+                    <img src="https://altered.re/assets/biome/M.webp" alt="Montagne" class="biome-ic">
+                    <img src="https://altered.re/assets/biome/O.webp" alt="Eau" class="biome-ic">)
+                    de la région où se trouve votre marqueur.</div>
+                </div>
+                <div class="flow-step">
+                  <div class="step-badge">B</div>
+                  <div class="step-title">Additionner</div>
+                  <div class="step-text">Pour chaque terrain, additionnez les statistiques correspondantes des Personnages de cette Expédition.</div>
+                </div>
+                <div class="flow-step">
+                  <div class="step-badge">C</div>
+                  <div class="step-title">Comparer &amp; avancer</div>
+                  <div class="step-text">Si au moins un de vos totaux est <strong>strictement supérieur</strong> à celui de l'adversaire, votre Expédition avance d'une région.</div>
+                </div>
+              </div>
+
+              <p>Procédez ensuite de la même manière pour l'Expédition restante. L'adversaire fait de même pour ses Expéditions.</p>
+
+              <div class="rule-callout">
+                <ul class="mb-0">
+                  <li>Votre total doit être <strong>supérieur à 0</strong> pour pouvoir avancer.</li>
+                  <li>Les Personnages <strong>Endormis</strong> <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Asleep_Marker.png" alt="Marqueur Endormi" style="width: 1.6em; height: 1.6em; vertical-align: -0.25em;" loading="lazy"> ne sont pas pris en compte dans le calcul des statistiques.</li>
+                  <li>Chaque Expédition ne peut avancer <strong>qu'une seule fois</strong> par phase Crépuscule.</li>
+                  <li>Quand une Expédition se déplace sur une carte Tumulte face cachée, <strong>retournez-la face visible</strong>.</li>
+                  <li>Vous comparez toujours votre <strong>Expédition Héros avec l'Expédition Héros adverse</strong>, même si les deux marqueurs ne sont pas dans la même région. Idem pour les Compagnons.</li>
+                </ul>
+              </div>
+
+              <h4>Exemple — Pierre vs Noémie</h4>
+              <figure class="rule-figure">
+                <div class="dusk-composition" role="img"
+                     aria-label="Exemple Crépuscule : Pierre joue un Personnage Muna, Noémie deux Personnages Axiom">
+
+                  <!-- Étiquettes joueurs -->
+                  <span class="dusk-player-label pierre">Pierre</span>
+                  <span class="dusk-player-label noemie">Noémie</span>
+
+                  <!-- Rangée 1 : Personnage de Pierre (Muna) + explication à droite -->
+                  <div class="dusk-row-with-text">
+                    <div class="dusk-character-row">
+                      <div class="dusk-character-wrap">
+                        <img class="dusk-character"
+                             src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_MU_10_C.webp"
+                             alt="Personnage Muna joué par Pierre"
+                             loading="lazy">
+                        <!-- <div class="dusk-highlight pierre"></div> -->
+                      </div>
+                    </div>
+                    <aside class="dusk-side-text">
+                      <p>
+                        <span class="step-badge">A</span>
+                        Le marqueur Expédition Héros de <strong>Pierre</strong> se trouve sur une carte avec
+                        3 terrains&nbsp;:
+                        <span class="terrain-badge"><img src="https://altered.re/assets/biome/F.webp" alt="">Forêt</span>
+                        <span class="terrain-badge"><img src="https://altered.re/assets/biome/M.webp" alt="">Montagne</span>
+                        <span class="terrain-badge"><img src="https://altered.re/assets/biome/O.webp" alt="">Eau</span>.
+                        Pour avancer, le total de Pierre doit dépasser celui de Noémie dans au moins un de ces terrains.
+                      </p>
+                    </aside>
+                  </div>
+
+                  <!-- Rangée 2 : 2 cartes Aventure tournées + marqueurs -->
+                  <div class="dusk-adventures">
+                    <!-- Carte gauche : ADV_CARD_1 (Expédition Héros) avec marqueur Muna Héros au centre -->
+                    <div class="adv-slot">
+                      <img class="adv-card-dusk"
+                           src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_1.png"
+                           alt="" loading="lazy">
+                      <img class="dusk-marker center"
+                           src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Hero_Marker.png"
+                           alt="Marqueur Héros Muna" loading="lazy">
+                    </div>
+                    <!-- Carte droite : ADV_CARD_3 avec marqueur Axiom Héros au premier quart -->
+                    <div class="adv-slot">
+                      <img class="adv-card-dusk"
+                           src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                           alt="" loading="lazy">
+                      <img class="dusk-marker first-quarter"
+                           src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                           alt="Marqueur Héros Axiom" loading="lazy">
+                    </div>
+                  </div>
+
+                  <!-- Rangée 3 : 2 Personnages de Noémie superposés (Axiom) + explication à droite -->
+                  <div class="dusk-row-with-text">
+                    <div class="dusk-bottom-row">
+                      <img class="dusk-character back"
+                           src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_04_C.webp"
+                           alt="Personnage Axiom joué par Noémie (arrière-plan)"
+                           loading="lazy">
+                      <img class="dusk-character front"
+                           src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_08_C.webp"
+                           alt="Personnage Axiom joué par Noémie (premier plan)"
+                           loading="lazy">
+                      <!-- <div class="dusk-highlight noemie"></div> -->
+                    </div>
+                    <aside class="dusk-side-text">
+                      <p>
+                        <span class="step-badge">A</span>
+                        Du côté de Noémie, son marqueur Expédition Héros se trouve dans une région
+                        <span class="terrain-badge"><img src="https://altered.re/assets/biome/F.webp" alt="">Forêt</span> et
+                        <span class="terrain-badge"><img src="https://altered.re/assets/biome/O.webp" alt="">Eau</span>.
+                        Pour avancer, le total de Noémie doit dépasser celui de Pierre dans au moins un de ces terrains.
+                        Les statistiques en
+                        <span class="terrain-badge"><img src="https://altered.re/assets/biome/M.webp" alt="">Montagne</span>
+                        ne lui servent qu'à bloquer Pierre.
+                      </p>
+                    </aside>
+                  </div>
+
+                </div>
+                <figcaption>Exemple complet&nbsp;: comparaison terrain par terrain, étapes A, B et C.</figcaption>
+              </figure>
+
+			  <p>
+				Noémie ne peut donc pas avancer grâce à
+				<span class="terrain-badge"><img src="https://altered.re/assets/biome/M.webp" alt="">Montagne</span>
+				mais peut empêcher Pierre d'y avancer.
+			  </p>
+
+              <p>
+                <span class="step-badge">B</span>
+                On additionne ensuite les statistiques de chaque Expédition pour chacun de ces terrains&nbsp;:
+              </p>
+
+              <div class="table-responsive">
+                <table class="example-table">
+                  <thead>
+                    <tr>
+                      <th>Terrain</th>
+                      <th class="center">Pierre</th>
+                      <th class="center">Noémie</th>
+                      <th>Résultat</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="terrain-badge"><img src="https://altered.re/assets/biome/F.webp" alt="">Forêt</span></td>
+                      <td class="center"><strong>3</strong></td>
+                      <td class="center">1+1 = 2</td>
+                      <td><span class="text-success">✓</span> Pierre dépasse en Forêt</td>
+                    </tr>
+                    <tr>
+                      <td><span class="terrain-badge"><img src="https://altered.re/assets/biome/M.webp" alt="">Montagne</span></td>
+                      <td class="center">3</td>
+                      <td class="center">3+1 = <strong>4</strong></td>
+                      <td>✕ Noémie bloque Pierre</td>
+                    </tr>
+                    <tr>
+                      <td><span class="terrain-badge"><img src="https://altered.re/assets/biome/O.webp" alt="">Eau</span></td>
+                      <td class="center">3</td>
+                      <td class="center">3+1 = <strong>4</strong></td>
+                      <td><span class="text-success">✓</span> Noémie dépasse en Eau</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>
+                <span class="step-badge">C</span>
+                Comme son total en <strong>Forêt</strong> dépasse celui de Noémie, le marqueur de
+                Pierre avance. De son côté, comme son total en <strong>Eau</strong> dépasse celui de
+                Pierre, le marqueur de Noémie avance également. Les deux joueurs progressent sur leur
+				Expédition Héros ce Jour.
+              </p>
+            </div>
+
+            <!-- PHASE 5 -->
+            <div class="rule-block">
+              <h3><img src="https://cdn.alteredcore.org/bga/icons/night.png" alt="" class="phase-title-icon" loading="lazy"> Phase 5 — Nuit</h3>
+			  
+              <figure class="rule-figure">
+                <div class="cleanup-illus" role="img"
+                     aria-label="Phase Nuit : pendant le Repos, les Personnages quittent les Expéditions pour rejoindre la Réserve (ou la défausse s'ils sont Fugaces) ; pendant le Nettoyage, l'excédent de la Réserve et des Repères est défaussé pour ne garder que 2 cartes par zone.">
+
+                  <div class="cleanup-playmat">
+                    <img class="playmat-bg" src="illus/playmat.jpg" alt="Tapis de jeu Altered">
+
+                    <!-- Expédition gauche : 2 Personnages épuisés -->
+                    <img class="cleanup-card cl-exp-l1 cleanup-grayed"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_04_C.webp"
+                         alt="Personnage sur l'Expédition gauche" loading="lazy">
+                    <img class="cleanup-card cl-exp-l2 cleanup-grayed"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_08_C.webp"
+                         alt="Personnage sur l'Expédition gauche" loading="lazy">
+
+                    <!-- Carte Héros : Sierra & Oddball -->
+                    <img class="cleanup-card cl-hero"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_01_C.webp"
+                         alt="Carte Héros Sierra & Oddball placée sur la zone Héros" loading="lazy">
+
+                    <!-- Deck face cachée -->
+                    <img class="cleanup-card cl-deck"
+                         src="https://cdn.alteredcore.org/marketing/cardbacks/ALT_OFFICIAL_CARDBACK.png"
+                         alt="Deck face cachée sur la zone Deck" loading="lazy">
+
+                    <!-- Expédition droite : Personnage avec marqueur Fugace (gauche) + Scarabot (droite) -->
+                    <img class="cleanup-card cl-exp-r cleanup-grayed"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_16_R1.webp"
+                         alt="Personnage devenu Fugace sur l'Expédition droite" loading="lazy">
+                    <img class="cleanup-card cl-exp-r2 cleanup-grayed"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_31_C.webp"
+                         alt="Scarabot Fugace sur l'Expédition droite" loading="lazy">
+                    <img class="cleanup-marker cl-fugace"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png"
+                         alt="Marqueur Fugace" loading="lazy">
+
+                    <!-- Réserve : 3 cartes (excédent) -->
+                    <img class="cleanup-card cl-res-1"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_13_C.webp"
+                         alt="Carte de Réserve" loading="lazy">
+                    <img class="cleanup-card cl-res-2"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_04_C.webp"
+                         alt="Carte de Réserve" loading="lazy">
+                    <img class="cleanup-card cl-res-3"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_08_C.webp"
+                         alt="Carte de Réserve (excédent)" loading="lazy">
+
+                    <!-- Repères : 3 cartes (excédent) -->
+                    <img class="cleanup-card cl-lm-1"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_24_C.webp"
+                         alt="Repère (excédent)" loading="lazy">
+                    <img class="cleanup-card cl-lm-2"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_25_C.webp"
+                         alt="Repère" loading="lazy">
+                    <img class="cleanup-card cl-lm-3"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_30_R1.webp"
+                         alt="Repère" loading="lazy">
+                  </div>
+
+                  <!-- Carte Fugace défaussée, hors du tapis -->
+                  <div class="cleanup-outside">
+                    <img class="cleanup-card cl-outside-card"
+                         src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_AX_31_C.webp"
+                         alt="Personnage Fugace défaussé hors du tapis" loading="lazy">
+                  </div>
+
+                  <!-- Flèches SVG (en overlay).
+                       viewBox 1984×1000 ≈ ratio de la composition (1024×600 du tapis + 14% à droite).
+                       Coordonnées en unités viewBox : 1% largeur ≈ 19.84 ; 1% hauteur ≈ 10.
+                       Les points sont volontairement décalés à l'intérieur des cartes. -->
+                  <svg class="cleanup-arrows" aria-hidden="true"
+                       viewBox="0 0 1984 1000" preserveAspectRatio="none"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <marker id="ah-yellow" viewBox="0 0 10 10" refX="10" refY="5"
+                              markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#f5c542" />
+                      </marker>
+                      <marker id="ah-blue" viewBox="0 0 10 10" refX="10" refY="5"
+                              markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#2196f3" />
+                      </marker>
+                    </defs>
+
+                    <!-- Flèches jaunes : Repos (Expédition → Réserve / hors-tapis) -->
+                    <path d="M 137 285 Q 230 334 290 421"
+                          stroke="#f5c542" stroke-width="4" stroke-linecap="round"
+                          fill="none" vector-effect="non-scaling-stroke"
+                          marker-end="url(#ah-yellow)" />
+                    <path d="M 324 285 Q 418 334 478 421"
+                          stroke="#f5c542" stroke-width="4" stroke-linecap="round"
+                          fill="none" vector-effect="non-scaling-stroke"
+                          marker-end="url(#ah-yellow)" />
+                    <path d="M 1638 208 Q 1715 220 1792 243"
+                          stroke="#f5c542" stroke-width="4" stroke-linecap="round"
+                          fill="none" vector-effect="non-scaling-stroke"
+                          marker-end="url(#ah-yellow)" />
+
+                    <!-- Flèches bleues : Nettoyage (Réserve / Repère → Discard)
+                         Cibles inversées : la Réserve va en bas-droite, le Repère en haut-gauche. -->
+                    <path d="M 478 560 Q 1024 630 1570 800"
+                          stroke="#2196f3" stroke-width="4" stroke-linecap="round"
+                          fill="none" vector-effect="non-scaling-stroke"
+                          marker-end="url(#ah-blue)" />
+                    <path d="M 1228 560 Q 1384 600 1540 720"
+                          stroke="#2196f3" stroke-width="4" stroke-linecap="round"
+                          fill="none" vector-effect="non-scaling-stroke"
+                          marker-end="url(#ah-blue)" />
+                    <!-- Personnage Fugace en Expédition droite : défausse au Repos (Fugace) -->
+                    <path d="M 1399 285 Q 1500 488 1605 690"
+                          stroke="#f5c542" stroke-width="4" stroke-linecap="round"
+                          fill="none" vector-effect="non-scaling-stroke"
+                          marker-end="url(#ah-yellow)" />
+                  </svg>
+
+                  <!-- Labels -->
+                  <div class="cleanup-label cleanup-label--repos">Repos</div>
+                  <div class="cleanup-label cleanup-label--nettoyage">Nettoyage</div>
+
+                </div>
+                <figcaption>
+                  Phase Nuit&nbsp;: au <strong>Repos</strong>, les Personnages rentrent en Réserve
+                  (ou sont défaussés s'ils sont <strong>Fugaces</strong>)&nbsp;; au <strong>Nettoyage</strong>,
+                  on défausse l'excédent de la Réserve et des Repères pour n'en garder que 2 par zone.
+                </figcaption>
+              </figure>
+
+              <h4>Repos</h4>
+              <p>
+                Envoyez <strong>tous les Personnages</strong> de vos Expéditions dans votre Réserve.
+              </p>
+              <ul>
+				<li>S'ils sont <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Fugaces</strong>, défaussez-les à la place.</li>
+                <li>Les marqueurs <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost1_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Boost</strong> sont retirés de la carte avant qu'elle ne rejoigne la Réserve.</li>
+                <li>Les cartes portant un marqueur <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Asleep_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Endormi</strong> ou <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Anchored_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Ancré</strong> ne vont pas en Réserve&nbsp;: elles perdent leur marqueur Endormi/Ancré à la place et restent en Expédition.</li>
+              </ul>
+
+              <h4>Nettoyage</h4>
+              <ul>
+                <li>Si vous avez 3 cartes ou plus dans votre <strong>Réserve</strong>, défaussez l'excédent pour ne conserver que <strong>2 cartes</strong> de votre choix.</li>
+                <li>De même, sacrifiez les cartes de vos <strong>Repères</strong> pour n'en garder que 2.</li>
+              </ul>
+
+              <div class="rule-callout tip">
+                Pendant les autres phases du Jour, il n'y a pas de limite au nombre de cartes
+                présentes dans la Réserve et la zone des Repères.
+              </div>
+
+              <h4>Vérifiez la victoire</h4>
+              <p>Voir <a href="#fin-partie">Fin de la partie</a>.</p>
+
+              <div class="rule-callout text-center">
+                Ce Jour est maintenant terminé. <strong>Démarrez un nouveau Jour</strong>, en
+                commençant par la phase Matin.
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 6. LA RÉSERVE ========== -->
+          <section id="reserve">
+            <h2 class="section-title"><span>7. La Réserve</span></h2>
+
+            <div class="rule-block">
+              <p>
+                La Réserve est une <strong>zone face visible</strong> qui fonctionne comme une
+                <strong>deuxième main</strong>.
+              </p>
+
+              <h4>Jouer une carte depuis la Réserve</h4>
+              <p>
+                Une carte dans votre Réserve peut être jouée comme si elle était dans votre main,
+                à deux différences près&nbsp;:
+              </p>
+              <ul>
+                <li>Vous devez payer son <strong>Coût de Réserve</strong> au lieu de son Coût de Main.</li>
+                <li>Une carte jouée depuis la Réserve gagne <strong>Fugace</strong> (sauf s'il s'agit d'un Permanent de Repère).</li>
+              </ul>
+
+              <h4>Fugace</h4>
+              <p>
+                Si une carte Fugace devait être normalement envoyée dans la Réserve, <strong>défaussez-la
+                à la place</strong>. Pour les Personnages : placez un marqueur Fugace sur le
+                Personnage pour vous en rappeler.
+              </p>
+
+              <div class="rule-callout warn">
+                <strong>Important — ciblage.</strong> Les cartes dans la Réserve ne sont pas
+                « contrôlées »&nbsp;: leurs capacités ne s'appliquent pas et elles ne peuvent pas être
+                ciblées par une capacité qui ne mentionne pas <strong>explicitement</strong> la Réserve.
+                <br><br>
+                Une carte portant la mention « Défaussez un Personnage ciblé » <em>ne peut pas</em>
+                cibler un Personnage dans la Réserve, mais une carte portant la mention « Défaussez une
+                carte ciblée dans une Réserve » le peut.
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 7. TYPES DE CARTES ========== -->
+          <section id="types-cartes">
+            <h2 class="section-title"><span>8. Autres types de cartes</span></h2>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="rule-block h-100">
+                  <h3>Sorts</h3>
+                  <div class="text-center mb-2">
+                    <img src="https://cdn.alteredcore.org/cards/fr/CORE/ALT_CORE_B_YZ_21_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
+                  </div>
+                  <p>
+                    Lorsque vous jouez un Sort, résolvez tous ses effets, puis envoyez-le
+                    <strong>immédiatement dans votre Réserve</strong>. Si vous jouez un Sort depuis votre
+                    Réserve, il gagne <strong>Fugace</strong> : défaussez-le après la résolution.
+                  </p>
+                  <div class="rule-callout mb-0">
+                    Certains Sorts sont <strong>automatiquement Fugaces</strong> : ils sont
+                    directement défaussés après leurs effets.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="rule-block h-100">
+                  <h3>Permanents Repères</h3>
+                  <div class="text-center mb-2">
+                    <img src="https://cdn.alteredcore.org/cards/fr/CYCLONE/ALT_CYCLONE_B_MU_82_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
+                  </div>
+                  <p>
+                    Lorsque vous jouez un Permanent Repère, <strong>placez-le dans votre zone Repère</strong>. Il ne retourne en
+                    Réserve que si un effet de jeu l'indique.
+                  </p>
+                  <div class="rule-callout mb-0">
+                    Tous les decks de démarrage ne contiennent pas forcément de Permanents Repères.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="rule-block h-100">
+                  <h3>Permanents d'Expédition</h3>
+                  <div class="text-center mb-2">
+                    <img src="https://cdn.alteredcore.org/cards/fr/ALIZE/ALT_ALIZE_B_BR_45_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
+                  </div>
+                  <p>
+                    Lorsque vous jouez un Permanent d'Expédition, <strong>placez-le dans une de vos Expédition</strong>.
+					<strong>Au repos</strong>, contrairement à un Personnage, <strong>un Permanent d'Expédition 
+					part en Réserve que si vous avez avancé sur cette Expédition.</strong>
+                  </p>
+                  <div class="rule-callout mb-0">
+                    Tous les decks de démarrage ne contiennent pas forcément de Permanents d'Expédition.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 8. FIN DE LA PARTIE ========== -->
+          <section id="fin-partie">
+            <h2 class="section-title"><span>9. Fin de la partie</span></h2>
+
+            <div class="rule-block">
+              <p class="fs-5">
+                <i class="bi bi-trophy-fill text-warning"></i>
+                Le premier qui parvient à <strong>réunir son Expédition Héros et son Expédition
+                Compagnon</strong> gagne la partie à la fin du Jour.
+              </p>
+
+              <h4>En cas d'égalité</h4>
+              <figure class="rule-figure float-right small">
+                <div class="dusk-adventures"
+                     style="width: 224px; height: 160px; margin: 0 auto 50px;"
+                     role="img"
+                     aria-label="Carte Aventure Tumulte : le marqueur Héros Muna a avancé plus que nécessaire, les autres marqueurs sont encore séparés">
+                  <div class="adv-slot" style="width: 224px; height: 160px;">
+                    <img class="adv-card-dusk" style="width: 160px; transform: rotate(90deg);"
+                         src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                         alt="" loading="lazy">
+                    <!-- Muna Héros : pleine opacité (marqueur gagnant) -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 31%; left: 10%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Hero_Marker.png"
+                         alt="Marqueur Héros Muna" loading="lazy">
+                    <!-- Muna Compagnon : haut droite, estompé (position de départ) -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 31%; right: 10%; left: auto; opacity: 0.5;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Companion_Marker.png"
+                         alt="Marqueur Compagnon Muna (départ)" loading="lazy">
+                    <!-- Muna Compagnon : arrivée, pleine opacité — left:20% → centre x=72 -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 31%; left: 20%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Companion_Marker.png"
+                         alt="Marqueur Compagnon Muna (arrivée)" loading="lazy">
+                    <!-- Flèche jaune courbe centre-à-centre entre les deux Compagnons Muna -->
+                    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                                overflow: visible; pointer-events: none; z-index: 4;"
+                         viewBox="0 0 224 160">
+                      <defs>
+                        <!-- refX="10" : la pointe (x=14) dépasse de 4u au-delà du point d'arrivée -->
+                        <marker id="arrow-muna-jump" markerWidth="14" markerHeight="10"
+                                refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+                          <polygon points="0 0, 14 5, 0 10" fill="#f5c542"/>
+                        </marker>
+                      </defs>
+                      <!-- Source (174,77) → destination (72,77) ; ctrl y=30 pour courbe douce -->
+                      <path d="M 174 77 Q 123 30 72 77"
+                            fill="none" stroke="#f5c542" stroke-width="5"
+                            marker-end="url(#arrow-muna-jump)"/>
+                    </svg>
+                    <!-- Axiom Héros : bas gauche, estompé (position de départ) -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; bottom: -5%; top: auto; left: 7%; opacity: 0.5;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                         alt="Marqueur Héros Axiom (départ)" loading="lazy">
+                    <!-- Axiom Héros : arrivée — right:20% → centre x=152 -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; bottom: -5%; top: auto; right: 20%; left: auto;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                         alt="Marqueur Héros Axiom (arrivée)" loading="lazy">
+                    <!-- Flèche jaune courbe vers le bas, de l'Axiom Héros gauche (x=43) vers droite (x=152) -->
+                    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                                overflow: visible; pointer-events: none; z-index: 4;"
+                         viewBox="0 0 224 160">
+                      <defs>
+                        <marker id="arrow-axiom-hero-jump" markerWidth="14" markerHeight="10"
+                                refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+                          <polygon points="0 0, 14 5, 0 10" fill="#f5c542"/>
+                        </marker>
+                      </defs>
+                      <!-- Source (43,141) → destination (152,141) ; ctrl y=185 pour arc vers le bas -->
+                      <path d="M 43 141 Q 98 185 152 141"
+                            fill="none" stroke="#f5c542" stroke-width="5"
+                            marker-end="url(#arrow-axiom-hero-jump)"/>
+                    </svg>
+                    <!-- Axiom Compagnon : bas droite, estompé (position de départ) -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; bottom: -5%; top: auto; right: 7%; left: auto; opacity: 0.5;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png"
+                         alt="Marqueur Compagnon Axiom (départ)" loading="lazy">
+                    <!-- Axiom Compagnon : arrivée à droite du Héros — left:20% → centre x=72 -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; bottom: -5%; top: auto; left: 20%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png"
+                         alt="Marqueur Compagnon Axiom (arrivée)" loading="lazy">
+                    <!-- Flèche jaune courbe centre-à-centre entre les deux Compagnons Axiom -->
+                    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                                overflow: visible; pointer-events: none; z-index: 4;"
+                         viewBox="0 0 224 160">
+                      <defs>
+                        <marker id="arrow-axiom-jump" markerWidth="14" markerHeight="10"
+                                refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+                          <polygon points="0 0, 14 5, 0 10" fill="#f5c542"/>
+                        </marker>
+                      </defs>
+                      <!-- Source (181,141) → destination (72,141) ; ctrl y=100 pour courbe douce vers le haut -->
+                      <path d="M 181 141 Q 127 100 72 141"
+                            fill="none" stroke="#f5c542" stroke-width="5"
+                            marker-end="url(#arrow-axiom-jump)"/>
+                    </svg>
+                  </div>
+                </div>
+                <figcaption>Noémie avance plus que nécessaire et gagne&nbsp;!</figcaption>
+              </figure>
+              <p>
+                Si les marqueurs des deux adversaires se sont rejoints le <strong>même Jour</strong>,
+                vérifiez d'abord si l'un d'eux a <strong>avancé plus que nécessaire</strong>. Si c'est
+                le cas pour l'un et non pour l'autre, celui qui l'a fait gagne la partie.
+              </p>
+
+              <div class="rule-callout tip">
+                <strong>Exemple.</strong> Les Expéditions de Noémie et Pierre sont toutes les deux sur
+                le point de se rejoindre. Pendant le Crépuscule, les deux Expéditions de Noémie avancent
+                et se croisent, tandis que seule l'Expédition Compagnon de Pierre avance. Noémie a
+                avancé plus que nécessaire et gagne donc la partie.
+              </div>
+
+              <div style="clear:both"></div>
+
+              <h4>L'Arène — départage ultime</h4>
+              <figure class="rule-figure float-right small">
+                <div class="dusk-adventures"
+                     style="width: 224px; height: 160px; margin: 0 auto 50px;"
+                     role="img"
+                     aria-label="Carte Arène avec les quatre marqueurs Expédition Muna et Axiom">
+                  <div class="adv-slot" style="width: 224px; height: 160px;">
+                    <img class="adv-card-dusk" style="width: 160px; transform: rotate(90deg);"
+                         src="https://cdn.alteredcore.org/marketing/adventure_cards/btg/ADV_CARD_5-B.png"
+                         alt="" loading="lazy">
+                    <!-- Muna Héros : haut gauche -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 33%; left: 16%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Hero_Marker.png"
+                         alt="Marqueur Héros Muna" loading="lazy">
+                    <!-- Axiom Héros : haut droite -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: auto; bottom: -5%; right: auto; left: 16%;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Hero_Marker.png"
+                         alt="Marqueur Héros Axiom" loading="lazy">
+                    <!-- Muna Compagnon : bas gauche -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: 33%; bottom: auto; right: 15%; left: auto;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_MU_Companion_Marker.png"
+                         alt="Marqueur Compagnon Muna" loading="lazy">
+                    <!-- Axiom Compagnon : bas droite -->
+                    <img class="dusk-marker"
+                         style="width: 55px; height: auto; top: auto; bottom: -5%; right: 15%; left: auto;"
+                         src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_AX_Companion_Marker.png"
+                         alt="Marqueur Compagnon Axiom" loading="lazy">
+                  </div>
+                </div>
+                <figcaption>L'Arène, au dos de la carte région de départ Compagnon.</figcaption>
+              </figure>
+              <p>
+                Dans le cas contraire, jouez un <strong>Jour supplémentaire dans l'Arène</strong> pour
+                les départager. L'Arène se trouve au dos de la carte région de départ Compagnon :
+                posez-la au centre de la table, placez-y les marqueurs Expédition des deux camps,
+                et retirez du jeu les autres cartes Aventure.
+              </p>
+              <p>
+                Puis, jouez un Jour normalement. Au Crépuscule, pour chaque terrain de l'Arène
+                (<img src="https://altered.re/assets/biome/F.webp" alt="Forêt" class="biome-ic">
+                <img src="https://altered.re/assets/biome/M.webp" alt="Montagne" class="biome-ic">
+                <img src="https://altered.re/assets/biome/O.webp" alt="Eau" class="biome-ic">),
+                additionnez les statistiques des Personnages de <strong>vos deux Expéditions</strong>.
+                Comparez les trois totaux avec ceux de l'adversaire : celui ou celle qui l'emporte
+                dans le plus grand nombre de terrains gagne.
+              </p>
+              <p class="mb-0">Si les deux camps sont de nouveau à égalité, <strong>recommencez un nouveau Jour</strong> dans l'Arène.</p>
+              <div style="clear:both"></div>
+            </div>
+          </section>
+
+          <!-- ========== 9. RÈGLES SUPPLÉMENTAIRES ========== -->
+          <section id="regles-sup">
+            <h2 class="section-title"><span>10. Règles supplémentaires</span></h2>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>Capacités des cartes</h3>
+                  <p class="mb-0">
+                    Si les capacités d'une carte <strong>contredisent</strong> les règles générales,
+                    suivez ce qui est écrit sur la carte.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>Cibler</h3>
+                  <p>
+                    Les capacités des cartes ciblent par défaut <strong>les cartes en jeu</strong> :
+                    Personnages dans une Expédition ou Permanents dans la zone des Repères.
+                  </p>
+                  <p class="mb-0">
+                    Les cartes dans la Réserve <strong>ne sont pas contrôlées</strong> et ne peuvent être
+                    ciblées que par une capacité mentionnant <strong>explicitement la Réserve</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>Plus de cartes dans votre deck&nbsp;?</h3>
+                  <p class="mb-0">
+                    <strong>À Midi uniquement</strong>, si votre deck est vide, <strong>mélangez votre défausse</strong>,
+					qui devient alors votre nouveau deck. Ensuite, piochez le nombre de cartes nécessaire.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>Permanent depuis la Réserve</h3>
+                  <p class="mb-0">
+                    Si vous jouez un <strong>Permanent de Repère</strong> depuis la Réserve, payez son
+                    Coût de Réserve. Il <strong>ne gagne pas Fugace</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>« À Midi », « Au Crépuscule », « À la Tombée de la Nuit »</h3>
+                  <p class="mb-0">
+                    Ces capacités se déclenchent au <strong>début</strong> de leur phase respective.
+                    Le camp détenant le marqueur Premier Joueur résout les siennes en premier,
+                    dans l'ordre de son choix.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>« Je » dans les capacités</h3>
+                  <p class="mb-0">
+                    Les cartes utilisent <strong>« je »</strong> pour se désigner elles-mêmes.
+                    Par exemple, « Je gagne 2 boosts » signifie « Cette carte gagne 2 boosts ».
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>Capacité de Soutien</h3>
+                  <p class="mb-0">
+                    Une capacité de Soutien se déclenche <strong>uniquement lorsque vous défaussez la
+                    carte en action rapide</strong>, pas si la carte est défaussée pour une autre raison
+                    (par exemple si vous avez trop de cartes en Réserve pendant la Nuit).
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rule-block h-100">
+                  <h3>Cartes jetons</h3>
+                  <p>
+                    Les cartes jetons ne démarrent pas dans votre deck mais sont <strong>créés par d'autres cartes</strong>.
+                  </p>
+                  <p class="mb-0">
+                    Lorsqu'un jeton quitte la zone associée, il est <strong>retiré du jeu</strong>, même
+                    si une carte vous dit d'en faire autre chose&nbsp;!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 10. MARQUEURS & ICÔNES ========== -->
+          <section id="marqueurs">
+            <h2 class="section-title"><span>11. Marqueurs &amp; icônes</span></h2>
+
+            <div class="rule-block">
+              <h3>Marqueurs de jeu</h3>
+              <div class="marker-grid">
+                <div class="marker-item">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_First_Player_A_Marker.png" alt="Marqueur Premier Joueur">
+                  <div class="m-text">
+                    <div class="m-label">Premier Joueur</div>
+                    <div class="m-desc">Indique qui commence le tour. Change chaque Matin.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost1_Marker.png" alt="Marqueur Boost +1">
+                  <div class="m-text">
+                    <div class="m-label">Boost +1</div>
+                    <div class="m-desc">Augmente les <strong>trois statistiques</strong> de 1.<br/>Retirés quand le Personnage quitte les Expéditions.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Boost2_Marker.png" alt="Marqueur Boost +2">
+                  <div class="m-text">
+                    <div class="m-label">Boost +2</div>
+                    <div class="m-desc">Augmente les trois statistiques de 2.<br/>Retirés quand le Personnage quitte les Expéditions.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="Marqueur Fugace">
+                  <div class="m-text">
+                    <div class="m-label">Fugace</div>
+                    <div class="m-desc">Si une carte Fugace est envoyé en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Anchored_Marker.png" alt="Marqueur Ancré">
+                  <div class="m-text">
+                    <div class="m-label">Ancré</div>
+                    <div class="m-desc">Marqueur posé sur un Personnage. <strong>Au Repos</strong>, un Personnage Ancré <strong>ne part pas en Réserve</strong> mais perd son marqueur Ancré à la place.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://cdn.alteredcore.org/marketing/game_assets/markers/ALT_Asleep_Marker.png" alt="Marqueur Endormi">
+                  <div class="m-text">
+                    <div class="m-label">Endormi</div>
+                    <div class="m-desc">Marqueur posé sur un Personnage. Un Personnage Endormi <strong>n'est pas pris en compte pour la phase d'avancée au Crépuscule</strong>. <strong>Au Repos</strong>, un Personnage Endormi <strong>ne part pas en Réserve</strong> mais perd son marqueur Endormi à la place.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-block">
+              <h3>Icônes des cartes</h3>
+              <div class="marker-grid">
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-anywhere"><i class="fak fa-altered-j"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Effet « de partout »</div>
+                    <div class="m-desc">Capacité active d'où que soit jouée la carte.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-hand"><i class="fak fa-altered-h"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Effet « depuis la main »</div>
+                    <div class="m-desc">Capacité active uniquement lorsque jouée de la main.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-reserve"><i class="fak fa-altered-r"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Effet « depuis la Réserve »</div>
+                    <div class="m-desc">Capacité active uniquement lorsque jouée de la Réserve.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-epuiser"><i class="fak fa-altered-t"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Épuiser</div>
+                    <div class="m-desc">Tourner la carte pour activer son effet.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-defausse"><i class="fak fa-altered-d"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Soutien</div>
+                    <div class="m-desc">Défausse la carte pour activer son effet de Soutien.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-block">
+              <h3>Terrains</h3>
+              <div class="marker-grid">
+                <div class="marker-item">
+                  <img src="https://altered.re/assets/biome/F.webp" alt="Forêt">
+                  <div class="m-text">
+                    <div class="m-label">Forêt</div>
+                    <div class="m-desc">Statistique de Forêt sur les Personnages.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://altered.re/assets/biome/M.webp" alt="Montagne">
+                  <div class="m-text">
+                    <div class="m-label">Montagne</div>
+                    <div class="m-desc">Statistique de Montagne sur les Personnages.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <img src="https://altered.re/assets/biome/O.webp" alt="Eau">
+                  <div class="m-text">
+                    <div class="m-label">Eau</div>
+                    <div class="m-desc">Statistique d'Eau sur les Personnages.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 11. CONSTRUCTION DE DECK ========== -->
+          <section id="construction">
+            <h2 class="section-title"><span>12. Construction de deck</span></h2>
+
+            <div class="rule-block">
+              <p>
+                Après avoir découvert le deck de démarrage, il est temps de <strong>construire votre
+                propre deck</strong>&nbsp;!
+              </p>
+              <p>
+                Votre deck doit inclure <strong>40 à 60 cartes de la même faction</strong>, dont une
+                carte Héros ou Héroïne, et respecter les contraintes suivantes&nbsp;:
+              </p>
+
+              <div class="deck-rules">
+                <div class="deck-rule-card">
+                  <div class="big">1</div>
+                  <div class="lbl">Héros ou Héroïne</div>
+                </div>
+                <div class="deck-rule-card">
+                  <div class="big">39–59</div>
+                  <div class="lbl">cartes par deck<small>même faction que le Héros ou Héroïne</small></div>
+                </div>
+                <div class="deck-rule-card">
+                  <div class="big">3</div>
+                  <div class="lbl">exemplaires max.<small>portant le même nom</small></div>
+                </div>
+                <div class="deck-rule-card">
+                  <div class="big">15</div>
+                  <div class="lbl">cartes Rares<small>maximum</small></div>
+                </div>
+                <div class="deck-rule-card">
+                  <div class="big">3</div>
+                  <div class="lbl">cartes Exaltées<small>maximum</small></div>
+                </div>
+                <div class="deck-rule-card">
+                  <div class="big">3</div>
+                  <div class="lbl">cartes Uniques<small>maximum</small></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== Source note ========== -->
+          <div class="source-note">
+            <strong>Source.</strong> Cette page est une transcription complétée du livret
+            <em>« Altered TCG — Quick Rules 3.0 »</em> (édition française, 2025) publié par Equinox.
+            Les illustrations sont extraites du livret officiel. Altered® est une marque déposée.
+            Cette page est mise à disposition à titre informatif par la communauté Altered Re:Union
+            et n'est pas affiliée à Equinox.
+          </div>
+
+          <!-- Retour en haut -->
+          <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary-altered">
+              <i class="bi bi-arrow-up"></i> Retour en haut
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

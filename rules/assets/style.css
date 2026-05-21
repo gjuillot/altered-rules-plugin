@@ -1,0 +1,1637 @@
+  /* ===========================================
+     Compléments locaux à la page règles
+     =========================================== */
+
+  /* Logo Altered en tête d'article */
+  .altered-logo-hero {
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  /* Sommaire latéral collant */
+  .rules-toc {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    position: sticky;
+    top: 1.5rem;
+  }
+  .rules-toc h6 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--neutral-500);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .rules-toc h6 img { height: 26px; width: auto; }
+  .rules-toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding: 0;
+    margin: 0;
+  }
+  .rules-toc ol li {
+    counter-increment: toc-counter;
+    margin-bottom: 0.3rem;
+    position: relative;
+    padding-left: 1.8rem;
+  }
+  .rules-toc ol li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-400);
+  }
+  .rules-toc ol li a {
+    color: var(--neutral-700);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .rules-toc ol li a:hover {
+    color: var(--primary-500);
+    text-decoration: underline;
+  }
+
+  /* Section anchors avec offset header sticky */
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  /* Bloc de règle */
+  .rule-block {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  [data-theme="dark"] .rule-block {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+  .rule-block h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--neutral-800);
+    margin-bottom: 0.85rem;
+  }
+  .rule-block h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  [data-theme="dark"] .rule-block h4 { color: var(--primary-300); }
+
+  /* Figure (illustration + légende) */
+  .rule-figure {
+    margin: 1.25rem 0;
+    text-align: center;
+  }
+  .rule-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    border: 1px solid var(--sand-200);
+    background: var(--sand-100);
+    box-shadow: 0 2px 12px rgba(12, 26, 50, 0.08);
+  }
+  /* Exclure les marqueurs et cartes superposées du style générique (fond transparent, pas de bordure) */
+  .rule-figure .placed-marker,
+  .rule-figure .placed-first-player,
+  .rule-figure .setup-markers-scatter img,
+  .rule-figure .zone-pin img,
+  .rule-figure .cleanup-card,
+  .rule-figure .cleanup-marker {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  [data-theme="dark"] .rule-figure img {
+    border-color: var(--sand-300);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  [data-theme="dark"] .rule-figure .placed-marker,
+  [data-theme="dark"] .rule-figure .placed-first-player,
+  [data-theme="dark"] .rule-figure .setup-markers-scatter img {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+  .rule-figure figcaption {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+  .rule-figure.float-right {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+    max-width: 280px;
+  }
+  .rule-figure.float-right.wide { max-width: 380px; }
+  .rule-figure.small img { max-width: 320px; }
+  @media (max-width: 575px) {
+    .rule-figure.float-right,
+    .rule-figure.float-right.wide { float: none; margin: 1rem 0; max-width: 100%; }
+  }
+
+  /* Composition "Orbes de Mana" : 2 dos de carte (redressée + épuisée à 90°) */
+  .mana-orbs-composition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 10px 30px;
+  }
+  .mana-orb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .mana-orb .orb-wrap {
+    width: 110px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+  }
+  .mana-orb img {
+    width: 110px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  .mana-orb.epuisee img { transform: rotate(90deg); }
+  .mana-orb .orb-label {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--neutral-700);
+    font-size: 0.95rem;
+  }
+  @media (max-width: 575px) {
+    .mana-orbs-composition { gap: 24px; }
+    .mana-orb .orb-wrap { width: 90px; height: 120px; }
+    .mana-orb img { width: 90px; }
+  }
+
+  /* === Composition "Exemple Crépuscule" === */
+  .dusk-composition {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 20px 20px 20px 60px;
+    max-width: 100%;
+  }
+
+  /* Rangée centrale : 2 cartes Aventure tournées de 90° anti-horaire */
+  .dusk-adventures {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 560px;
+    height: 220px;
+    justify-content: center;
+    margin-left: 0;
+	margin-top: -20px;
+	margin-bottom: 20px;
+  }
+  .dusk-adventures img.adv-card-dusk {
+    width: 190px;
+    height: auto;
+    display: block;
+    transform: rotate(-90deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    background: #fff;
+  }
+  .dusk-adventures .adv-slot {
+    width: 280px;
+    height: 220px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: visible;
+  }
+  /* Marqueurs Expédition posés sur les cartes Aventure : sans fond */
+  .dusk-adventures .dusk-marker {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 3;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .dusk-adventures .dusk-marker.center { top: 40%; left: 50%; transform: translate(-50%, -50%); }
+  .dusk-adventures .dusk-marker.first-quarter { top: 70%; left: 25%; transform: translate(-50%, -50%); }
+
+  /* Carte Personnage placée au-dessus (Pierre) — centrée dans la largeur de la rangée 2 */
+  .dusk-character-row {
+    display: flex;
+    justify-content: center;
+    width: 460px;
+  }
+  .dusk-character-row .dusk-character-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .dusk-character-row .dusk-character {
+    width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Rangée carte(s) + texte explicatif à droite */
+  .dusk-row-with-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .dusk-row-with-text > .dusk-character-row,
+  .dusk-row-with-text > .dusk-bottom-row {
+    flex: 0 0 auto;
+  }
+  .dusk-side-text {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+  .dusk-side-text p { margin: 0 0 0.6rem 0; }
+  .dusk-side-text p:last-child { margin-bottom: 0; }
+
+  /* Rangée du bas : 2 cartes superposées (Noémie) — centrée dans la largeur */
+  .dusk-bottom-row {
+    position: relative;
+    width: 460px;
+    height: 290px;
+  }
+  .dusk-bottom-row .dusk-character {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  /* Centrage : le groupe (back + front avec décalage 50px) fait 200px de large
+     → départ à (460-200)/2 = 130px */
+  .dusk-bottom-row .dusk-character.back  { top: 0; left: 130px; z-index: 1; }
+  .dusk-bottom-row .dusk-character.front { top: 0; left: 180px; z-index: 2; }
+
+  /* Carré jaune (à repositionner manuellement) */
+  .dusk-highlight {
+    position: absolute;
+    height: 24%;
+    border: 3px solid #f5c542;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 4;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+  .dusk-highlight.pierre {
+    top: 18%;
+    left: 2%;
+    width: 22%;
+    height: 24%;
+  }
+  .dusk-highlight.noemie {
+    top: 21%;
+    left: 29%;
+    width: 20%;
+    height: 28%;
+  }
+
+  /* Étiquettes joueur (rotation -90°) */
+  .dusk-player-label {
+    position: absolute;
+    left: 90px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    white-space: nowrap;
+  }
+  .dusk-player-label.pierre { top: 180px; color: #16a34a; }
+  .dusk-player-label.noemie { top: 690px; color: #92400e; }
+
+  @media (max-width: 575px) {
+    .dusk-composition { padding: 12px 12px 12px 40px; }
+    .dusk-adventures { width: 280px; height: 170px; }
+    .dusk-adventures img.adv-card-dusk { width: 170px; }
+    .dusk-adventures .adv-slot { width: 85px; height: 170px; }
+    .dusk-adventures .dusk-marker { width: 32px; height: 32px; }
+    .dusk-character-row { width: 280px; }
+    .dusk-character-row .dusk-character,
+    .dusk-bottom-row .dusk-character { width: 115px; }
+    .dusk-bottom-row { width: 280px; height: 170px; }
+    .dusk-bottom-row .dusk-character.front { left: 40px; }
+    .dusk-player-label { font-size: 1rem; left: 18px; }
+    .dusk-row-with-text { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .dusk-side-text { font-size: 0.9rem; }
+  }
+
+  /* === Composition "Mise en place" complète === */
+  .setup-composition {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    max-width: 100%;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+
+  /* Indicateur numéroté d'étape */
+  .step-marker {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #1a1306;
+    font-weight: 800;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border: 2px solid #fff;
+    z-index: 10;
+    line-height: 1;
+  }
+  @media (max-width: 575px) {
+    .step-marker { width: 24px; height: 24px; font-size: 0.78rem; border-width: 1.5px; }
+  }
+
+  /* Cadre jaune autour des 3 cartes Tumulte */
+  .tumult-frame {
+    position: absolute;
+    border: 3px solid #f5c542;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 5;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Illustration carte Tumulte tournée avec ses deux régions encadrées */
+  .tumulte-regions-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .tumulte-rotated-card {
+    position: relative;
+    width: 143px;
+    height: 200px;
+  }
+  .tumulte-rotated-card img {
+    position: absolute;
+    width: 200px;
+    height: 143px;
+    top: 29px;
+    left: -29px;
+    transform: rotate(90deg);
+    transform-origin: center center;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  }
+  .tumulte-region-box {
+    position: absolute;
+    border: 3px solid #f5c542;
+    border-radius: 4px;
+    pointer-events: none;
+    top: 60px;
+    bottom: 4px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f5c542;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  }
+  .tumulte-region-box.rgn-left  { left: -55px; }
+  .tumulte-region-box.rgn-right { left: 50px; }
+
+  /* Marqueurs Expédition posés sur les cartes Aventure Héros/Compagnon */
+  .adv-wrap { position: relative; }
+  .adv-wrap .placed-marker {
+    position: absolute;
+    width: 28%;
+    height: auto;
+    z-index: 6;
+    background: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .adv-wrap .placed-marker.top    { top: 12%; left: 50%; transform: translateX(-50%); }
+  .adv-wrap .placed-marker.bottom { bottom: 12%; left: 50%; transform: translateX(-50%); }
+  @media (max-width: 575px) {
+    .adv-wrap .placed-marker { width: 32%; }
+  }
+  .setup-main {
+    flex: 1 1 65%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  /* Rangée d'aventures : alignée sur la largeur du tapis, collée au tapis */
+  .setup-adventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    margin-bottom: -8px;
+    position: relative;
+    z-index: 1;
+  }
+  .setup-adventures .adv-wrap {
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .setup-adventures img {
+    /* L'image source est paysage (largeur > hauteur).
+       Après rotation 90°, sa hauteur visuelle devient sa largeur originale.
+       On veut que la carte tourne et tienne dans le carré du slot. */
+    width: 70%;
+    height: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    background: #fff;
+  }
+  .setup-adventures .adv-hero-card      { transform: rotate(-90deg); }
+  .setup-adventures .adv-tumult-card,
+  .setup-adventures .adv-companion-card { transform: rotate(90deg); }
+
+  /* Tapis avec cartes posées dessus */
+  .setup-playmat {
+    position: relative;
+    width: 100%;
+  }
+  .setup-playmat > img.playmat-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .setup-playmat .placed-card {
+    position: absolute;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    background: #fff;
+  }
+  .setup-playmat .placed-hero {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11%;
+  }
+  .setup-playmat .placed-first-player {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 9%;
+    height: auto;
+    z-index: 3;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .setup-playmat .placed-deck {
+    bottom: 7%;
+    right: 13%;
+    width: 11%;
+  }
+
+  /* Panneau latéral droit : marqueurs éparpillés + 3 piles de jetons */
+  .setup-side {
+    flex: 0 1 280px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 0;
+  }
+  .setup-markers-scatter {
+    position: relative;
+    width: 100%;
+    height: 140px;
+  }
+  .setup-markers-scatter img {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+  }
+  .setup-tokens-stacks {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .token-stack {
+    position: relative;
+    width: 70px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+  .token-stack img {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .token-stack img:nth-child(1) { top: 0;  left: 0; z-index: 1; }
+  .token-stack img:nth-child(2) { top: 4px; left: 4px; z-index: 2; }
+
+  @media (max-width: 767px) {
+    .setup-composition { padding: 10px; gap: 16px; }
+    .setup-main, .setup-side { flex: 1 1 100%; }
+    .setup-side { padding: 0; }
+    .token-stack { width: 60px; height: 95px; }
+    .token-stack img { width: 60px; }
+  }
+
+  /* === Illustration "Nettoyage de la Réserve" === */
+  .cleanup-illus {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .cleanup-playmat {
+    position: relative;
+    width: 86%;
+    flex: 0 0 86%;
+  }
+  .cleanup-playmat > img.playmat-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .cleanup-outside {
+    position: relative;
+    width: 14%;
+    flex: 0 0 14%;
+    align-self: stretch;
+  }
+  .cleanup-card {
+    position: absolute;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  }
+  .cleanup-card.cleanup-grayed {
+    filter: grayscale(100%) brightness(0.55);
+  }
+  /* Cartes dans les zones du tapis (positions en % du tapis) — taille calibrée
+     sur les rectangles Deck/Discard du tapis (~10% de largeur). */
+  .cl-hero   { top: 7%;   left: 45%;   width: 10%; }
+  .cl-deck   { top: 67%;  left: 76%;   width: 10%; }
+  .cl-exp-l1 { top: 8%;   left: 3%;    width: 10%; }
+  .cl-exp-l2 { top: 8%;   left: 14%;   width: 10%; }
+  .cl-exp-r  { top: 8%;   left: 77%;   width: 10%; }
+  .cl-exp-r2 { top: 8%;   left: 88%;   width: 10%; }
+  .cl-res-1  { top: 37%;  left: 1%;    width: 10%; }
+  .cl-res-2  { top: 37%;  left: 12%;   width: 10%; }
+  .cl-res-3  { top: 37%;  left: 23%;   width: 10%; }
+  .cl-lm-1   { top: 37%;  left: 67%;   width: 10%; }
+  .cl-lm-2   { top: 37%;  left: 78%;   width: 10%; }
+  .cl-lm-3   { top: 37%;  left: 89%;   width: 10%; }
+  /* Carte hors tapis (% du conteneur .cleanup-outside) */
+  .cl-outside-card { top: 11%; left: 18%; width: 64%; }
+
+  /* Marqueur posé sur une carte */
+  .cleanup-marker {
+    position: absolute;
+    height: auto;
+    z-index: 5;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  }
+  .cl-fugace { top: 25%; left: 83%; width: 3.5%; }
+
+  .cleanup-arrows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: visible;
+  }
+  .cleanup-label {
+    position: absolute;
+    z-index: 11;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid;
+  }
+  .cleanup-label--repos {
+    color: #5c4400;
+    background: #ffe680;
+    border-color: #f5c542;
+    top: 30%;
+    left: 22%;
+  }
+  .cleanup-label--nettoyage {
+    color: #0b3d6e;
+    background: #cfe6ff;
+    border-color: #2196f3;
+    top: 62%;
+    left: 56%;
+  }
+  [data-theme="dark"] .cleanup-label--repos {
+    color: #1a1306;
+    background: #f5c542;
+    border-color: #ffe680;
+  }
+  [data-theme="dark"] .cleanup-label--nettoyage {
+    color: #fff;
+    background: #1565c0;
+    border-color: #6ec1ff;
+  }
+  @media (max-width: 575px) {
+    .cleanup-label { font-size: 0.7rem; padding: 2px 6px; letter-spacing: 0.3px; }
+  }
+
+  /* === Illustration "Jouer un Personnage" : tapis recadré sur la zone Héros === */
+  /* On affiche le tiers central horizontal et la moitié supérieure verticale du tapis. */
+  .play-character-illus {
+    position: relative;
+    width: 100%;
+    /* On affiche les 3/4 centraux horizontaux et les 3/4 supérieurs verticaux du tapis. */
+    /* (1024 × 3/4) : (588 × 3/4) = 1024 : 588 → ratio naturel du tapis 256/147 */
+    aspect-ratio: 256 / 147;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .play-character-illus > .playmat-bg {
+    position: absolute;
+    top: 0;
+    left: -16.6667%;
+    width: 133.3333%;
+    max-width: none;   /* contourne .rule-figure img { max-width: 100% } */
+    height: auto;
+    display: block;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .play-character-illus .pc-card {
+    position: absolute;
+    height: auto;
+    max-width: none;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    z-index: 2;
+  }
+  .play-character-illus .pc-hero {
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14%;
+  }
+  .play-character-illus .pc-played {
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.6);
+  }
+  .play-character-illus .pc-arrows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Composition "Cartes Aventure" : Héros+Compagnon empilés à gauche, 3 Tumulte en éventail à droite */
+  .adventure-composition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 20px 50px;
+    max-width: 100%;
+  }
+  /* Stack gauche : 2 cartes paysage en éventail horizontal */
+  .adventure-stack.left {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    flex-shrink: 0;
+  }
+  .adventure-stack.left img {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    top: 40px;
+  }
+  .adventure-stack.left .adv-hero {
+    left: 0;
+    z-index: 2;
+    transform: rotate(-6deg);
+  }
+  .adventure-stack.left .adv-companion {
+    left: 50px;
+    z-index: 1;
+    transform: rotate(6deg);
+  }
+
+  /* Stack droite : 3 cartes paysage en éventail horizontal */
+  .adventure-stack.right {
+    position: relative;
+    width: 220px;
+    height: 180px;
+    flex-shrink: 0;
+  }
+  .adventure-stack.right img {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    top: 40px;
+  }
+  .adventure-stack.right .tumult-1 { left: 0;   transform: rotate(-8deg); z-index: 1; }
+  .adventure-stack.right .tumult-2 { left: 40px; transform: rotate(0deg);  z-index: 2; }
+  .adventure-stack.right .tumult-3 { left: 80px; transform: rotate(8deg);  z-index: 3; }
+
+  @media (max-width: 575px) {
+    .adventure-composition { gap: 20px; padding: 20px 10px; }
+    .adventure-stack.left { width: 130px; height: 150px; }
+    .adventure-stack.left img { width: 115px; }
+    .adventure-stack.left .adv-companion { top: 55px; }
+    .adventure-stack.right { width: 180px; height: 150px; }
+    .adventure-stack.right img { width: 115px; top: 30px; }
+    .adventure-stack.right .tumult-2 { left: 32px; }
+    .adventure-stack.right .tumult-3 { left: 64px; }
+  }
+
+  /* Rangée d'exemples de cartes Héros (3 cartes côte à côte) */
+  .hero-examples {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .hero-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    max-width: 200px;
+  }
+  .hero-example img {
+    max-width: 100%;
+    width: 180px;
+    height: auto;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  .hero-example .hero-label {
+    font-size: 0.82rem;
+    color: var(--neutral-600);
+    text-align: center;
+    line-height: 1.3;
+  }
+  .hero-example .hero-faction {
+    font-weight: 700;
+    color: var(--primary-500);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  [data-theme="dark"] .hero-example .hero-faction { color: var(--primary-300); }
+  @media (max-width: 575px) {
+    .hero-example img { width: 140px; }
+  }
+
+  /* === Anatomie de carte avec annotations A-I === */
+  .card-anatomy {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+  }
+  .card-anatomy > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  .card-anatomy .anno {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #1a1306;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    z-index: 2;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 575px) {
+    .card-anatomy .anno { width: 22px; height: 22px; font-size: 0.72rem; border-width: 1.5px; }
+  }
+
+  /* === Section Zones du Jeu === */
+  .playmat-annotated {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+  }
+  .playmat-annotated img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .zone-pin {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .zone-pin:hover,
+  .zone-pin:focus {
+    background: #ffd966;
+    color: #fff;
+    transform: translate(-50%, -50%) scale(1.15);
+    outline: none;
+    text-decoration: none;
+  }
+  @media (max-width: 575px) {
+    .zone-pin { width: 24px; height: 24px; font-size: 0.78rem; border-width: 1.5px; }
+  }
+
+  /* Liste des zones avec mini-vignette du tapis recadré */
+  .zone-list {
+    margin-top: 1.5rem;
+  }
+  .zone-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.6rem;
+    scroll-margin-top: 5rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  [data-theme="dark"] .zone-item {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+  .zone-item:target {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(59, 142, 240, 0.15);
+  }
+  .zone-item .zone-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+  }
+  .zone-item .zone-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .zone-item .zone-name {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .zone-item .zone-desc {
+    font-size: 0.92rem;
+    color: var(--neutral-700);
+    line-height: 1.5;
+  }
+  .zone-item .zone-desc p:last-child { margin-bottom: 0; }
+
+  /* === Layout Section Matériel === */
+  .materiel-group {
+    margin-bottom: 1.5rem;
+  }
+  .materiel-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--sand-200);
+  }
+  [data-theme="dark"] .materiel-group-title {
+    color: var(--primary-300);
+    border-bottom-color: var(--sand-300);
+  }
+  .materiel-group-title i {
+    font-size: 1.3rem;
+  }
+
+  /* Ligne d'élément matériel — base commune */
+  .materiel-item {
+    background: var(--sand-50);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    margin-bottom: 0.6rem;
+    overflow: hidden;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  [data-theme="dark"] .materiel-item {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+  .materiel-item:hover {
+    border-color: var(--primary-400);
+  }
+
+  /* Élément non développable : affichage direct (marqueurs petits) */
+  .materiel-item.static {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+  }
+  .materiel-item.static .item-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .materiel-item.static .item-text .item-title {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+  .materiel-item.static .item-text .item-desc {
+    font-size: 0.83rem;
+    color: var(--neutral-600);
+  }
+  .materiel-item.static .item-visual {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .materiel-item.static .item-visual img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  /* Élément développable : <details> avec en-tête cliquable */
+  .materiel-item details {
+    margin: 0;
+  }
+  .materiel-item summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background 0.15s ease;
+  }
+  .materiel-item summary::-webkit-details-marker { display: none; }
+  .materiel-item summary:hover {
+    background: rgba(59, 142, 240, 0.04);
+  }
+  .materiel-item summary .item-thumb {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--sand-100);
+    border-radius: 0.4rem;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .materiel-item summary .item-thumb {
+    background: var(--sand-200);
+  }
+  .materiel-item summary .item-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .materiel-item summary .item-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .materiel-item summary .item-text .item-title {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+  .badge-optional {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.1rem 0.5rem;
+    margin-left: 0.4rem;
+    background: rgba(217, 119, 6, 0.12);
+    color: #b45309;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+    border-radius: 0.7rem;
+    vertical-align: middle;
+  }
+  [data-theme="dark"] .badge-optional {
+    background: rgba(217, 119, 6, 0.18);
+    color: #f59e0b;
+  }
+  .materiel-item summary .item-text .item-desc {
+    font-size: 0.83rem;
+    color: var(--neutral-600);
+  }
+  .materiel-item summary .item-chevron {
+    flex-shrink: 0;
+    color: var(--primary-400);
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+  }
+  .materiel-item details[open] summary .item-chevron {
+    transform: rotate(180deg);
+  }
+  .materiel-item details[open] summary {
+    background: rgba(59, 142, 240, 0.06);
+    border-bottom: 1px solid var(--sand-200);
+  }
+  [data-theme="dark"] .materiel-item details[open] summary {
+    border-bottom-color: var(--sand-300);
+  }
+
+  .materiel-item .item-detail {
+    padding: 1rem 1.1rem 1.2rem;
+    text-align: center;
+  }
+  .materiel-item .item-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+  }
+  .materiel-item .item-detail .detail-caption {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    font-style: italic;
+    margin-top: 0.6rem;
+  }
+  /* Variante pour les compositions custom déjà stylées (cartes Aventure, jetons) */
+  .materiel-item .item-detail.composition-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  /* Composition "éventail" pour les cartes jeton (orientation portrait) */
+  .token-fan {
+    position: relative;
+    width: 140px;
+    height: 110px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+  }
+  .token-fan img {
+    position: absolute;
+    width: 65px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    top: 0;
+  }
+  .token-fan .token-1 { left: 0;   transform: rotate(-10deg); z-index: 1; }
+  .token-fan .token-2 { left: 35px; transform: rotate(0deg);   z-index: 2; }
+  .token-fan .token-3 { left: 70px; transform: rotate(10deg);  z-index: 3; }
+
+  @media (max-width: 575px) {
+    .token-fan { width: 120px; height: 95px; margin-left: 0; margin-top: 8px; display: block; }
+    .token-fan img { width: 55px; }
+    .token-fan .token-2 { left: 30px; }
+    .token-fan .token-3 { left: 60px; }
+  }
+
+  /* Rangées de marqueurs inline dans les listes Matériel */
+  .marker-inline-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  .marker-inline-row img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+  /* Variante centrée pour usage en figure */
+  .marker-row-figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+  .marker-row-figure .marker-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .marker-row-figure .marker-cell img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+  .marker-row-figure .marker-cell .label {
+    font-size: 0.72rem;
+    color: var(--neutral-600);
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  /* Callouts contextuels */
+  .rule-callout {
+    border-left: 4px solid var(--primary-400);
+    background: rgba(59, 142, 240, 0.06);
+    padding: 0.85rem 1.1rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  .rule-callout.warn {
+    border-left-color: #d97706;
+    background: rgba(217, 119, 6, 0.06);
+  }
+  .rule-callout.tip {
+    border-left-color: #10b981;
+    background: rgba(16, 185, 129, 0.06);
+  }
+  [data-theme="dark"] .rule-callout { background: rgba(59, 142, 240, 0.10); }
+  [data-theme="dark"] .rule-callout.warn { background: rgba(217, 119, 6, 0.10); }
+  [data-theme="dark"] .rule-callout.tip { background: rgba(16, 185, 129, 0.10); }
+
+  /* Grille des 5 phases du jour */
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 991px) { .phases-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .phases-grid { grid-template-columns: 1fr; } }
+
+  .phase-card {
+    background: linear-gradient(180deg, var(--sand-50), var(--sand-100));
+    border: 1px solid var(--sand-200);
+    border-radius: 0.6rem;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .phase-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-400);
+    box-shadow: 0 4px 12px rgba(59, 142, 240, 0.15);
+  }
+  [data-theme="dark"] .phase-card {
+    background: linear-gradient(180deg, var(--sand-100), var(--sand-200));
+    border-color: var(--sand-300);
+  }
+  .phase-card .phase-num {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.35rem;
+  }
+  .phase-card .phase-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary-500);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phase-card .phase-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  /* Icône image dans les titres h3 des phases */
+  .phase-title-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+  }
+  [data-theme="dark"] .phase-card .phase-icon { color: var(--primary-300); }
+  .phase-card .phase-name {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+  .phase-card .phase-desc {
+    font-size: 0.78rem;
+    color: var(--neutral-600);
+    line-height: 1.4;
+  }
+
+  /* Grille d'icônes / marqueurs */
+  .marker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .marker-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .marker-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(12, 26, 50, 0.08);
+  }
+  [data-theme="dark"] .marker-item {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .marker-item img {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+  .marker-item .m-label {
+    font-weight: 700;
+    color: var(--neutral-800);
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .marker-item .m-desc {
+    font-size: 0.8rem;
+    color: var(--neutral-600);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+  }
+  .marker-item .m-text { min-width: 0; display: flex; flex-direction: column; }
+
+  /* Galerie des 6 factions */
+  .factions-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 767px) { .factions-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 480px)  { .factions-grid { grid-template-columns: repeat(2, 1fr); } }
+  .faction-cell {
+    text-align: center;
+    padding: 0.65rem 0.5rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+  }
+  [data-theme="dark"] .faction-cell {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .faction-cell .faction-pair {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
+  }
+  .faction-cell .faction-pair img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+  }
+  .faction-cell .faction-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--neutral-700);
+  }
+
+  /* Badges de terrain (avec images de biome) */
+  .terrain-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem 0.2rem 0.3rem;
+    border-radius: 1rem;
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    font-size: 0.85rem;
+    color: var(--neutral-700);
+    margin: 0.1rem 0.2rem 0.1rem 0;
+    font-weight: 600;
+  }
+  [data-theme="dark"] .terrain-badge {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .terrain-badge img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  /* Inline biome icon (in flowing text) */
+  .biome-ic {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: -4px;
+    margin: 0 1px;
+  }
+
+  /* Inline marker icon (in flowing text) — used next to a marker name */
+  .inline-marker-ic {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    vertical-align: -0.45em;
+    margin: 0 1px;
+  }
+
+  /* Couleurs de fond pour les cercles d'icônes (pictos Bootstrap restants) */
+  .ic-circle {
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  /* Icônes Altered Font dans les marker-item : noir, sans fond */
+  .ic-circle {
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: var(--neutral-800);
+    font-size: 1.8rem;
+  }
+  [data-theme="dark"] .ic-circle { color: #f0f0f0; }
+  /* Conserver les variantes de fond seulement pour compat — neutralisées */
+  .ic-bg-epuiser, .ic-bg-defausse, .ic-bg-anywhere, .ic-bg-hand, .ic-bg-reserve {
+    background: transparent;
+  }
+
+  /* Tableau d'exemple */
+  .example-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  .example-table th,
+  .example-table td {
+    padding: 0.6rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .example-table th {
+    background: var(--sand-200);
+    color: var(--neutral-700);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .example-table td.center { text-align: center; }
+  [data-theme="dark"] .example-table td,
+  [data-theme="dark"] .example-table th { border-bottom-color: var(--sand-300); }
+
+  /* Flow steps */
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .flow-step {
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-left: 4px solid var(--primary-400);
+    border-radius: 0.4rem;
+    padding: 0.85rem 1rem;
+  }
+  [data-theme="dark"] .flow-step {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+    border-left-color: var(--primary-400);
+  }
+  .flow-step .step-num {
+    color: var(--primary-500);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+  }
+  [data-theme="dark"] .flow-step .step-num { color: var(--primary-300); }
+  .flow-step .step-title {
+    font-weight: 700;
+    color: var(--neutral-800);
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+  }
+  .flow-step .step-text {
+    font-size: 0.85rem;
+    color: var(--neutral-600);
+    line-height: 1.45;
+  }
+
+  /* Badge circulaire jaune (étapes A/B/C) — utilisable inline ou en bloc */
+  .step-badge {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f5c542;
+    color: #1a1306;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .flow-step .step-badge { margin-bottom: 0.4rem; }
+  p > .step-badge:first-child,
+  .dusk-side-text p > .step-badge:first-child { margin-right: 0.5rem; }
+
+  /* Règles de construction de deck */
+  .deck-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+  .deck-rule-card {
+    background: var(--sand-100);
+    border: 1px solid var(--sand-200);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  [data-theme="dark"] .deck-rule-card {
+    background: var(--sand-200);
+    border-color: var(--sand-300);
+  }
+  .deck-rule-card .big {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-500);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  [data-theme="dark"] .deck-rule-card .big { color: var(--primary-300); }
+  .deck-rule-card .lbl {
+    font-size: 0.85rem;
+    color: var(--neutral-700);
+    font-weight: 600;
+  }
+  .deck-rule-card .lbl small {
+    display: block;
+    font-weight: 400;
+    color: var(--neutral-500);
+    margin-top: 0.15rem;
+    font-size: 0.78rem;
+  }
+
+  /* Note de source */
+  .source-note {
+    margin-top: 3rem;
+    padding: 1rem 1.25rem;
+    background: var(--sand-100);
+    border: 1px dashed var(--sand-300);
+    border-radius: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+  }
+  [data-theme="dark"] .source-note {
+    background: var(--sand-100);
+    border-color: var(--sand-300);
+  }
+
+  /* Petite icône symbole Altered en accent dans les titres */
+  .altered-bullet {
+    width: 18px;
+    height: 18px;
+    vertical-align: -3px;
+    margin-right: 0.3rem;
+  }

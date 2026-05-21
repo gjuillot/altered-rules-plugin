@@ -1,0 +1,19 @@
+# Build output
+dist/
+
+# Local Claude settings
+.claude/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
