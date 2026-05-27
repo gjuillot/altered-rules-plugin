@@ -17,7 +17,8 @@ rules/
   plugin.json              ← manifest (id "rules", page slug "rules", table_prefix "rl")
   pages/
     rules.php              ← dispatcher: includes the right language partial, falls back to FR
-    rules.fr.php           ← French content (only language shipped in v1)
+    rules.fr.php           ← French content (reference source for all translations)
+    rules.en.php           ← English content
     rules.{lang}.php       ← future translations (drop one in to enable a new language)
   assets/
     style.css              ← rules-specific styles, extracted from the original <style> block
@@ -25,6 +26,19 @@ rules/
 ```
 
 No `inc/`, `admin/`, `api/`, or `sql/` directories — the page is purely static content rendered server-side, no DB, no auth, no API.
+
+## Langues disponibles
+
+| Code | Fichier | Statut |
+|---|---|---|
+| `fr` | `pages/rules.fr.php` | Français — source de référence pour toutes les traductions |
+| `en` | `pages/rules.en.php` | Anglais |
+
+**Règle de propagation des modifications.** Toute modification demandée (correction de contenu, ajout/retrait d'un bloc, changement de structure HTML/CSS, nouvelle illustration, mise à jour d'URL, etc.) doit être appliquée à **chaque langue disponible** (`rules.fr.php`, `rules.en.php`, …) afin que toutes les versions restent synchronisées.
+
+**Exception.** Si la modification concerne explicitement une langue en particulier (ex. : corriger une faute de frappe dans le texte anglais, ajuster une tournure propre au français), ne toucher qu'au fichier de cette langue.
+
+Lors de la propagation, adapter chaque version à sa langue : traduire le texte visible, les `alt`/`aria-label`/`figcaption`, et remplacer le code langue dans les URLs de cartes (`/cards/fr/…` ↔ `/cards/{lang}/…`). Les `id` de section, classes CSS, SVG et valeurs de positionnement restent identiques d'une langue à l'autre.
 
 ### Dispatcher and language fallback
 
@@ -124,7 +138,7 @@ The `.cmd` wrappers bypass the PowerShell `ExecutionPolicy` so they work without
 3. Upload `dist/rules-{version}.zip` via **Admin → Plugins → Install plugin** on altered.re.
 4. First install: activate the plugin to make `/pages/rules` accessible. Updates: the installer auto-detects the version bump and replaces files.
 
-The ZIP uses a single top-level directory layout (`rules/...` inside the archive), accepted by the installer alongside the flat format.
+The ZIP uses a flat layout — the plugin contents (`plugin.json`, `pages/`, `assets/`, …) sit at the top level of the archive, with no enclosing `rules/` directory.
 
 ## Assets distants utilisés
 
