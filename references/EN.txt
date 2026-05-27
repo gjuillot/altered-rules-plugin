@@ -1,0 +1,268 @@
+After a tumultuous journey through the clouds, the Asgarthi reach their destination. Liria is a resplendent floating city and home to the Reka people, as well as the Naos, an immense world tree whose canopy overlooks the city's tallest buildings. As the two peoples become acquainted, a new alliance is born.
+SETUP
+
+Presentation
+Altered is a trading card game in which each player brings a deck led by a Hero card. This starter deck is ready to play as-is, but you can customize it or create new decks from scratch.
+Game Overview
+In Altered, you’ll lead two Expeditions as they discover and explore the land transformed by the Tumult. One of your Expeditions will be led by your Hero, represented by the Hero Expedition marker, and the other one is led by their Companion, represented by the Companion Expedition marker. Your Expeditions will progress towards each other as the game goes on, and your goal is to be the first to have them meet up.
+The Axiom (brown) Expedition markers have reached each other: the Axiom player wins!
+
+Material
+
+29 card deck for the first game + 10 cards for the following games + 1 Hero card + 12 Token cards
+
+EXPEDITION RESERVE
+
+HERO
+
+EXPEDITION LANDMARKS
+
+MANA
+
+DECK
+
+DISCARD
+
+1 Playmat
+
+2
+
+1
+
+3
+
+Tumult cards
+
+2 3
+
+Every single copy of an Altered playing card has a unique QR code. Download the Altered® Companion app, secure the digital ownership of your cards, and add them to your online collection.
+
+Adventure cards: 1 Starting Hero Region card 1 Starting Companion Region card 1 Set of 3 Tumult cards
+6 Expedition markers (Hero & Companion)
+1 First Player marker
+4 Boost, 4 Fleeting, 3 Anchored and 3 Asleep markers
+
+PHASES OF THE DAYICONS
+R HJ FT PhPaPhCsRhDPaheGePAarTusaaoa-1hpshYe-tndw:PeopbaPe1g2yMlCmulnaase32ac:yyoescay:ocNodfocsm‘kiarAAa4rvaoruodtntansrefp:hrcoodttNniiDaaeafncenpnnsodocrarurtegMletdrorunafiswdovsnoayrfkotasrnaren’faoottreratatehdmnhfinfsQteetdayuicfcoketoiscsiunnlkarldgonAhywdtRcaWouthinceWiunroahdhaWnsrgnehneensoA:csheynrrdfk(tevnwR.DeIwne.e‘rI.hmhn.&s‘I.meeio‘.cTmrrpohvepnlee)a.pl.xayl.paeyeeyddedFifdtErfiloorxefonmrheosmamtyioyunousgurtr PhaRKsKCeeeehse5etep:p:cCNukuhpivpagitrcthoaottoc22trecyianrsrLdgasonintdomRReaesrsekersrv,vesea, dcrisifciacerdthtAheAesrnerlesectseht pored 4 Player Aid cards
+1 set of Terrain markers to separate
+
+Learn how to play
+If you would rather watch a video tutorial, scan the QR code to the right.
+
+1 Shuffle the three Tumult cards and place them
+as shown, face-down in a line between the two players.
+Place the Hero starting region card at one end
+2 of the line, and the Companion starting region card at the other end. Each player places their Hero Expedition 3 marker and their Companion Expedition marker on the corresponding starting region.
+4 Set up the two playmats facing each other on either side of the Tumult.
+
+4
+Expedition
+5
+Reserve
+Mana
+
+Expedition
+6
+Landmarks
+7
+
+Each player places their Hero card in the Hero zone
+5 of the playmat. (For your first game, remove your Hero and the 10 additional cards. Use them for future games.)
+
+Randomly determine the starting player (you can
+6 flip the First Player marker to do so), and place the First Player marker on their Hero card.
+
+Each player removes the token cards from their
+
+7 deck, then shuffles the remaining cards and places
+
+8
+
+them face down in the “Deck” zone of the playmat. (Tokens have a different design on the back from
+
+normal playing cards.)
+
+8 Keep the player aid cards and the rest of the markers close at hand.
+
+PARTS OF A CARD
+
+A
+
+C
+
+There are 4 types of cards: Heroes, Characters, Spells, and Permanents. See “Other Card Types” for more details.
+On all cards:
+
+D EB H
+
+On Character cards only:
+H Characters have statistics corresponding to the three terrains: Forest , Mountain and Water .
+
+Starting Hand
+Draw 6 cards from your deck, then choose 3 of them to put in your Mana zone, face-down and ready (see illustration below). The three other cards will form your starting hand.
+Mana Orbs
+
+A Name
+
+B Type and sub-type(s).
+
+C Faction: there are 6 different factions in the game.
+
+F
+
+D
+
+Hand Cost: the card’s mana cost when it is played from your hand.
+
+I
+
+E
+
+Reserve Cost: the card’s mana cost when it is played from Reserve.
+
+F Abilities: the card’s special rules.
+
+G
+
+G Support ability: an additional ability that some cards have.
+
+Abilities:
+I Cards have different effects depending on where they are played from: : This activates regardless of where the card is played from. : This activates when the card is played from your hand. : This activates when the card is played from Reserve.
+
+Cards in your Mana zone are always face down, and are called Mana Orbs. Each Mana Orb gives you 1 Mana when you exhaust it. Ready all of your Mana Orbs during the Morning phase. A card that is face-down in your Mana zone stays there for the rest of the game.
+
+Ready
+
+Exhausted
+
+A DAY OF EXPLORATION
+
+A game of Altered is played over several rounds called Days. Each Day is composed of five phases: Morning, Noon, Afternoon, Dusk and Night.
+
+PHASE 1: MORNING
+
+PHASE 3: AFTERNOON
+
+If it’s the first Day of the game, go straight to the next phase (Noon). Otherwise, follow these steps:
+1. Change the owner of the First Player marker.
+2. Ready your Mana Orbs and exhausted cards.
+3. Draw two cards from your deck.
+4. Starting with the First Player, each player chooses if they want to place a card from their hand into their Mana zone.
+
+Starting with the First Player, players take turns in this phase, during which they each play one card at a time.
+
+PHASE 2: NOON
+Activate any card with an “At Noon” ability. Not all starter decks have cards with “At Noon” abilities.
+
+In Altered, 1 TURN = 1 CARD
+As soon as one player plays a card, the other player starts their turn. They continue back and forth in this way until the end of the Afternoon.
+
+Turn structure
+1. Take as many quick actions as you want. 2. Then, play a card OR pass.
+QUICK ACTIONS Before playing a card, you may take as many quick actions as you wish. You can also do this before choosing to pass.
+There are two kinds of quick actions: Exhaust abilities: These are present on certain Permanent and Hero cards. Exhaust ( ) the card to activate its effect. Support abilities: A card’s support ability is only usable if it is in your Reserve. To activate it, discard ( ) the card from your Reserve. (See “The Reserve”.) Remember, taking a quick action doesn’t count as playing a card, and doesn’t end your turn.
+
+PLAYING A CARD To play a card, you must exhaust the number of Mana Orbs corresponding to its cost.
+Playing a Character: When you play a Character, you decide which Expedition to place it in (Hero or Companion).
+Playing a card from Reserve: See “The Reserve”. Playing a Spell or a Permanent: See “Other Card Types”.
+PASS If you cannot play a card or no longer wish to do so, you may pass. This means that you won’t be able to take any more turns until the next Afternoon phase. Once a player has passed, the remaining player can continue taking turns. Once both players have passed, move on to the Dusk phase.
+
+PHASE 4: DUSK
+During Dusk, players compare the statistics of the Characters in play to determine which Expedition markers can move forward, and which ones can't.
+Starting with one Expedition (Hero or Companion), do the following steps:
+A Check the terrain(s) ( , , ) of the region where your Expedition marker is currently located.
+B For each of these terrains, add up the statistics of the Characters in that Expedition.
+C If at least one of your totals (for the terrains of this region) is strictly higher than your opponent’s, your Expedition marker moves forward one region. Otherwise, your Expedition stays where it is.
+Next, do the same for the remaining Expedition (Hero or Companion). Your opponent does the same for their Expeditions.
+Your total must be higher than 0 in order to move forward.
+Each Expedition can only move forward once per Dusk phase.
+When an Expedition would move to a face-down Tumult card, flip it face-up.
+You always compare your Hero Expedition with your opponent’s Hero Expedition, even if the two markers are not in the same region. The same goes for the Companion Expeditions.
+
+3
+
+MIKE
+
+3
+
+A
+
+3
+
+C
+
+2
+
+B
++= 2 += 4 += 4
+
+ELLA
+
+4
+
+4
+
+Each of the three Tumult cards has two regions that you will travel through.
+
+Example
+Mike’s Hero Expedition marker is on a region card with 3 terrains: , , . In order to move forward, the sum of stats in Mike's Hero Expedition needs to surpass Ella’s in at least one of those terrains.
+Since his Expedition total in is higher than Ella’s Expedition total in , Mike’s Expedition marker moves forward.
+Ella’s Hero Expedition marker is in a region with and . To move forward, Ella’s Expedition total needs to surpass Mike’s Expedition total in at least one of those terrains. Her stats are only useful to block Mike.
+Since her Expedition total in beats Mike’s Expedition total in , Ella’s Expedition marker also moves forward.
+
+PHASE 5: NIGHT REST Send all Characters in your Expeditions to your Reserve. If they are Fleeting , discard them instead (see “The Reserve”). CLEANUP If you have 3 or more cards in your Reserve, choose 2 to keep and discard the excess. Similarly, choose 2 cards in your Landmarks and sacrifice the rest (see “Other Card Types”).
+During the other phases of the Day, there is no limit to the number of cards in your Reserve and Landmark zone. CHECK VICTORY See "Ending the Game".
+
+YOU HAVE NOW REACHED THE END OF THIS DAY. BEGIN A NEW DAY, STARTING WITH THE MORNING PHASE.
+
+The Reserve
+The Reserve is a face-up zone which acts like a second hand of cards.
+PLAYING A CARD FROM RESERVE Cards in Reserve can be played as if they were in your hand. However: - Pay its Reserve Cost instead of its Hand Cost. - A card played from Reserve gains Fleeting (unless it’s a Landmark Permanent).
+Fleeting means: If a Fleeting card would be sent to Reserve, discard it instead. For Characters: Place a Fleeting marker ( )on the Character as a reminder.
+Cards in Reserve are not “controlled”: their abilities don’t apply, and they can't be targeted by an ability that doesn’t specifically mention the Reserve. A card that says “Discard target Character” can't discard a Character in Reserve, but a card that says “Discard target card in a Reserve” can.
+
+Other Card types
+Heroes
+After your first game, add your Hero to the Hero zone on the Playmat. Belonging to a specific faction, they will shape your strategy, and using their ability wisely is essential to winning
+the game.
+Spells
+When you play a spell, resolve all of the card’s effects, then send it immediately to your Reserve. If you play a spell from your Reserve, it gains Fleeting: discard it once you’ve resolved its abilities.
+Some spells are automatically Fleeting. This means that they are directly discarded after their abilities resolve.
+Permanents When you play a Permanent, put it in the specified zone. It stays there unless an effect says otherwise.
+Some starter decks don't contain Permanents.
+
+Ending the game
+The first player whose Hero and Companion Expedition meet up in the same Region wins the game at the end of the Day.
+TIEBREAKER If both player’s markers meet the same Day, first check if any player moved forward further than necessary. If one player did and the other did not, the player who did wins the game.
+Example
+Ella’s and Mike’s Expeditions are both on adjacent regions to one another.
+During Dusk, both of Ella’s Expeditions move forward, while only Mike’s Companion Expedition does. Ella progressed further than necessary, and therefore wins the game.
+
+Otherwise, players play a tiebreaker Day in the Arena. (The Arena is on the back of the Companion starting region.) Place it in the center of the table and put both players' Expedition markers on it, remove the other cards from the game.
+Then play out a normal Day. At Dusk, for each of the Arena terrains ( , , ), add up the statistics of Characters in both of your Expeditions. Compare all three totals with your opponent's: the player who wins in the highest number of terrains wins the game.i
+If both sides are still tied, start a new Day in the Arena.
+9
+11
+11
+
+ADDITIONAL RULES
+CARD ABILITIES If a card’s abilities contradict these rules, follow what the card says. You can use the Altered® app to scan its QR Code and open "access details" for more advanced rulings. TARGETING Card abilities usually only target cards in play. Characters in an Expedition, or Permanents in the Landmark zone are in play and controlled by a player. Cards in Reserve are not controlled and can only be targeted by an ability that explicitly mentions the Reserve.
+RUNNING OUT OF CARDS IN YOUR DECK If your deck is empty and you need to draw or Resupply cards, shuffle your discard pile, which then becomes your new deck. After that, finish drawing or resupplying cards. PLAYING A PERMANENT FROM RESERVE If you play a Landmark Permanent from Reserve, pay its Reserve Cost. It does not gain Fleeting.
+OTHER INFORMATION
+“AT NOON”, “AT DUSK” AND “AT NIGHT” These abilities trigger at the beginning of their respective phases. (The First Player resolves theirs first, in the order of their choice).
+TOKEN CARDS Tokens have a different cardback. They aren’t included in your deck, but created by other cards. When a token leaves its zone, it is removed from the game, even if a card tells you to do something else with it!
+
+MARKERS Use these counters when a Character gains boosts. Each boost increases the three statistics by 1. Remove them when it leaves the Expeditions.
+Use this marker when a Character gains Anchored.
+Use this marker when a Character gains Asleep.
+SUPPORT ABILITY A support ability is triggered when you discard the card as a Quick Action, not if it’s discarded for another reason (such as having too many cards in your Reserve during the Night phase).
+“I” IN CARD ABILITIES Cards use “I” to refer to themselves. For example, “I gain 2 boosts.” should be understood as “this card gains two boosts.”
+
+DECKBUILDING After discovering this starter deck, it is time to build your own!
+Your deck must include 40 to 60 cards of the same faction, including a Hero card and:
+No more than 3 copies of a card with the same name, regardless of rarity. No more than 15 Rare cards. No more than 3 Exalted cards. No more than 3 Unique cards.
+Check out the Altered® app and website for more information about available cards and the Marketplace!
+ADVANCED RULES AND MULTIPLAYER
+Scan the QR code to find the Comprehensive rules and the Free-for-all and 2vs2 game modes:
+
+

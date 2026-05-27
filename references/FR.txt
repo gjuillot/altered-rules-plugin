@@ -1,0 +1,275 @@
+Après un voyage tumultueux à travers les nuages, les Asgarthi atteignent leur destination. Asty est une resplendissante ville flottante qui abrite le peuple Reka, ainsi que le Naos, un arbre-monde immense dont la canopée surplombe les plus hauts bâtiments de la ville. Alors que les deux peuples font connaissance, une nouvelle alliance naît.
+
+Présentation
+Altered est un jeu de cartes à collectionner dans lequel chaque joueur·se utilise un deck dirigé par une carte Héros ou Héroïne. Ce deck de démarrage est prêt à l'emploi, mais vous pouvez le personnaliser ou créer un deck entièrement nouveau.
+Aperçu du jeu
+Dans Altered, vous menez deux Expéditions qui explorent les terres transformées par le Tumulte. L'une de vos Expéditions est menée par votre Héros ou Héroïne, représenté·e par le marqueur Expédition Héros, et l'autre par son Compagnon, représenté par le marqueur Expédition Compagnon. Vos Expéditions progressent l'une vers l'autre au fil de la partie, et votre objectif est de les réunir avant l'adversaire.
+Les marqueurs Expédition Axiom (marron) sont réunis à la fin du Jour : Axiom gagne la partie !
+
+Matériel
+
+Chaque exemplaire d'une carte Altered possède un code QR unique. Téléchargez l'application officielle Altered®, sécurisez la propriété numérique de vos cartes et ajoutez-les à votre collection en ligne.
+
+1 deck de 29 cartes pour la 1ère partie + 10 cartes pour les parties suivantes + 1 carte Héros ou Héroïne + 12 cartes jeton
+
+Cartes Aventure : 1 carte région de départ Héros 1 carte région de départ Compagnon 3 cartes Tumulte
+
+PHASES DU JOUR ICÔNES
+R HJ FT PhPaPhCsRhPMaheCePiAaPsaohde-1hpPsVe-uncatrJeopaPht:higec2oseCulaMseesau3Euizo:cRsessqzzGxsnee:aheVsMmuepuepl2a4renAtzévoenpéeoripir51corp:ivdedonRdzpusiaaltoCcfr:eseiieirlcvrrritasèresNeezpteaee:itsréeossmzczèrlozjutetep-sutaneerloulazmieisaesreusfterductfqesPesrsvaeeiteer,undneicisvjtstvdco’vtstruaiàMettarésouno«elerotf2etaecriaidrnÀr:snmuceueeetnaanrMisismaqrtnsti.gauedeeaeczersiitsn/s»viesoveoaonontctRuLRrnsrdméoeLiRétréfnoLsiarésAeate’oseepsernpiizqersmrrinrrdvRmlrqvsuèe.eveépqs.eueiesr.s-enuo.eemejt(.eeserDr.j2zitvtedejseeqc&eiusauoursTiestuùileslj)i.seEos.jAs.ounFjoÉnuéudupécdgoérudearédeivmcseoveeotirrtere
+4 cartes d’Aides de Jeu
+
+EXPÉDITION RÉSERVE
+
+HÉROS
+
+EXPÉDITION REPÈRES
+
+MANA
+
+DECK
+
+DÉFAUSSE
+
+1 tapis de jeu
+
+6 marqueurs Expédition (Héros et Compagnon)
+1 marqueur Premier Joueur
+4 compteurs Boost, 4 marqueurs Fugace, 3 Ancré et 3 Endormi
+
+1 set de marqueurs Terrains à découper
+
+MISE EN PLACE
+Mélangez trois cartes Tumulte, et alignez-les
+1 comme indiqué, face cachée, entre les deux camps opposés. Placez la carte région de départ Héros à une
+2 extrémité de la ligne et la carte région de départ Compagnon à l'autre extrémité. Chacun·e place 3 son marqueur Expédition Héros et son marqueur Expédition Compagnon sur les
+régions de départ correspondantes.
+4 Installez les deux tapis de jeu face à face de chaque côté du Tumulte.
+
+2
+
+1
+
+3
+
+4
+Expédition
+
+Réserve
+
+Cartes Tumulte
+
+2 3
+
+Expédition
+6 5
+Repères
+
+7
+Mana
+
+Comment jouer
+Si vous préférez regarder un tutoriel vidéo, scannez le code QR ci-contre.
+
+Chaque joueur·se place sa carte Héros ou Héroïne
+5 dans la zone Héros du tapis de jeu. (Pour votre première partie, retirez le Héros et les 10 cartes supplémentaires. Ajoutez-les pour les parties suivantes.)
+
+Déterminez au hasard qui commencera la partie,
+6 et placez le marqueur Premier Joueur sur sa carte Héros ou Héroïne.
+
+Chaque joueur·se retire les cartes jeton de son deck,
+
+7 puis mélange les cartes restantes et les place face cachée dans la zone de Deck du tapis de jeu.
+
+(Les cartes jeton ont un verso différent des
+
+8
+
+cartes normales.)
+
+8 Gardez les cartesd’aidedejeu et le reste des marqueurs à portée de main.
+
+DÉTAIL D'UNE CARTE
+
+A
+
+C
+
+Il y a 4 types de cartes : les Héros ou Héroïnes, les Personnages, les Sorts et les Permanents. Voir "Autres types de cartes" pour plus de détails.
+Sur toutes les cartes :
+
+D EB H
+
+A Nom
+
+B Type et sous-type(s)
+
+C Faction : il existe 6 factions différentes.
+
+D
+
+Coût de Main : le coût en Mana de la carte lorsqu'elle est jouée depuis votre main.
+
+F
+
+E
+
+Coût de Réserve : le coût en Mana de la carte lorsqu'elle est jouée depuis la Réserve.
+
+I
+
+F Capacités : les règles spéciales de la carte.
+
+G
+
+G
+
+Capacité de Soutien : une capacité utilisable depuis la Réserve que possèdent certaines cartes.
+
+Sur les cartes Personnage uniquement :
+H Les Personnages ont des statistiques correspondant aux trois terrains : Forêt , Montagne et Eau .
+Capacités :
+I Les cartes ont divers effets, en fonction de l'endroit depuis lequel elles sont jouées : : Cet effet s'active quel que soit l'endroit depuis lequel la carte est jouée. : Cet effet s'active lorsqu’elle est jouée depuis votre main. : Cet effet s'active lorsqu’elle est jouée depuis votre Réserve.
+
+Main de départ
+Piochez 6 cartes dans votre deck, puis choisissez 3 d'entre elles et placez-les dans votre zone de Mana, face cachée et redressées (voir illustration ci-dessous). Les trois autres cartes constituent votre main de départ.
+Orbes de Mana Les cartes dans votre zone de Mana sont toujours face cachée et sont appelées Orbes de Mana. Chaque Orbe de Mana vous donne 1 Mana lorsque vous l'épuisez. Redressez tous vos Orbes de Mana pendant la phase Matin. Une carte face cachée dans votre zone de Mana y reste jusqu'à la fin de la partie.
+
+Redressée
+
+Épuisée
+
+UN JOUR D'EXPLORATION
+
+Une partie d'Altered se joue en plusieurs manches appelées Jours. Chaque Jour est composé de cinq phases : Matin, Midi, Après-midi, Crépuscule et Nuit.
+
+PHASE 1 : MATIN
+
+PHASE 3 : APRÈS-MIDI
+
+S'il s'agit du premier Jour de la partie, passez directement à la phase suivante (Midi). Sinon, suivez ces étapes :
+1. Placez le marqueur Premier Joueur dans l'autre camp. 2. Redressez vos Orbes de Mana et vos cartes épuisées. 3. Piochez deux cartes dans votre deck. 4. En commençant par le camp possédant le marqueur Premier Joueur, chaque joueur·se choisit de placer ou non une carte de sa main dans sa zone de Mana.
+
+En commençant par celui qui détient le marqueur Premier Joueur, les deux camps jouent chacun leur tour, une carte à la fois.
+
+PHASE 2 : MIDI
+
+Dans Altered, 1 TOUR = 1 CARTE
+
+Activez toutes les cartes en jeu avec un effet "À Midi". Tous les decks de démarrage ne contiennent pas forcément de cartes avec un effet "À Midi".
+
+Dès qu'une carte a été jouée, l'autre joueur·se commence son tour, et la partie continue ainsi jusqu'à la fin de l'Après-midi.
+
+Structure d'un tour
+1. Effectuez autant d'actions rapides que vous le souhaitez.
+2. Ensuite, jouez une carte OU passez.
+ACTIONS RAPIDES Il y a deux types d'actions rapides : Capacité d'épuisement : présente sur certaines cartes Permanent ou Héros. Épuisez ( ) la carte pour activer son effet. Capacité de Soutien : peut être utilisée si la carte se trouve en Réserve. Pour l'activer, défaussez ( ) la carte depuis votre Réserve. (Voir "La Réserve".) Rappel : une action rapide ne compte pas comme une carte jouée et ne met pas fin à votre tour.
+
+JOUER UNE CARTE Pour jouer une carte, vous devez épuiser le nombre d'Orbes de Mana correspondant à son coût.
+Jouer un Personnage : lorsque vous jouez un Personnage, vous décidez dans quelle Expédition le placer (Héros ou Compagnon).
+Jouer un Sort ou un Permanent : voir "Autres types de cartes".
+Jouer une carte depuis la Réserve : voir "La Réserve".
+PASSER Si vous ne pouvez pas ou ne souhaitez pas jouer de carte, vous pouvez passer. Vous ne pourrez alors plus jouer de tours jusqu'à la prochaine phase d’Après-midi. Quand vous passez, l'adversaire peut continuer à jouer des tours. Une fois qu'il ou elle a également passé, la phase Crépuscule commence.
+
+PHASE 4 : CRÉPUSCULE
+Pendant la phase Crépuscule, les deux camps comparent les statistiques des Personnages en jeu pour déterminer quels marqueurs Expédition peuvent avancer.
+En commençant par une Expédition (Héros ou Compagnon), effectuez les étapes suivantes :
+A Vérifiez le ou les terrains ( , , ) de la region dans laquelle se trouve actuellement votre marqueur Expédition.
+B Pour chaque terrain, additionnez les statistiques correspondantes des Personnages de cette Expédition.
+C Si au moins un de vos totaux (pour les terrains de cette région) est strictement supérieur à celui de votre adversaire, votre marqueur Expédition avance d’une région. Sinon, votre Expédition reste en place.
+Procédez ensuite de la même manière pour l'Expédition restante (Héros ou Compagnon). Votre adversaire fait de même pour ses Expéditions.
+Votre total doit être supérieur à 0 pour pouvoir avancer.
+Chaque Expédition ne peut avancer qu'une fois par phase Crépuscule.
+Lorsqu'une Expédition se déplace sur une carte Tumulte face cachée, retournez-la face visible.
+Vous comparez toujours votre Expédition Héros avec l'Expédition Héros de votre adversaire, même si les deux marqueurs ne se trouvent pas dans la même région. Il en va de même pour les Expéditions Compagnon.
+
+3
+
+PIERRE
+
+3
+
+A
+
+3
+
+C
+
+2
+
+B
++= 2 += 4 += 4
+
+NOÉMIE
+
+4
+
+4
+
+Chacune des trois cartes Tumulte comporte deux régions que vous traverserez.
+
+Exemple
+Le marqueur Expédition Héros de Pierre se trouve sur une carte avec 3 terrains : , , . Pour avancer, le total des statistiques de l’Expédition Héros de Pierre doit être supérieur à celui de Noémie dans au moins un de ces terrains.
+Comme son total d'Expédition Héros en dépasse le total d'Expédition Héros de Noémie en , le marqueur Expédition de Pierre avance.
+Le marqueur Expédition Héros de Noémie se trouve dans une région et . Pour avancer, le total d'Expédition de Noémie doit dépasser celui de Pierre dans au moins un de ces terrains. Les statistiques en
+ne lui servent qu’à bloquer Pierre.
+Comme son total d'Expédition en est supérieur au total d'Expédition de Pierre en , le marqueur Expédition de Noémie avance également.
+
+PHASE 5 : NUIT REPOS Envoyez tous les Personnages de vos Expéditions dans votre Réserve. S'ils sont Fugaces , défaussez-les à la place (voir « La Réserve »). NETTOYAGE Si vous avez 3 cartes ou plus dans votre Réserve, défaussez l'excédent pour ne conserver que 2 cartes de votre choix. De même, sacrifiez les cartes de vos Repères pour n’en garder que 2 (voir « Autres types de cartes »).
+Pendant les autres phases du Jour, il n'y a pas de limite au nombre de cartes présentes dans la Réserve et la zone des Repères. VÉRIFIEZ LA VICTOIRE Voir « Fin de la partie ».
+
+CE JOUR EST MAINTENANT TERMINÉ. DÉMARREZ UN NOUVEAU JOUR, EN COMMENÇANT PAR LA PHASE MATIN.
+
+La Réserve
+La Réserve est une zone face visible qui fonctionne comme une deuxième main.
+JOUER UNE CARTE DEPUIS LA RÉSERVE Une carte dans votre Réserve peut être jouée comme si elle était dans votre main, à deux différences près : - Vous devez payer son Coût de Réserve au lieu de son Coût de Main. - Une carte jouée depuis la Réserve gagne Fugace (sauf si c'est un Permanent de Repère).
+Fugace : si une carte Fugace devait être normalement envoyée dans la Réserve, défaussez-la à la place. PourlesPersonnages:placez un marqueur Fugace ( ) sur le Personnage pour vous en rappeler.
+Les cartes dans la Réserve ne sont pas "contrôlées" : leurs capacités ne s'appliquent pas et elles ne peuvent pas être ciblées par une capacité qui ne mentionne pas spécifiquement la Réserve. Une carte portant la mention "Défaussez un Personnage ciblé" ne peut pas cibler un Personnage dans la Réserve, mais une carte portant la mention "Défaussez une carte ciblée dans une Réserve" le peut.
+
+Autres types de cartes
+Héros et Héroïnes
+Après votre première partie, ajoutez votre carte Héros dans la zone Héros du tapis. Appartenant à une faction spécifique, cette carte détermine votre stratégie, et l'utilisation judicieuse de sa capacité est
+essentielle pour gagner.
+Sorts
+Lorsque vous jouez un Sort, résolvez tous les effets de la carte, puis envoyez-la immédiatement dans votre Réserve. Si vous jouez un Sort depuis votre Réserve, il gagne Fugace : défaussez-le une fois
+que vous avez résolu ses effets.
+Certains Sorts sont automatiquement Fugaces, ce qui signifie qu'ils sont directement défaussés après la résolution de leurs effets.
+Permanents Lorsque vous jouez un Permanent, placezle dans la zone indiquée. Il ne retourne en Réserve que si un effet de jeu l’indique. Tous les decks de démarrage ne contiennent pas forcément de Permanents.
+
+Fin de la partie
+Le premier qui parvient à réunir son Expédition Héros et son Expédition Compagnon gagne la partie à la fin du Jour.
+EN CAS D'ÉGALITÉ Si les marqueurs des deux adversaires se sont rejoints le même Jour, vérifiez d'abord si l'un d'eux a avancé plus que nécessaire. Si c'est le cas pour l'un et non pour l'autre, celui qui l'a fait gagne la partie.
+Exemple :
+Les Expéditions de Noémie et de Pierre sont toutes les deux sur le point de se rejoindre.
+Pendant le Crépuscule, les deux Expéditions de Noémie avancent et se croisent, tandis que seule l’Expédition Compagnon de Pierre avance. Noémie a avancé plus que nécessaire et gagne donc la partie.
+
+Dans le cas contraire, jouez un Jour supplémentaire dans l'Arène pour les départager. (L'Arène se trouve au dos de la carte région de départ Compagnon.) Posez-la au centre de la table et placez-y les marqueurs Expédition des deux camps, et retirez du jeu les autres cartes Aventure.
+Puis, jouez un Jour normalement. Au Crépuscule, pour chaque terrain de l'Arène ( , , ), additionnez les statistiques des Personnages de vos deux Expéditions. Comparez les trois totaux avec ceux de votre adversaire: celui ou celle qui l’emporte dans le plus grand nombre de terrains gagne.
+Si les deux camps sont de nouveau à égalité, recommencez un nouveau Jour dans l'Arène.
+9
+11
+11
+
+RÈGLES SUPPLÉMENTAIRES
+CAPACITÉS DES CARTES Si les capacités d'une carte contredisent ces règles, suivez ce qui est écrit sur la carte. Vous pouvez utiliser l’application Altered® pour scanner son QR code et ouvir « access details » pour des réponses avancées. CIBLER Les capacités des cartes ciblent par défaut les cartes en jeu. Les Personnages qui sont dans une Expédition, ou les Permanents qui se trouvent dans la zone des Repères sont en jeu et contrôlés par un joueur. Les cartes dans la Réserve ne sont pas contrôlées et ne peuvent être ciblées que par une capacité qui mentionne explicitement la Réserve. PLUS DE CARTES DANS VOTRE DECK ? Si votre deck est vide et que vous devez piocher ou Ravitailler des cartes, mélangez votre défausse, qui devient alors votre nouveau deck. Ensuite, piochez ou ravitaillez le nombre de cartes nécessaire. JOUER UN PERMANENT DEPUIS LA RÉSERVE Si vous jouez un Permanent de Repère depuis la Réserve, payez son Coût de Réserve. Il ne gagne pas Fugace.
+INFORMATIONS SUPPLÉMENTAIRES
+"À MIDI", "AU CRÉPUSCULE", "À LA TOMBÉE DE LA NUIT" Ces capacités se déclenchent au début de leur phase respective. (Le camp détenant le marqueur Premier Joueur résout les siennes en premier, dans l'ordre de son choix).
+CARTES JETON Les jetons ont un dos différent des autres cartes. Ils ne démarrent pas dans votre deck, mais sont créés par d'autres cartes. Lorsqu'un jeton quitte la zone associée, il est retiré du jeu, même si une carte vous dit d'en faire autre chose !
+
+MARQUEURS
+Utilisez ces compteurs lorsqu'un Personnage gagne des boosts. Chaque boost augmente les trois statistiques de 1. Retirez-les quand il quitte les Expéditions.
+Utilisez ce marqueur lorsqu'un Personnage gagne Ancré.
+Utilisez ce marqueur lorsqu'un Personnage gagne Endormi.
+CAPACITÉ DE SOUTIEN Une capacité de Soutien se déclenche lorsque vous défaussez la carte en action rapide, pas si la carte est défaussée pour une autre raison (par exemple si vous avez trop de cartes dans votre Réserve pendant la phase de Nuit).
+"JE" DANS LES CAPACITÉS DES CARTES Les cartes utilisent "je" pour se désigner elles-mêmes. Par exemple, "Je gagne 2 boosts" signifie "Cette carte gagne 2 boosts".
+Édité par
+100 rue La Fayette, 75010 Paris, France
+
+CONSTRUCTION DE DECK
+Après avoir découvert ce deck de démarrage, il est temps pour vous de construire votre propre deck !
+Votre deck doit inclure 40 à 60 cartes de la même faction, dont une carte Héros ou Héroïne, et respecter :
+Pas plus de 3 exemplaires d'une carte portant le même nom, quelle que soit sa rareté. Pas plus de 15 cartes Rares. Pas plus de 3 cartes Exaltées. Pas plus de 3 cartes Uniques.
+Consultez l'application et le site Altered® pour plus d'informations sur les cartes disponibles, et pour visiter la Marketplace !
+RÈGLES AVANCÉES ET MULTIJOUEUR
+Scannez ce QR Code pour retrouver les Règles Complètes et pour les règles des modes Chacun·e pour soi et 2vs2.
+
+
