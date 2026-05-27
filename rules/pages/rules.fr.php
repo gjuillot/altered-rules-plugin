@@ -17,15 +17,24 @@
             <li><a href="#presentation">Présentation</a></li>
             <li><a href="#materiel">Matériel</a></li>
             <li><a href="#mise-en-place">Mise en place</a></li>
-            <li><a href="#carte">Détail d'une carte</a></li>
+            <li><a href="#mana">Orbes de Mana</a></li>
             <li><a href="#zones">Les zones de jeu</a></li>
-            <li><a href="#jour">Un jour d'exploration</a></li>
-            <li><a href="#reserve">La Réserve</a></li>
+            <li><a href="#carte">Détail d'une carte</a></li>
             <li><a href="#types-cartes">Types de cartes</a></li>
+            <li>
+              <a href="#jour">Un jour d'exploration</a>
+              <ul class="rules-toc-sub">
+                <li><a href="#phase-matin"><img src="<?= CDN_URL ?>/bga/icons/dawn.png" alt="" loading="lazy">Matin</a></li>
+                <li><a href="#phase-midi"><img src="<?= CDN_URL ?>/bga/icons/noon.png" alt="" loading="lazy">Midi</a></li>
+                <li><a href="#phase-apres-midi"><img src="<?= CDN_URL ?>/bga/icons/afternoon.png" alt="" loading="lazy">Après-midi</a></li>
+                <li><a href="#phase-crepuscule"><img src="<?= CDN_URL ?>/bga/icons/dusk.png" alt="" loading="lazy">Crépuscule</a></li>
+                <li><a href="#phase-nuit"><img src="<?= CDN_URL ?>/bga/icons/night.png" alt="" loading="lazy">Nuit</a></li>
+              </ul>
+            </li>
+            <li><a href="#reserve">La Réserve</a></li>
             <li><a href="#fin-partie">Fin de la partie</a></li>
             <li><a href="#regles-sup">Règles supplémentaires</a></li>
             <li><a href="#marqueurs">Marqueurs &amp; icônes</a></li>
-            <li><a href="#construction">Construction de deck</a></li>
           </ol>
         </nav>
       </aside>
@@ -56,11 +65,21 @@
                 <li><a href="#presentation">Présentation</a></li>
                 <li><a href="#materiel">Matériel</a></li>
                 <li><a href="#mise-en-place">Mise en place</a></li>
-                <li><a href="#carte">Détail d'une carte</a></li>
+                <li><a href="#mana">Orbes de Mana</a></li>
                 <li><a href="#zones">Les zones de jeu</a></li>
-                <li><a href="#jour">Un jour d'exploration</a></li>
-                <li><a href="#reserve">La Réserve</a></li>
+                <li><a href="#carte">Détail d'une carte</a></li>
                 <li><a href="#types-cartes">Types de cartes</a></li>
+                <li>
+                  <a href="#jour">Un jour d'exploration</a>
+                  <ul class="rules-toc-sub">
+                    <li><a href="#phase-matin"><img src="<?= CDN_URL ?>/bga/icons/dawn.png" alt="" loading="lazy">Matin</a></li>
+                    <li><a href="#phase-midi"><img src="<?= CDN_URL ?>/bga/icons/noon.png" alt="" loading="lazy">Midi</a></li>
+                    <li><a href="#phase-apres-midi"><img src="<?= CDN_URL ?>/bga/icons/afternoon.png" alt="" loading="lazy">Après-midi</a></li>
+                    <li><a href="#phase-crepuscule"><img src="<?= CDN_URL ?>/bga/icons/dusk.png" alt="" loading="lazy">Crépuscule</a></li>
+                    <li><a href="#phase-nuit"><img src="<?= CDN_URL ?>/bga/icons/night.png" alt="" loading="lazy">Nuit</a></li>
+                  </ul>
+                </li>
+                <li><a href="#reserve">La Réserve</a></li>
                 <li><a href="#fin-partie">Fin de la partie</a></li>
                 <li><a href="#regles-sup">Règles supplémentaires</a></li>
                 <li><a href="#marqueurs">Marqueurs &amp; icônes</a></li>
@@ -129,8 +148,8 @@
               <h4>Aperçu du jeu</h4>
               <p>Vous menez <strong>deux Expéditions</strong> qui explorent les terres transformées par le Tumulte&nbsp;:</p>
               <ul>
-                <li>L'<strong>Expédition Héros</strong>, menée par votre Héros/Héroïne et représentée par le marqueur Expédition Héros.</li>
-                <li>L'<strong>Expédition Compagnon</strong>, représentée par le marqueur Expédition Compagnon.</li>
+                <li>L'<strong>Expédition Héros</strong>, menée par votre Héros/Héroïne et représentée par le marqueur Expédition Héros&nbsp;<img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_AX_Hero_Marker.png" alt="Marqueur Expédition Héros" class="inline-marker-ic">.</li>
+                <li>L'<strong>Expédition Compagnon</strong>, représentée par le marqueur Expédition Compagnon&nbsp;<img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_AX_Companion_Marker.png" alt="Marqueur Expédition Compagnon" class="inline-marker-ic">.</li>
               </ul>
               <p>
                 Les Expéditions progressent l'une vers l'autre au fil de la partie. Votre objectif est
@@ -140,47 +159,47 @@
               <div style="clear:both"></div>
 
               <h4>Les 6 factions</h4>
-              <p>Chaque Héros/Héroïne appartient à l'une des six factions du jeu&nbsp;:</p>
+              <p>Chaque Héros/Héroïne appartient à l'une des six factions du jeu. Chaque faction possède deux marqueurs Expédition&nbsp;: le marqueur de gauche est le <strong>marqueur Héros</strong>, celui de droite le <strong>marqueur Compagnon</strong>.</p>
               <div class="factions-grid">
                 <div class="faction-cell">
                   <div class="faction-pair">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_AX_Hero_Marker.png" alt="Axiom Hero">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_AX_Companion_Marker.png" alt="Axiom Companion">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_AX_Hero_Marker.png" alt="Marqueur Héros Axiom">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_AX_Companion_Marker.png" alt="Marqueur Compagnon Axiom">
                   </div>
                   <div class="faction-name">Axiom</div>
                 </div>
                 <div class="faction-cell">
                   <div class="faction-pair">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_BR_Hero_Marker.png" alt="Bravos Hero">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_BR_Companion_Marker.png" alt="Bravos Companion">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_BR_Hero_Marker.png" alt="Marqueur Héros Bravos">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_BR_Companion_Marker.png" alt="Marqueur Compagnon Bravos">
                   </div>
                   <div class="faction-name">Bravos</div>
                 </div>
                 <div class="faction-cell">
                   <div class="faction-pair">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_LY_Hero_Marker.png" alt="Lyra Hero">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_LY_Companion_Marker.png" alt="Lyra Companion">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_LY_Hero_Marker.png" alt="Marqueur Héros Lyra">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_LY_Companion_Marker.png" alt="Marqueur Compagnon Lyra">
                   </div>
                   <div class="faction-name">Lyra</div>
                 </div>
                 <div class="faction-cell">
                   <div class="faction-pair">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_MU_Hero_Marker.png" alt="Muna Hero">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_MU_Companion_Marker.png" alt="Muna Companion">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_MU_Hero_Marker.png" alt="Marqueur Héros Muna">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_MU_Companion_Marker.png" alt="Marqueur Compagnon Muna">
                   </div>
                   <div class="faction-name">Muna</div>
                 </div>
                 <div class="faction-cell">
                   <div class="faction-pair">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_OR_Hero_Marker.png" alt="Ordis Hero">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_OR_Companion_Marker.png" alt="Ordis Companion">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_OR_Hero_Marker.png" alt="Marqueur Héros Ordis">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_OR_Companion_Marker.png" alt="Marqueur Compagnon Ordis">
                   </div>
                   <div class="faction-name">Ordis</div>
                 </div>
                 <div class="faction-cell">
                   <div class="faction-pair">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_YZ_Hero_Marker.png" alt="Yzmir Hero">
-                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_YZ_Companion_Marker.png" alt="Yzmir Companion">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_YZ_Hero_Marker.png" alt="Marqueur Héros Yzmir">
+                    <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_YZ_Companion_Marker.png" alt="Marqueur Compagnon Yzmir">
                   </div>
                   <div class="faction-name">Yzmir</div>
                 </div>
@@ -275,7 +294,7 @@
                              loading="lazy">
                         <div class="hero-label">
                           <div class="hero-faction">Yzmir</div>
-                          Lindiwe &amp; Max
+                          Lindiwe &amp; Maw
                         </div>
                       </div>
                     </div>
@@ -302,7 +321,7 @@
             <!-- ===== Groupe 2 : Pour les 2 joueurs ===== -->
             <div class="materiel-group">
               <h3 class="materiel-group-title">
-                <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-user-group"></i>
                 Pour les 2 joueurs
               </h3>
 
@@ -332,9 +351,8 @@
                     </div>
                     <i class="fa-solid fa-chevron-down item-chevron"></i>
                   </summary>
-                  <div class="item-detail composition-wrap">
-                    <div class="adventure-composition" role="img"
-                         aria-label="Cartes Aventure : régions de départ Héros et Compagnon empilées, et 3 cartes Tumulte en éventail">
+                  <div class="item-detail adv-detail-pair">
+                    <figure class="adv-detail-fig">
                       <div class="adventure-stack left">
                         <img class="adv-companion"
                              src="<?= CDN_URL ?>/marketing/adventure_cards/btg/ADV_CARD_5.png"
@@ -343,6 +361,9 @@
                              src="<?= CDN_URL ?>/marketing/adventure_cards/btg/ADV_CARD_1.png"
                              alt="" loading="lazy">
                       </div>
+                      <figcaption class="detail-caption">Régions de départ Héros et Compagnon (empilées).</figcaption>
+                    </figure>
+                    <figure class="adv-detail-fig">
                       <div class="adventure-stack right">
                         <img class="tumult-1"
                              src="<?= CDN_URL ?>/marketing/adventure_cards/btg/ADV_CARD_2.png"
@@ -354,18 +375,19 @@
                              src="<?= CDN_URL ?>/marketing/adventure_cards/btg/ADV_CARD_4.png"
                              alt="" loading="lazy">
                       </div>
-                    </div>
-                    <div class="detail-caption">À gauche&nbsp;: régions de départ Héros et Compagnon. À droite&nbsp;: 3 cartes Tumulte qui forment le chemin à parcourir.</div>
-
-                    <div class="tumulte-regions-wrap">
-                      <div class="tumulte-rotated-card">
-                        <img src="<?= CDN_URL ?>/marketing/adventure_cards/btg/ADV_CARD_3.png"
-                             alt="Carte Tumulte avec ses deux régions" loading="lazy">
-                        <div class="tumulte-region-box rgn-left">1</div>
-                        <div class="tumulte-region-box rgn-right">2</div>
+                      <figcaption class="detail-caption">3 cartes Tumulte formant le chemin à parcourir.</figcaption>
+                    </figure>
+                    <figure class="adv-detail-fig">
+                      <div class="tumulte-regions-wrap">
+                        <div class="tumulte-rotated-card">
+                          <img src="<?= CDN_URL ?>/marketing/adventure_cards/btg/ADV_CARD_3.png"
+                               alt="Carte Tumulte avec ses deux régions" loading="lazy">
+                          <div class="tumulte-region-box rgn-left">1</div>
+                          <div class="tumulte-region-box rgn-right">2</div>
+                        </div>
                       </div>
-                      <div class="detail-caption">Chacune des trois cartes Tumulte comporte deux régions que vous traverserez.</div>
-                    </div>
+                      <figcaption class="detail-caption">Chaque carte Tumulte comporte deux régions à traverser.</figcaption>
+                    </figure>
                   </div>
                 </details>
               </div>
@@ -584,20 +606,25 @@
                 <li>Installez les <strong>deux tapis de jeu</strong> face à face de chaque côté du Tumulte.</li>
                 <li>Chaque joueur·se place sa <strong>carte Héros ou Héroïne</strong> dans la zone Héros du tapis de jeu.</li>
                 <li>Déterminez au hasard qui commencera la partie, et placez le <strong>marqueur Premier Joueur</strong> sur sa carte Héros/Héroïne.</li>
-                <li>Chaque joueur·se mélange sondeck et le place face cachée dans la zone Deck.</li>
+                <li>Chaque joueur·se mélange son deck et le place face cachée dans la zone Deck.</li>
                 <li>Gardez le reste des cartes jeton et marqueurs à portée de main.</li>
               </ol>
             </div>
 
             <div class="rule-block">
-              <h3>Main de départ</h3>
+              <h4>Main de départ</h4>
               <p>
                 <strong>Piochez 6 cartes</strong> dans votre deck, puis choisissez-en <strong>3</strong>
                 que vous placez dans votre zone de Mana, <strong>face cachée et redressées</strong>.
                 Les trois autres cartes constituent votre <strong>main de départ</strong>.
               </p>
+            </div>
+          </section>
 
-              <h4>Orbes de Mana</h4>
+          <!-- ========== 4. ORBES DE MANA ========== -->
+          <section id="mana">
+            <h2 class="section-title"><span>4. Orbes de Mana</span></h2>
+            <div class="rule-block">
               <figure class="rule-figure">
                 <div class="mana-orbs-composition" role="img"
                      aria-label="Orbes de Mana : redressée à gauche, épuisée (tournée à 90°) à droite">
@@ -623,79 +650,6 @@
                 <li>Redressez tous vos Orbes de Mana pendant la <strong>phase Matin</strong>.</li>
                 <li>Une carte face cachée dans la zone de Mana y reste <strong>jusqu'à la fin de la partie</strong>.</li>
               </ul>
-              <div style="clear:both"></div>
-            </div>
-          </section>
-
-          <!-- ========== 4. DÉTAIL D'UNE CARTE ========== -->
-          <section id="carte">
-            <h2 class="section-title"><span>4. Détail d'une carte</span></h2>
-
-            <div class="rule-block">
-              <figure class="rule-figure float-right small">
-                <div class="card-anatomy">
-                  <img src="<?= CDN_URL ?>/cards/fr/CORE/ALT_CORE_B_YZ_14_C.webp"
-                       alt="Anatomie d'une carte Personnage : Flamel, avec les zones A à I annotées"
-                       loading="lazy">
-                  <span class="anno" style="top: 3%;  left: 50%;">A</span>
-                  <span class="anno" style="top: 17%; left: 50%;">B</span>
-                  <span class="anno" style="top: 5%;  left: 95%;">C</span>
-                  <span class="anno" style="top: 12%;  left: 7%;">D</span>
-                  <span class="anno" style="top: 15%; left: 26%;">E</span>
-                  <span class="anno" style="top: 63%; left: 58%;">F</span>
-                  <span class="anno" style="top: 82%; left:  7%;">G</span>
-                  <span class="anno" style="top: 30%; left: 24%;">H</span>
-                  <span class="anno" style="top: 66%; left:  7%;">I</span>
-                </div>
-                <figcaption>Anatomie d'une carte Personnage&nbsp;: zones A à I.</figcaption>
-              </figure>
-
-              <p>Il y a 4 types de cartes&nbsp;: <strong>Héros / Héroïnes</strong>, <strong>Personnages</strong>, <strong>Sorts</strong> et <strong>Permanents</strong>.</p>
-
-              <h4>Sur toutes les cartes</h4>
-              <ul>
-                <li><strong>A — Nom</strong> de la carte</li>
-                <li><strong>B — Type</strong> et sous-type(s)</li>
-                <li><strong>C — Faction</strong> : il existe 6 factions différentes</li>
-                <li><strong>D — Coût de Main</strong> : le coût en Mana lorsque la carte est jouée depuis votre main</li>
-                <li><strong>E — Coût de Réserve</strong> : le coût en Mana lorsqu'elle est jouée depuis la Réserve</li>
-                <li><strong>F — Capacités</strong> : les règles spéciales de la carte</li>
-                <li><strong>G — Capacité de Soutien</strong> : capacité utilisable depuis la Réserve, présente sur certaines cartes</li>
-              </ul>
-
-              <h4>Sur les cartes Personnage uniquement</h4>
-              <p>
-				<strong>H —</strong> Les Personnages ont des <strong>statistiques</strong> correspondant aux trois terrains&nbsp;:&nbsp;
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span>
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span>
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Eau</span>
-              </p>
-
-              <div style="clear:both"></div>
-
-              <h4>I — Capacités selon l'origine</h4>
-              <p>Les cartes ont divers effets selon l'endroit depuis lequel elles sont jouées&nbsp;:</p>
-
-              <div class="marker-grid">
-                <div class="marker-item">
-                  <div class="ic-circle ic-bg-anywhere"><i class="fak fa-altered-j"></i></div>
-                  <div class="m-text">
-                    <div class="m-desc"> Cet effet s'active <strong>quel que soit l'endroit</strong> depuis lequel la carte est jouée.</div>
-                  </div>
-                </div>
-                <div class="marker-item">
-                  <div class="ic-circle ic-bg-hand"><i class="fak fa-altered-h"></i></div>
-                  <div class="m-text">
-                    <div class="m-desc"> Cet effet s'active lorsqu’elle est jouée <strong>depuis votre main</strong>.</div>
-                  </div>
-                </div>
-                <div class="marker-item">
-                  <div class="ic-circle ic-bg-reserve"><i class="fak fa-altered-r"></i></div>
-                  <div class="m-text">
-                    <div class="m-desc">Cet effet s'active lorsqu’elle est jouée <strong>depuis votre Réserve</strong>.</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -728,7 +682,7 @@
                 <a href="#zone-7" class="zone-pin" style="top: 82%; left: 92%;"
                    aria-label="Zone Défausse">7</a>
               </div>
-              <figcaption>Les 7 zones du tapis de jeu, numérotées dans l'ordre des descriptions ci-dessous.</figcaption>
+              <figcaption>Les 7 zones du tapis de jeu, numérotées dans l’ordre des descriptions ci-dessous.</figcaption>
             </figure>
 
             <div class="zone-list">
@@ -738,7 +692,7 @@
                 <div class="zone-content">
                   <div class="zone-name">Zone Héros</div>
                   <div class="zone-desc">
-                    <p>C'est là que vous placez votre carte <strong>Héros ou Héroïne</strong> au début de la partie. Cette carte y reste pendant toute la partie et peut être utilisée pour activer sa capacité spéciale.</p>
+                    <p>C’est là que vous placez votre carte <strong>Héros ou Héroïne</strong> au début de la partie. Cette carte y reste pendant toute la partie et peut être utilisée pour activer sa capacité spéciale.</p>
                     <p>En début de partie, le <strong>marqueur Premier Joueur</strong> est posé sur la carte Héros du joueur qui commence.</p>
                   </div>
                 </div>
@@ -749,8 +703,8 @@
                 <div class="zone-content">
                   <div class="zone-name">Zones Expédition (×2)</div>
                   <div class="zone-desc">
-                    <p>Deux zones, une pour l'<strong>Expédition Héros</strong> et une pour l'<strong>Expédition Compagnon</strong>. Lorsque vous jouez un Personnage, vous choisissez dans quelle Expédition le placer.</p>
-                    <p>Les Personnages présents dans ces zones contribuent aux statistiques de l'Expédition au Crépuscule pour faire avancer le marqueur Expédition correspondant.</p>
+                    <p>Deux zones, une pour l’<strong>Expédition Héros</strong> et une pour l’<strong>Expédition Compagnon</strong>. Lorsque vous jouez un Personnage, vous choisissez dans quelle Expédition le placer.</p>
+                    <p>Les Personnages présents dans ces zones contribuent aux statistiques de l’Expédition au Crépuscule pour faire avancer le marqueur Expédition correspondant.</p>
                   </div>
                 </div>
               </div>
@@ -761,7 +715,7 @@
                   <div class="zone-name">Réserve</div>
                   <div class="zone-desc">
                     <p>Une zone <strong>face visible</strong> qui fonctionne comme une <strong>deuxième main</strong>. Les Personnages qui se reposent à la Nuit y arrivent, et les Sorts joués y sont envoyés après résolution.</p>
-                    <p>Une carte en Réserve peut être rejouée en payant son <strong>Coût de Réserve</strong>, mais gagne alors <strong>Fugace</strong>. En phase Nuit, la Réserve est nettoyée pour n'y conserver que 2 cartes.</p>
+                    <p>Une carte en Réserve peut être rejouée en payant son <strong>Coût de Réserve</strong>, mais gagne alors <strong>Fugace</strong>. En phase Nuit, la Réserve est nettoyée pour n’y conserver que 2 cartes.</p>
                   </div>
                 </div>
               </div>
@@ -771,7 +725,7 @@
                 <div class="zone-content">
                   <div class="zone-name">Repères</div>
                   <div class="zone-desc">
-                    <p>La zone où sont placés les <strong>Permanents de Repère</strong>. Contrairement aux Personnages, les Permanents restent en jeu d'un Jour à l'autre et continuent de produire leurs effets.</p>
+                    <p>La zone où sont placés les <strong>Permanents de Repère</strong>. Contrairement aux Personnages, les Permanents restent en jeu d’un Jour à l’autre et continuent de produire leurs effets.</p>
                     <p>En phase Nuit, la zone des Repères est elle aussi nettoyée pour ne conserver que 2 Permanents.</p>
                   </div>
                 </div>
@@ -782,8 +736,8 @@
                 <div class="zone-content">
                   <div class="zone-name">Mana</div>
                   <div class="zone-desc">
-                    <p>La zone où sont placées les cartes utilisées comme <strong>Orbes de Mana</strong>. Une carte mise en Mana y reste <strong>face cachée jusqu'à la fin de la partie</strong>.</p>
-                    <p>Chaque Orbe de Mana fournit 1 Mana lorsqu'il est épuisé. Tous vos Orbes sont redressés pendant la phase Matin.</p>
+                    <p>La zone où sont placées les cartes utilisées comme <strong>Orbes de Mana</strong>. Une carte mise en Mana y reste <strong>face cachée jusqu’à la fin de la partie</strong>.</p>
+                    <p>Chaque Orbe de Mana fournit 1 Mana lorsqu’il est épuisé. Tous vos Orbes sont redressés pendant la phase Matin.</p>
                   </div>
                 </div>
               </div>
@@ -813,9 +767,139 @@
             </div>
           </section>
 
+          <!-- ========== 6. DÉTAIL D’UNE CARTE ========== -->
+          <section id="carte">
+            <h2 class="section-title"><span>6. Détail d’une carte</span></h2>
+
+            <div class="rule-block">
+              <figure class="rule-figure float-right">
+                <div class="card-anatomy">
+                  <img src="<?= CDN_URL ?>/cards/fr/CORE/ALT_CORE_B_YZ_14_C.webp"
+                       alt="Anatomie d’une carte Personnage : Flamel, avec les zones A à I annotées"
+                       loading="lazy">
+                  <span class="anno" style="top: 3%;  left: 50%;">A</span>
+                  <span class="anno" style="top: 17%; left: 50%;">B</span>
+                  <span class="anno" style="top: 5%;  left: 95%;">C</span>
+                  <span class="anno" style="top: 12%;  left: 7%;">D</span>
+                  <span class="anno" style="top: 15%; left: 26%;">E</span>
+                  <span class="anno" style="top: 63%; left: 58%;">F</span>
+                  <span class="anno" style="top: 82%; left:  7%;">G</span>
+                  <span class="anno" style="top: 30%; left: 24%;">H</span>
+                  <span class="anno" style="top: 66%; left:  7%;">I</span>
+                </div>
+                <figcaption>Anatomie d’une carte Personnage&nbsp;: zones A à I.</figcaption>
+              </figure>
+
+              <p>Il y a 4 types de cartes&nbsp;: <strong>Héros / Héroïnes</strong>, <strong>Personnages</strong>, <strong>Sorts</strong> et <strong>Permanents</strong>.</p>
+
+              <h4>Sur toutes les cartes</h4>
+              <ul>
+                <li><strong>A — Nom</strong> de la carte</li>
+                <li><strong>B — Type</strong> et sous-type(s)</li>
+                <li><strong>C — Faction</strong> : il existe 6 factions différentes</li>
+                <li><strong>D — Coût de Main</strong> : le coût en Mana lorsque la carte est jouée depuis votre main</li>
+                <li><strong>E — Coût de Réserve</strong> : le coût en Mana lorsqu’elle est jouée depuis la Réserve</li>
+                <li><strong>F — Capacités</strong> : les règles spéciales de la carte</li>
+                <li><strong>G — Capacité de Soutien</strong> : capacité utilisable depuis la Réserve, présente sur certaines cartes</li>
+              </ul>
+
+              <h4>Sur les cartes Personnage uniquement</h4>
+              <p>
+				<strong>H —</strong> Les Personnages ont des <strong>statistiques</strong> correspondant aux trois terrains&nbsp;:&nbsp;
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Eau</span>
+              </p>
+
+              <div style="clear:both"></div>
+
+              <h4>I — Capacités selon l’origine</h4>
+              <p>Les cartes ont divers effets selon l’endroit depuis lequel elles sont jouées&nbsp;:</p>
+
+              <div class="marker-grid">
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-anywhere"><i class="fak fa-altered-j"></i></div>
+                  <div class="m-text">
+                    <div class="m-desc"> Cet effet s’active <strong>quel que soit l’endroit</strong> depuis lequel la carte est jouée.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-hand"><i class="fak fa-altered-h"></i></div>
+                  <div class="m-text">
+                    <div class="m-desc"> Cet effet s’active lorsqu’elle est jouée <strong>depuis votre main</strong>.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-reserve"><i class="fak fa-altered-r"></i></div>
+                  <div class="m-text">
+                    <div class="m-desc">Cet effet s’active lorsqu’elle est jouée <strong>depuis votre Réserve</strong>.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 7. TYPES DE CARTES ========== -->
+          <section id="types-cartes">
+            <h2 class="section-title"><span>7. Autres types de cartes</span></h2>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="rule-block h-100">
+                  <h3>Sorts</h3>
+                  <div class="text-center mb-2">
+                    <img src="<?= CDN_URL ?>/cards/fr/CORE/ALT_CORE_B_YZ_21_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
+                  </div>
+                  <p>
+                    Lorsque vous jouez un Sort, résolvez tous ses effets, puis envoyez-le
+                    <strong>immédiatement dans votre Réserve</strong>. Si vous jouez un Sort depuis votre
+                    Réserve, il gagne <strong>Fugace</strong> : défaussez-le après la résolution.
+                  </p>
+                  <div class="rule-callout mb-0">
+                    Certains Sorts sont <strong>automatiquement Fugaces</strong> : ils sont
+                    directement défaussés après leurs effets.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="rule-block h-100">
+                  <h3>Permanents Repères</h3>
+                  <div class="text-center mb-2">
+                    <img src="<?= CDN_URL ?>/cards/fr/CYCLONE/ALT_CYCLONE_B_MU_82_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
+                  </div>
+                  <p>
+                    Lorsque vous jouez un Permanent Repère, <strong>placez-le dans votre zone Repère</strong>. Il ne retourne en
+                    Réserve que si un effet de jeu l’indique.
+                  </p>
+                  <div class="rule-callout mb-0">
+                    Tous les decks de démarrage ne contiennent pas forcément de Permanents Repères.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="rule-block h-100">
+                  <h3>Permanents d’Expédition</h3>
+                  <div class="text-center mb-2">
+                    <img src="<?= CDN_URL ?>/cards/fr/ALIZE/ALT_ALIZE_B_BR_45_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
+                  </div>
+                  <p>
+                    Lorsque vous jouez un Permanent d’Expédition, <strong>placez-le dans une de vos Expédition</strong>.
+					<strong>Au repos</strong>, contrairement à un Personnage, <strong>un Permanent d’Expédition
+					part en Réserve que si vous avez avancé sur cette Expédition.</strong>
+                  </p>
+                  <div class="rule-callout mb-0">
+                    Tous les decks de démarrage ne contiennent pas forcément de Permanents d’Expédition.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <!-- ========== 6. UN JOUR D'EXPLORATION ========== -->
           <section id="jour">
-            <h2 class="section-title"><span>6. Un jour d'exploration</span></h2>
+            <h2 class="section-title"><span>8. Un jour d'exploration</span></h2>
 
             <div class="rule-block">
               <p>
@@ -824,42 +908,42 @@
               </p>
 
               <div class="phases-grid">
-                <div class="phase-card">
+                <a class="phase-card" href="#phase-matin">
                   <div class="phase-num">Phase 1</div>
                   <div class="phase-icon"><img src="<?= CDN_URL ?>/bga/icons/dawn.png" alt="" loading="lazy"></div>
                   <div class="phase-name">Matin</div>
                   <div class="phase-desc">Premier joueur, redresser, piocher, mettre une carte en Mana.</div>
-                </div>
-                <div class="phase-card">
+                </a>
+                <a class="phase-card" href="#phase-midi">
                   <div class="phase-num">Phase 2</div>
                   <div class="phase-icon"><img src="<?= CDN_URL ?>/bga/icons/noon.png" alt="" loading="lazy"></div>
                   <div class="phase-name">Midi</div>
                   <div class="phase-desc">Appliquer les effets « À Midi ».</div>
-                </div>
-                <div class="phase-card">
+                </a>
+                <a class="phase-card" href="#phase-apres-midi">
                   <div class="phase-num">Phase 3</div>
                   <div class="phase-icon"><img src="<?= CDN_URL ?>/bga/icons/afternoon.png" alt="" loading="lazy"></div>
                   <div class="phase-name">Après-midi</div>
                   <div class="phase-desc">Chacun votre tour, jouer une carte ou passer.</div>
-                </div>
-                <div class="phase-card">
+                </a>
+                <a class="phase-card" href="#phase-crepuscule">
                   <div class="phase-num">Phase 4</div>
                   <div class="phase-icon"><img src="<?= CDN_URL ?>/bga/icons/dusk.png" alt="" loading="lazy"></div>
                   <div class="phase-name">Crépuscule</div>
                   <div class="phase-desc">Comparer les statistiques, faire avancer les Expéditions.</div>
-                </div>
-                <div class="phase-card">
+                </a>
+                <a class="phase-card" href="#phase-nuit">
                   <div class="phase-num">Phase 5</div>
                   <div class="phase-icon"><img src="<?= CDN_URL ?>/bga/icons/night.png" alt="" loading="lazy"></div>
                   <div class="phase-name">Nuit</div>
                   <div class="phase-desc">Repos, nettoyage, vérification de la victoire.</div>
-                </div>
+                </a>
               </div>
             </div>
 
             <!-- PHASE 1 -->
             <div class="rule-block">
-              <h3><img src="<?= CDN_URL ?>/bga/icons/dawn.png" alt="" class="phase-title-icon" loading="lazy"> Phase 1 — Matin</h3>
+              <h3 id="phase-matin"><img src="<?= CDN_URL ?>/bga/icons/dawn.png" alt="" class="phase-title-icon" loading="lazy"> Phase 1 — Matin</h3>
               <p>
                 S'il s'agit du <strong>premier Jour</strong> de la partie, passez directement à la phase
                 Midi. Sinon, suivez ces étapes&nbsp;:
@@ -874,7 +958,7 @@
 
             <!-- PHASE 2 -->
             <div class="rule-block">
-              <h3><img src="<?= CDN_URL ?>/bga/icons/noon.png" alt="" class="phase-title-icon" loading="lazy"> Phase 2 — Midi</h3>
+              <h3 id="phase-midi"><img src="<?= CDN_URL ?>/bga/icons/noon.png" alt="" class="phase-title-icon" loading="lazy"> Phase 2 — Midi</h3>
               <p>Activez toutes les cartes en jeu avec un effet <strong>« À Midi »</strong>.</p>
               <div class="rule-callout">
                 Tous les decks de démarrage ne contiennent pas forcément de cartes avec un effet « À Midi ».
@@ -883,14 +967,14 @@
 
             <!-- PHASE 3 -->
             <div class="rule-block">
-              <h3><img src="<?= CDN_URL ?>/bga/icons/afternoon.png" alt="" class="phase-title-icon" loading="lazy"> Phase 3 — Après-midi</h3>
+              <h3 id="phase-apres-midi"><img src="<?= CDN_URL ?>/bga/icons/afternoon.png" alt="" class="phase-title-icon" loading="lazy"> Phase 3 — Après-midi</h3>
               <p>
                 En commençant par le détenteur du marqueur Premier Joueur, les deux camps jouent
                 <strong>chacun leur tour</strong>, <strong>une carte à la fois</strong>. 
               </p>
               <div class="rule-callout">
 				<div>Dans Altered, <strong>1 tour = 1 carte</strong></div>
-				<div>Dès qu'une cartea été jouée, l'autre joueur·se commence son tour.</div>
+				<div>Dès qu'une carte a été jouée, l'autre joueur·se commence son tour.</div>
               </div>
 
               <h4>Structure d'un tour</h4>
@@ -924,7 +1008,7 @@
                 correspondant à son coût.
               </p>
               <ul>
-                <li><strong>Jouer un Personnage</strong> : vous décidez dans quelle Expédition le placer (Héros ou Compagnon).</li>
+                <li><strong>Jouer un Personnage</strong> : décidez dans quelle Expédition le placer (Héros ou Compagnon).</li>
 
 				  <figure class="rule-figure" style="max-width: 380px; margin: 0.5rem auto 1.25rem;">
 					<div class="play-character-illus" role="img"
@@ -960,9 +1044,16 @@
 					  </svg>
 					</div>
 				  </figure>
-                <li><strong>Jouer un Sort ou un Permanent</strong> : voir <a href="#types-cartes">Types de cartes</a>.</li>
+                <li><strong>Jouer un Sort</strong> : résolvez tous ses effets, puis envoyez-le immédiatement dans votre Réserve.</li>
+                <li><strong>Jouer un Permanent Repère</strong> : placez la carte dans votre zone de Repères.</li>
+                <li><strong>Jouer un Permanent d'Expédition</strong> : décidez dans quelle Expédition le placer (Héros ou Compagnon).</li>
                 <li><strong>Jouer une carte depuis la Réserve</strong> : voir <a href="#reserve">La Réserve</a>.</li>
               </ul>
+			  
+			  <p>
+				N'oubliez pas de résoudre les éventuels effets <i class="fak fa-altered-j"></i>, <i class="fak fa-altered-h"></i> ou <i class="fak fa-altered-r"></i>
+				présents sur les Personnages et Permanents.
+			  </p>
 
               <h4>Passer</h4>
               <p>
@@ -975,7 +1066,7 @@
 
             <!-- PHASE 4 -->
             <div class="rule-block">
-              <h3><img src="<?= CDN_URL ?>/bga/icons/dusk.png" alt="" class="phase-title-icon" loading="lazy"> Phase 4 — Crépuscule</h3>
+              <h3 id="phase-crepuscule"><img src="<?= CDN_URL ?>/bga/icons/dusk.png" alt="" class="phase-title-icon" loading="lazy"> Phase 4 — Crépuscule</h3>
               <p>
                 Pendant le Crépuscule, les deux camps <strong>comparent les statistiques</strong> des
                 Personnages en jeu pour déterminer quels marqueurs Expédition peuvent avancer.
@@ -1157,7 +1248,7 @@
 
             <!-- PHASE 5 -->
             <div class="rule-block">
-              <h3><img src="<?= CDN_URL ?>/bga/icons/night.png" alt="" class="phase-title-icon" loading="lazy"> Phase 5 — Nuit</h3>
+              <h3 id="phase-nuit"><img src="<?= CDN_URL ?>/bga/icons/night.png" alt="" class="phase-title-icon" loading="lazy"> Phase 5 — Nuit</h3>
 			  
               <figure class="rule-figure">
                 <div class="cleanup-illus" role="img"
@@ -1280,9 +1371,8 @@
 
                 </div>
                 <figcaption>
-                  Phase Nuit&nbsp;: au <strong>Repos</strong>, les Personnages rentrent en Réserve
-                  (ou sont défaussés s'ils sont <strong>Fugaces</strong>)&nbsp;; au <strong>Nettoyage</strong>,
-                  on défausse l'excédent de la Réserve et des Repères pour n'en garder que 2 par zone.
+                  Au <strong>Repos</strong>, les Personnages vont en Réserve (ou sont défaussés s'ils sont Fugaces); les cartes jetons sont mis de côté.<br/>
+				  Au <strong>Nettoyage</strong>, on défausse l'excédent de la Réserve et des Repères pour n'en garder que 2 par zone.
                 </figcaption>
               </figure>
 
@@ -1295,6 +1385,11 @@
                 <li>Les marqueurs <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_Boost1_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Boost</strong> sont retirés de la carte avant qu'elle ne rejoigne la Réserve.</li>
                 <li>Les cartes portant un marqueur <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_Asleep_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Endormi</strong> ou <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_Anchored_Marker.png" alt="" class="inline-marker-ic" loading="lazy"> <strong>Ancré</strong> ne vont pas en Réserve&nbsp;: elles perdent leur marqueur Endormi/Ancré à la place et restent en Expédition.</li>
               </ul>
+			  <p>
+				Envoyez en Réserve <strong>tous les Permanents d'Expédition</strong> placés dans une <strong>Expédition qui a avancé</strong>.
+			  </p>
+			  <p>
+				Mettez de côté, et non en Réserve, les <strong>cartes jetons</strong> de vos Expéditions.
 
               <h4>Nettoyage</h4>
               <ul>
@@ -1319,7 +1414,7 @@
 
           <!-- ========== 6. LA RÉSERVE ========== -->
           <section id="reserve">
-            <h2 class="section-title"><span>7. La Réserve</span></h2>
+            <h2 class="section-title"><span>9. La Réserve</span></h2>
 
             <div class="rule-block">
               <p>
@@ -1356,67 +1451,9 @@
             </div>
           </section>
 
-          <!-- ========== 7. TYPES DE CARTES ========== -->
-          <section id="types-cartes">
-            <h2 class="section-title"><span>8. Autres types de cartes</span></h2>
-
-            <div class="row g-3">
-              <div class="col-md-4">
-                <div class="rule-block h-100">
-                  <h3>Sorts</h3>
-                  <div class="text-center mb-2">
-                    <img src="<?= CDN_URL ?>/cards/fr/CORE/ALT_CORE_B_YZ_21_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
-                  </div>
-                  <p>
-                    Lorsque vous jouez un Sort, résolvez tous ses effets, puis envoyez-le
-                    <strong>immédiatement dans votre Réserve</strong>. Si vous jouez un Sort depuis votre
-                    Réserve, il gagne <strong>Fugace</strong> : défaussez-le après la résolution.
-                  </p>
-                  <div class="rule-callout mb-0">
-                    Certains Sorts sont <strong>automatiquement Fugaces</strong> : ils sont
-                    directement défaussés après leurs effets.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="rule-block h-100">
-                  <h3>Permanents Repères</h3>
-                  <div class="text-center mb-2">
-                    <img src="<?= CDN_URL ?>/cards/fr/CYCLONE/ALT_CYCLONE_B_MU_82_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
-                  </div>
-                  <p>
-                    Lorsque vous jouez un Permanent Repère, <strong>placez-le dans votre zone Repère</strong>. Il ne retourne en
-                    Réserve que si un effet de jeu l'indique.
-                  </p>
-                  <div class="rule-callout mb-0">
-                    Tous les decks de démarrage ne contiennent pas forcément de Permanents Repères.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="rule-block h-100">
-                  <h3>Permanents d'Expédition</h3>
-                  <div class="text-center mb-2">
-                    <img src="<?= CDN_URL ?>/cards/fr/ALIZE/ALT_ALIZE_B_BR_45_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
-                  </div>
-                  <p>
-                    Lorsque vous jouez un Permanent d'Expédition, <strong>placez-le dans une de vos Expédition</strong>.
-					<strong>Au repos</strong>, contrairement à un Personnage, <strong>un Permanent d'Expédition 
-					part en Réserve que si vous avez avancé sur cette Expédition.</strong>
-                  </p>
-                  <div class="rule-callout mb-0">
-                    Tous les decks de démarrage ne contiennent pas forcément de Permanents d'Expédition.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- ========== 8. FIN DE LA PARTIE ========== -->
+          <!-- ========== 10. FIN DE LA PARTIE ========== -->
           <section id="fin-partie">
-            <h2 class="section-title"><span>9. Fin de la partie</span></h2>
+            <h2 class="section-title"><span>10. Fin de la partie</span></h2>
 
             <div class="rule-block">
               <p class="fs-5">
@@ -1591,7 +1628,7 @@
 
           <!-- ========== 9. RÈGLES SUPPLÉMENTAIRES ========== -->
           <section id="regles-sup">
-            <h2 class="section-title"><span>10. Règles supplémentaires</span></h2>
+            <h2 class="section-title"><span>11. Règles supplémentaires</span></h2>
 
             <div class="row g-3">
               <div class="col-md-6">
@@ -1687,7 +1724,7 @@
 
           <!-- ========== 10. MARQUEURS & ICÔNES ========== -->
           <section id="marqueurs">
-            <h2 class="section-title"><span>11. Marqueurs &amp; icônes</span></h2>
+            <h2 class="section-title"><span>12. Marqueurs &amp; icônes</span></h2>
 
             <div class="rule-block">
               <h3>Marqueurs de jeu</h3>
@@ -1801,49 +1838,6 @@
                     <div class="m-label">Eau</div>
                     <div class="m-desc">Statistique d'Eau sur les Personnages.</div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- ========== 11. CONSTRUCTION DE DECK ========== -->
-          <section id="construction">
-            <h2 class="section-title"><span>12. Construction de deck</span></h2>
-
-            <div class="rule-block">
-              <p>
-                Après avoir découvert le deck de démarrage, il est temps de <strong>construire votre
-                propre deck</strong>&nbsp;!
-              </p>
-              <p>
-                Votre deck doit inclure <strong>40 à 60 cartes de la même faction</strong>, dont une
-                carte Héros ou Héroïne, et respecter les contraintes suivantes&nbsp;:
-              </p>
-
-              <div class="deck-rules">
-                <div class="deck-rule-card">
-                  <div class="big">1</div>
-                  <div class="lbl">Héros ou Héroïne</div>
-                </div>
-                <div class="deck-rule-card">
-                  <div class="big">39–59</div>
-                  <div class="lbl">cartes par deck<small>même faction que le Héros ou Héroïne</small></div>
-                </div>
-                <div class="deck-rule-card">
-                  <div class="big">3</div>
-                  <div class="lbl">exemplaires max.<small>portant le même nom</small></div>
-                </div>
-                <div class="deck-rule-card">
-                  <div class="big">15</div>
-                  <div class="lbl">cartes Rares<small>maximum</small></div>
-                </div>
-                <div class="deck-rule-card">
-                  <div class="big">3</div>
-                  <div class="lbl">cartes Exaltées<small>maximum</small></div>
-                </div>
-                <div class="deck-rule-card">
-                  <div class="big">3</div>
-                  <div class="lbl">cartes Uniques<small>maximum</small></div>
                 </div>
               </div>
             </div>

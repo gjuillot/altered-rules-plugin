@@ -307,10 +307,24 @@ register_shutdown_function(function (): void {
        . 'color:#cdd6f4;padding:0 14px;height:36px;font:12px/36px monospace;'
        . 'display:flex;align-items:center;gap:10px;border-bottom:1px solid #313244}'
        . '</style>'
+       // Real altered.re stylesheets — loaded AFTER the inline fallbacks so
+       // their values win when reachable. If altered.re is offline (or in
+       // local-only dev), the inline approximations above keep the page
+       // usable.
+       . '<link rel="stylesheet" href="https://altered.re/assets/font/alteredicons.css">'
+       . '<link rel="stylesheet" href="https://altered.re/css/style.css">'
+       . '<link rel="stylesheet" href="https://altered.re/themes/azure/style.css">'
        . $pluginCss
-       . '</head><body>'
+       . '</head><body class="az-mobile-compact">'
        . $bar
+       // Mirror the live altered.re page chrome: .site-wrapper applies the
+       // 1200px centred max-width, <main> is semantic root, and the inner
+       // .container py-4 gives the same padding the site uses for its
+       // top-level page sections (see <section class="container py-4"> on
+       // altered.re/).
+       . '<div class="site-wrapper"><main><section class="container py-4">'
        . $content
+       . '</section></main></div>'
        . '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>'
        . $pluginJs
        . '</body></html>';
