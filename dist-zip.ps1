@@ -25,7 +25,7 @@ if (-not $id -or -not $version) {
 # Paths
 $dist    = Join-Path $PSScriptRoot 'dist'
 $staging = Join-Path $dist '_staging'
-$pkgDir  = Join-Path $staging $id
+$pkgDir  = $staging
 $zipPath = Join-Path $dist ("{0}-{1}.zip" -f $id, $version)
 
 # Clean previous artefacts
@@ -51,8 +51,8 @@ foreach ($f in $files) {
     Copy-Item -Path $f.FullName -Destination $dst
 }
 
-# Zip the staged plugin directory (top-level "{id}/" inside the ZIP)
-Compress-Archive -Path $pkgDir -DestinationPath $zipPath -Force
+# Zip the staged plugin contents flat (no top-level "{id}/" inside the ZIP)
+Compress-Archive -Path (Join-Path $pkgDir '*') -DestinationPath $zipPath -Force
 
 # Clean staging
 Remove-Item -Recurse -Force $staging
