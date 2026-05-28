@@ -22,7 +22,8 @@ rules/
     rules.{lang}.php       ← future translations (drop one in to enable a new language)
   assets/
     style.css              ← rules-specific styles, extracted from the original <style> block
-    playmat.jpg            ← the only local image used on the page
+    playmat.jpg            ← background image for setup composition illustrations
+    F.webp, M.webp, O.webp ← biome icons (Forêt, Montagne, Eau)
 ```
 
 No `inc/`, `admin/`, `api/`, or `sql/` directories — the page is purely static content rendered server-side, no DB, no auth, no API.
@@ -66,8 +67,8 @@ All external resource URLs use site-provided PHP constants — never hardcode do
 | Resource | Pattern |
 |---|---|
 | Card images, markers, marketing assets, BGA icons | `<?= CDN_URL ?>/cards/...`, `<?= CDN_URL ?>/marketing/...`, `<?= CDN_URL ?>/bga/icons/...` |
-| Site-hosted assets (biome icons, fonts) | `<?= BASE_URL ?>/assets/...` |
-| Plugin's own assets | `<?= BASE_URL ?>/plugins/rules/assets/...` |
+| Site-hosted assets (fonts) | `<?= BASE_URL ?>/assets/...` |
+| Plugin's own assets (incl. biome icons) | `<?= BASE_URL ?>/plugins/rules/assets/...` |
 
 Both constants are documented without trailing slash, so every path starts with `/`. The `assets/style.css` file is plain CSS (no PHP processing) and does not reference any external URL, so no constant substitution is needed there.
 
@@ -89,12 +90,13 @@ The page uses CSS custom properties defined by the Azure theme (`--sand-50`, `--
 
 ## Local assets
 
-Two files bundled with the plugin:
+Files bundled with the plugin:
 
 | Path | Purpose |
 |---|---|
 | `assets/playmat.jpg` | Background for the setup composition illustrations. Referenced via `<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg`. |
 | `assets/Altered_Complete_Rules_5.0.pdf` | Official complete rulebook (v5.0). Linked from a download button in the article header. The page itself is the Quick Rules v3.0 transcription — the PDF is offered as a deeper reference. |
+| `assets/F.webp`, `assets/M.webp`, `assets/O.webp` | Biome icons (Forêt, Montagne, Eau). Bundled locally because the host site's biome asset paths have moved in the past. Referenced via `<?= BASE_URL ?>/plugins/rules/assets/{F,M,O}.webp`. |
 
 The repo-root `illus/` directory contains `playmat.webp`, `markers-reunited.jpg`, and `markers-reunited.webp` — none of these are referenced by the HTML and they are intentionally **not** shipped in the plugin.
 
@@ -267,7 +269,7 @@ Font Awesome 6.5.1 est chargé globalement par le site — pas besoin de l'impor
 
 ### Icônes de biome / terrain
 
-Images `.webp` depuis `<?= BASE_URL ?>/assets/biome/` :
+Images `.webp` bundled with the plugin, depuis `<?= BASE_URL ?>/plugins/rules/assets/` :
 
 | Fichier | Terrain |
 |---|---|
@@ -279,12 +281,12 @@ Deux modes d'emploi :
 
 **Inline dans du texte** — `.biome-ic` (18 × 18 px, `vertical-align: -4px`) :
 ```html
-<img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forêt" class="biome-ic">
+<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forêt" class="biome-ic">
 ```
 
 **Badge avec libellé** — `.terrain-badge` (22 × 22 px, fond sable + bordure arrondie) :
 ```html
-<span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span>
+<span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forêt</span>
 ```
 
 ### Icônes de phase de jeu

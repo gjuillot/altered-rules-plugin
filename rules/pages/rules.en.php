@@ -448,11 +448,11 @@
               <!-- Marqueurs Terrains (statique, pas d'illustration disponible) -->
               <div class="materiel-item static">
                 <div class="item-visual" aria-hidden="true">
-                  <img src="<?= BASE_URL ?>/assets/biome/F.webp"
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp"
                        alt="" loading="lazy">
-                  <img src="<?= BASE_URL ?>/assets/biome/M.webp"
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp"
                        alt="" loading="lazy">
-                  <img src="<?= BASE_URL ?>/assets/biome/O.webp"
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp"
                        alt="" loading="lazy">
                 </div>
                 <div class="item-text">
@@ -808,9 +808,9 @@
               <h4>On Character cards only</h4>
               <p>
 				<strong>H —</strong> Characters have <strong>statistics</strong> corresponding to the three terrains&nbsp;:&nbsp;
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forest</span>
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Mountain</span>
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Water</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forest</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Mountain</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Water</span>
               </p>
 
               <div style="clear:both"></div>
@@ -1080,9 +1080,9 @@
                   <div class="step-badge">A</div>
                   <div class="step-title">Check the terrains</div>
                   <div class="step-text">Identify the terrain(s)
-                    (<img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forest" class="biome-ic">
-                    <img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="Mountain" class="biome-ic">
-                    <img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="Water" class="biome-ic">)
+                    (<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forest" class="biome-ic">
+                    <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Mountain" class="biome-ic">
+                    <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Water" class="biome-ic">)
                     of the region where your marker is located.</div>
                 </div>
                 <div class="flow-step">
@@ -1134,9 +1134,9 @@
                         <span class="step-badge">A</span>
                         <strong>Mike's</strong> Hero Expedition marker is on a card with
                         3 terrains&nbsp;:
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forest</span>
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Mountain</span>
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Water</span>.
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forest</span>
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Mountain</span>
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Water</span>.
                         To move forward, Mike's total must beat Ella's in at least one of these terrains.
                       </p>
                     </aside>
@@ -1181,11 +1181,11 @@
                       <p>
                         <span class="step-badge">A</span>
                         On Ella's side, her Hero Expedition marker is in a
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forest</span> and
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Water</span> region.
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forest</span> and
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Water</span> region.
                         To move forward, Ella's total must beat Mike's in at least one of these terrains.
                         Her
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Mountain</span>
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Mountain</span>
                         stats only serve to block Mike.
                       </p>
                     </aside>
@@ -1197,7 +1197,7 @@
 
 			  <p>
 				Ella therefore cannot advance via
-				<span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Mountain</span>
+				<span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Mountain</span>
 				but can prevent Mike from advancing there.
 			  </p>
 
@@ -1218,19 +1218,19 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forest</span></td>
+                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forest</span></td>
                       <td class="center"><strong>3</strong></td>
                       <td class="center">1+1 = 2</td>
                       <td><span class="text-success">✓</span> Mike wins in Forest</td>
                     </tr>
                     <tr>
-                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Mountain</span></td>
+                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Mountain</span></td>
                       <td class="center">3</td>
                       <td class="center">3+1 = <strong>4</strong></td>
                       <td>✕ Ella blocks Mike</td>
                     </tr>
                     <tr>
-                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Water</span></td>
+                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Water</span></td>
                       <td class="center">3</td>
                       <td class="center">3+1 = <strong>4</strong></td>
                       <td><span class="text-success">✓</span> Ella wins in Water</td>
@@ -1617,9 +1617,9 @@
               </p>
               <p>
                 Then play a Day normally. At Dusk, for each Arena terrain
-                (<img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forest" class="biome-ic">
-                <img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="Mountain" class="biome-ic">
-                <img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="Water" class="biome-ic">),
+                (<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forest" class="biome-ic">
+                <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Mountain" class="biome-ic">
+                <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Water" class="biome-ic">),
                 add up the statistics of the Characters in <strong>both your Expeditions</strong>.
                 Compare the three totals with your opponent's: whoever wins
                 in the most terrains wins the game.
@@ -1829,21 +1829,21 @@
               <h3>Terrains</h3>
               <div class="marker-grid">
                 <div class="marker-item">
-                  <img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forest">
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forest">
                   <div class="m-text">
                     <div class="m-label">Forest</div>
                     <div class="m-desc">Forest statistic on Characters.</div>
                   </div>
                 </div>
                 <div class="marker-item">
-                  <img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="Mountain">
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Mountain">
                   <div class="m-text">
                     <div class="m-label">Mountain</div>
                     <div class="m-desc">Mountain statistic on Characters.</div>
                   </div>
                 </div>
                 <div class="marker-item">
-                  <img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="Water">
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Water">
                   <div class="m-text">
                     <div class="m-label">Water</div>
                     <div class="m-desc">Water statistic on Characters.</div>

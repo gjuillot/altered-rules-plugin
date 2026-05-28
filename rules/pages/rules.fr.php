@@ -448,11 +448,11 @@
               <!-- Marqueurs Terrains (statique, pas d'illustration disponible) -->
               <div class="materiel-item static">
                 <div class="item-visual" aria-hidden="true">
-                  <img src="<?= BASE_URL ?>/assets/biome/F.webp"
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp"
                        alt="" loading="lazy">
-                  <img src="<?= BASE_URL ?>/assets/biome/M.webp"
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp"
                        alt="" loading="lazy">
-                  <img src="<?= BASE_URL ?>/assets/biome/O.webp"
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp"
                        alt="" loading="lazy">
                 </div>
                 <div class="item-text">
@@ -808,9 +808,9 @@
               <h4>Sur les cartes Personnage uniquement</h4>
               <p>
 				<strong>H —</strong> Les Personnages ont des <strong>statistiques</strong> correspondant aux trois terrains&nbsp;:&nbsp;
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span>
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span>
-                <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Eau</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forêt</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Montagne</span>
+                <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Eau</span>
               </p>
 
               <div style="clear:both"></div>
@@ -1080,9 +1080,9 @@
                   <div class="step-badge">A</div>
                   <div class="step-title">Vérifier les terrains</div>
                   <div class="step-text">Identifiez le ou les terrains
-                    (<img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forêt" class="biome-ic">
-                    <img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="Montagne" class="biome-ic">
-                    <img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="Eau" class="biome-ic">)
+                    (<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forêt" class="biome-ic">
+                    <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Montagne" class="biome-ic">
+                    <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Eau" class="biome-ic">)
                     de la région où se trouve votre marqueur.</div>
                 </div>
                 <div class="flow-step">
@@ -1134,9 +1134,9 @@
                         <span class="step-badge">A</span>
                         Le marqueur Expédition Héros de <strong>Pierre</strong> se trouve sur une carte avec
                         3 terrains&nbsp;:
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span>
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span>
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Eau</span>.
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forêt</span>
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Montagne</span>
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Eau</span>.
                         Pour avancer, le total de Pierre doit dépasser celui de Noémie dans au moins un de ces terrains.
                       </p>
                     </aside>
@@ -1181,11 +1181,11 @@
                       <p>
                         <span class="step-badge">A</span>
                         Du côté de Noémie, son marqueur Expédition Héros se trouve dans une région
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span> et
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Eau</span>.
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forêt</span> et
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Eau</span>.
                         Pour avancer, le total de Noémie doit dépasser celui de Pierre dans au moins un de ces terrains.
                         Les statistiques en
-                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span>
+                        <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Montagne</span>
                         ne lui servent qu'à bloquer Pierre.
                       </p>
                     </aside>
@@ -1197,7 +1197,7 @@
 
 			  <p>
 				Noémie ne peut donc pas avancer grâce à
-				<span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span>
+				<span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Montagne</span>
 				mais peut empêcher Pierre d'y avancer.
 			  </p>
 
@@ -1218,19 +1218,19 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="">Forêt</span></td>
+                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forêt</span></td>
                       <td class="center"><strong>3</strong></td>
                       <td class="center">1+1 = 2</td>
                       <td><span class="text-success">✓</span> Pierre dépasse en Forêt</td>
                     </tr>
                     <tr>
-                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="">Montagne</span></td>
+                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Montagne</span></td>
                       <td class="center">3</td>
                       <td class="center">3+1 = <strong>4</strong></td>
                       <td>✕ Noémie bloque Pierre</td>
                     </tr>
                     <tr>
-                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="">Eau</span></td>
+                      <td><span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Eau</span></td>
                       <td class="center">3</td>
                       <td class="center">3+1 = <strong>4</strong></td>
                       <td><span class="text-success">✓</span> Noémie dépasse en Eau</td>
@@ -1616,9 +1616,9 @@
               </p>
               <p>
                 Puis, jouez un Jour normalement. Au Crépuscule, pour chaque terrain de l'Arène
-                (<img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forêt" class="biome-ic">
-                <img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="Montagne" class="biome-ic">
-                <img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="Eau" class="biome-ic">),
+                (<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forêt" class="biome-ic">
+                <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Montagne" class="biome-ic">
+                <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Eau" class="biome-ic">),
                 additionnez les statistiques des Personnages de <strong>vos deux Expéditions</strong>.
                 Comparez les trois totaux avec ceux de l'adversaire : celui ou celle qui l'emporte
                 dans le plus grand nombre de terrains gagne.
@@ -1828,21 +1828,21 @@
               <h3>Terrains</h3>
               <div class="marker-grid">
                 <div class="marker-item">
-                  <img src="<?= BASE_URL ?>/assets/biome/F.webp" alt="Forêt">
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forêt">
                   <div class="m-text">
                     <div class="m-label">Forêt</div>
                     <div class="m-desc">Statistique de Forêt sur les Personnages.</div>
                   </div>
                 </div>
                 <div class="marker-item">
-                  <img src="<?= BASE_URL ?>/assets/biome/M.webp" alt="Montagne">
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Montagne">
                   <div class="m-text">
                     <div class="m-label">Montagne</div>
                     <div class="m-desc">Statistique de Montagne sur les Personnages.</div>
                   </div>
                 </div>
                 <div class="marker-item">
-                  <img src="<?= BASE_URL ?>/assets/biome/O.webp" alt="Eau">
+                  <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Eau">
                   <div class="m-text">
                     <div class="m-label">Eau</div>
                     <div class="m-desc">Statistique d'Eau sur les Personnages.</div>
