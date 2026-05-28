@@ -11,7 +11,7 @@ if (!defined('BASE_URL')) {
  *
  * Loads the per-language content partial (rules.{lang}.php) matching the
  * visitor's UI language. Any language without a partial falls back to the
- * French version with a discreet bilingual notice at the top of the page.
+ * English version with a discreet bilingual notice at the top of the page.
  *
  * Adding a new language: drop pages/rules.{lang}.php next to this file.
  * No code change needed here.
@@ -22,14 +22,14 @@ $partial  = __DIR__ . "/rules.{$lang}.php";
 $fallback = false;
 
 if (!is_file($partial)) {
-    $partial  = __DIR__ . '/rules.fr.php';
-    $fallback = ($lang !== 'fr');
+    $partial  = __DIR__ . '/rules.en.php';
+    $fallback = ($lang !== 'en');
 }
 
 if ($fallback) {
     echo '<div class="rule-callout tip mb-3">'
-       . 'Translation pending — showing the French version. '
-       . '<em>Traduction en cours — version française affichée.</em>'
+       . 'Translation pending — showing the English version. '
+       . '<em>Traduction en cours — version anglaise affichée.</em>'
        . '</div>';
 }
 

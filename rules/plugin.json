@@ -2,7 +2,7 @@
     "id": "rules",
     "name": "Altered Rules",
     "version": "1.0.0",
-    "description": "Rules page for Altered TCG. Multilingual-ready: drop pages/rules.{lang}.php to add a translation; any missing language falls back to French.",
+    "description": "Rules page for Altered TCG. Multilingual-ready: drop pages/rules.{lang}.php to add a translation; any missing language falls back to English.",
     "author": "Darigaaz",
     "table_prefix": "rl",
     "pages": [

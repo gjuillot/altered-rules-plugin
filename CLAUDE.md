@@ -43,7 +43,7 @@ Lors de la propagation, adapter chaque version à sa langue : traduire le texte 
 
 ### Dispatcher and language fallback
 
-`pages/rules.php` is tiny: it looks for `pages/rules.{getUiLang()}.php`, includes it if present, otherwise includes `pages/rules.fr.php` and emits a small bilingual notice at the top of the page (`Translation pending — Traduction en cours`).
+`pages/rules.php` is tiny: it looks for `pages/rules.{getUiLang()}.php`, includes it if present, otherwise includes `pages/rules.en.php` and emits a small bilingual notice at the top of the page (`Translation pending — Traduction en cours`).
 
 To add a new language: drop `rules.{lang}.php` next to `rules.fr.php`. No code change in the dispatcher needed.
 
