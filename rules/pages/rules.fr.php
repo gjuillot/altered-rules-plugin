@@ -1862,28 +1862,28 @@
                 Le terme anglais figurant sur les cartes est indiqué entre parenthèses.
               </p>
               <ul class="keywords-glossary">
-                <li id="seasoned"><strong>Aguerri</strong> <span class="kw-en">(Seasoned)</span> — Un Personnage Aguerri garde ses boosts lorsqu'il est envoyé en Réserve depuis la zone d'Expédition.</li>
-                <li id="augment"><strong>Amplifier</strong> <span class="kw-en">(Augment)</span> — Si la carte ciblée possède au moins un marqueur (Boost, etc.), elle en gagne un de plus. Les cartes Héros ne peuvent pas être ciblées.</li>
-                <li id="anchored"><strong>Ancré</strong> <span class="kw-en">(Anchored)</span> — Au Repos, un Personnage Ancré n'est pas envoyé en Réserve&nbsp;; il perd Ancré à la place.</li>
-                <li id="support-ability"><strong>Capacité de Soutien</strong> <span class="kw-en">(Support ability)</span> — Écrite au bas de certaines cartes, sur fond coloré, la Capacité de Soutien nécessite que la carte soit en Réserve. Elle peut nécessiter d'être défaussée (<i class="fak fa-altered-d"></i>) pour déclencher son effet, ou s'appliquer en continu (<i class="fak fa-altered-i"></i>).</li>
-                <li id="tough-x"><strong>Coriace X</strong> <span class="kw-en">(Tough X)</span> — Un adversaire ne peut pas choisir un objet Coriace X comme cible d'un effet qu'il contrôle à moins de payer X manas supplémentaires.</li>
-                <li id="defender"><strong>Défenseur</strong> <span class="kw-en">(Defender)</span> — Une Expédition contenant un Personnage avec Défenseur ne peut pas avancer au Crépuscule.</li>
-                <li id="gift"><strong>Don</strong> <span class="kw-en">(Gift)</span> — Vous faites un Don si, durant votre tour, un adversaire pioche une carte, Ravitaille ou reçoit un jeton grâce à un effet d'une carte que vous contrôlez.</li>
-                <li id="ascend"><strong>Élevé</strong> <span class="kw-en">(Ascend)</span> — Jusqu'au Repos, une Expédition Élevée peut avancer même en cas de statistiques égales à l'Expédition adverse sur les terrains de sa région. Elle ne peut toujours pas avancer avec des statistiques de&nbsp;0.</li>
-                <li id="in-contact"><strong>En Contact</strong> <span class="kw-en">(In Contact)</span> — Un Personnage est En Contact si une des Expéditions de l'adversaire est dans la région de ce Personnage.</li>
-                <li id="asleep"><strong>Endormi</strong> <span class="kw-en">(Asleep)</span> — Les statistiques d'un Personnage Endormi ne sont pas comptées au Crépuscule. Au Repos, un Personnage Endormi n'est pas envoyé en Réserve&nbsp;; il perd Endormi à la place.</li>
-                <li id="exhaust"><strong>Épuiser</strong> <span class="kw-en">(Exhaust)</span> — Une carte épuisée (tournée à 90°) en Réserve ne peut pas être jouée et n'a plus de capacités de Soutien.</li>
-                <li id="eternal"><strong>Éternel</strong> <span class="kw-en">(Eternal)</span> — Un Personnage Éternel n'est pas envoyé en Réserve au Repos.</li>
-                <li id="rush"><strong>Foncer</strong> <span class="kw-en">(Rush)</span> — Jouez immédiatement une autre carte.</li>
-                <li id="fleeting"><strong>Fugace</strong> <span class="kw-en">(Fleeting)</span> — Si une carte Fugace est envoyée en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu. Toutes les cartes jouées depuis la Réserve gagnent Fugace, à l'exception des Permanents Repère.</li>
-                <li id="gigantic"><strong>Gigantesque</strong> <span class="kw-en">(Gigantic)</span> — Un Personnage Gigantesque est présent dans vos deux Expéditions.</li>
-                <li id="cooldown"><strong>Rafraîchissement</strong> <span class="kw-en">(Cooldown)</span> — Si la carte part en Réserve après la résolution de son effet, épuisez-la.</li>
-                <li id="resupply"><strong>Ravitailler</strong> <span class="kw-en">(Resupply)</span> — Placez la carte du dessus de votre Deck dans votre Réserve.</li>
-                <li id="exhausted-resupply"><strong>Ravitailler épuisé</strong> <span class="kw-en">(Exhausted Resupply)</span> — Ravitaillez, puis épuisez la carte ravitaillée.</li>
-                <li id="scout-x"><strong>Repérage X</strong> <span class="kw-en">(Scout X)</span> — Cette carte peut être jouée depuis votre Main pour X manas avec l'effet supplémentaire <em><i class="fak fa-altered-h"></i> Envoyez-moi en Réserve</em>.</li>
-                <li id="sabotage"><strong>Saboter</strong> <span class="kw-en">(Sabotage)</span> — Défaussez une carte ciblée d'une Réserve.</li>
-                <li id="sacrifice"><strong>Sacrifier</strong> <span class="kw-en">(Sacrifice)</span> — Défaussez une carte ciblée d'une de vos Expéditions ou de votre zone Repère.</li>
-                <li id="defect"><strong>Trahir</strong> <span class="kw-en">(Defect)</span> — Un Personnage qui Trahit rejoint l'Expédition qui lui fait face et change de contrôleur (mais pas de propriétaire).</li>
+                <li id="seasoned"><strong>Aguerri</strong> — Un Personnage Aguerri garde ses boosts lorsqu'il est envoyé en Réserve depuis la zone d'Expédition.</li>
+                <li id="augment"><strong>Amplifier</strong> — Si la carte ciblée possède au moins un marqueur (Boost, etc.), elle en gagne un de plus. Les cartes Héros ne peuvent pas être ciblées.</li>
+                <li id="anchored"><strong>Ancré</strong> — Au Repos, un Personnage Ancré n'est pas envoyé en Réserve&nbsp;; il perd Ancré à la place.</li>
+                <li id="support-ability"><strong>Capacité de Soutien</strong> — Écrite au bas de certaines cartes, sur fond coloré, la Capacité de Soutien nécessite que la carte soit en Réserve. Elle peut nécessiter d'être défaussée (<i class="fak fa-altered-d"></i>) pour déclencher son effet, ou s'appliquer en continu (<i class="fak fa-altered-i"></i>).</li>
+                <li id="contact"><strong>Contact</strong> — Un Personnage est En Contact si une des Expéditions de l'adversaire est dans la région de ce Personnage.</li>
+                <li id="tough-x"><strong>Coriace X</strong> — Un adversaire ne peut pas choisir un objet Coriace X comme cible d'un effet qu'il contrôle à moins de payer X manas supplémentaires.</li>
+                <li id="defender"><strong>Défenseur</strong> — Une Expédition contenant un Personnage avec Défenseur ne peut pas avancer au Crépuscule.</li>
+                <li id="gift"><strong>Don</strong> — Vous faites un Don si, durant votre tour, un adversaire pioche une carte, Ravitaille ou reçoit un jeton grâce à un effet d'une carte que vous contrôlez.</li>
+                <li id="ascend"><strong>Élevé</strong> — Jusqu'au Repos, une Expédition Élevée peut avancer même en cas de statistiques égales à l'Expédition adverse sur les terrains de sa région. Elle ne peut toujours pas avancer avec des statistiques de&nbsp;0.</li>
+                <li id="asleep"><strong>Endormi</strong> — Les statistiques d'un Personnage Endormi ne sont pas comptées au Crépuscule. Au Repos, un Personnage Endormi n'est pas envoyé en Réserve&nbsp;; il perd Endormi à la place.</li>
+                <li id="exhaust"><strong>Épuiser</strong> — Une carte épuisée (tournée à 90°) en Réserve ne peut pas être jouée et n'a plus de capacités de Soutien.</li>
+                <li id="eternal"><strong>Éternel</strong> — Un Personnage Éternel n'est pas envoyé en Réserve au Repos.</li>
+                <li id="rush"><strong>Foncer</strong> — Jouez immédiatement une autre carte.</li>
+                <li id="fleeting"><strong>Fugace</strong> — Si une carte Fugace est envoyée en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu. Toutes les cartes jouées depuis la Réserve gagnent Fugace, à l'exception des Permanents Repère.</li>
+                <li id="gigantic"><strong>Gigantesque</strong> — Un Personnage Gigantesque est présent dans vos deux Expéditions.</li>
+                <li id="cooldown"><strong>Rafraîchissement</strong> — Si la carte part en Réserve après la résolution de son effet, épuisez-la.</li>
+                <li id="resupply"><strong>Ravitailler</strong> — Placez la carte du dessus de votre Deck dans votre Réserve.</li>
+                <li id="exhausted-resupply"><strong>Ravitailler épuisé</strong> — Ravitaillez, puis épuisez la carte ravitaillée.</li>
+                <li id="scout-x"><strong>Repérage X</strong> — Cette carte peut être jouée depuis votre Main pour X manas avec l'effet supplémentaire <em><i class="fak fa-altered-h"></i> Envoyez-moi en Réserve</em>.</li>
+                <li id="sabotage"><strong>Saboter</strong> — Défaussez une carte ciblée d'une Réserve.</li>
+                <li id="sacrifice"><strong>Sacrifier</strong> — Défaussez une carte ciblée d'une de vos Expéditions ou de votre zone Repère.</li>
+                <li id="defect"><strong>Trahir</strong> — Un Personnage qui Trahit rejoint l'Expédition qui lui fait face et change de contrôleur (mais pas de propriétaire).</li>
               </ul>
             </div>
           </section>
