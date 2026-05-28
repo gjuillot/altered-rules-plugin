@@ -51,7 +51,7 @@
           </p>
 		  <p class="lead">
 			Cette page est une transcription complétée du livret <em>« Altered TCG — Quick Rules 3.0 »</em>
-			publié par Equinox (2025). <br />
+			publié par Equinox (2025). 
 			<a href="<?= BASE_URL ?>/plugins/rules/assets/Altered_Complete_Rules_5.0.pdf" target="_blank" rel="noopener">
 			  <i class="fa-solid fa-file-pdf"></i>
 			  Télécharger les règles complètes (PDF, v5.0) - Anglais uniquement
@@ -476,17 +476,17 @@
                     <!-- Rangée de cartes Aventure au-dessus du tapis -->
                     <div class="setup-adventures" style="position: relative;">
 
-                      <!-- Étape 1 : cadre + numéro autour des 3 Tumulte -->
-                      <div class="tumult-frame" style="top: 8%; left: 20%; right: 20%; bottom: 8%;"></div>
-                      <div class="step-marker" style="top: -16px; left: 50%; transform: translateX(-50%);">1</div>
-
                       <!-- Étape 2 : numéro dans les coins extérieurs des cartes Expédition -->
                       <div class="step-marker" style="top: 0%; left: 0; transform: translate(-30%, 0);">2</div>
                       <div class="step-marker" style="top: 0%; right: 0; transform: translate(30%, 0);">2</div>
 
-                      <!-- Étape 3 : marqueurs Expédition (entre Muna haut et Axiom bas) -->
-                      <div class="step-marker" style="top: 50%; left: 10%; transform: translate(-50%, -50%);">3</div>
-                      <div class="step-marker" style="top: 50%; left: 90%; transform: translate(-50%, -50%);">3</div>
+                      <!-- Étape 3 : cadre + numéro autour des 3 Tumulte -->
+                      <div class="tumult-frame" style="top: 8%; left: 20%; right: 20%; bottom: 8%;"></div>
+                      <div class="step-marker" style="top: -16px; left: 50%; transform: translateX(-50%);">3</div>
+
+                      <!-- Étape 4 : marqueurs Expédition (entre Muna haut et Axiom bas) -->
+                      <div class="step-marker" style="top: 50%; left: 10%; transform: translate(-50%, -50%);">4</div>
+                      <div class="step-marker" style="top: 50%; left: 90%; transform: translate(-50%, -50%);">4</div>
 
                       <div class="adv-wrap">
                         <img class="adv-hero-card"
@@ -531,9 +531,9 @@
                     <div class="setup-playmat">
                       <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Tapis de jeu Altered">
 
-                      <!-- Étape 3 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
-                      <!-- Étape 4 : le tapis lui-même -->
-                      <div class="step-marker" style="top: 50%; left: -16px; transform: translateY(-50%);">4</div>
+                      <!-- Étape 4 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
+                      <!-- Étape 1 : le tapis lui-même -->
+                      <div class="step-marker" style="top: 50%; left: -16px; transform: translateY(-50%);">1</div>
 
                       <!-- Étape 5 : Sierra sur zone Héros -->
                       <div class="step-marker" style="top: 5%; left: 40%; transform: translate(0, -50%);">5</div>
@@ -602,10 +602,10 @@
               </figure>
 
               <ol>
-                <li>Mélangez les <strong>trois cartes Tumulte</strong> et alignez-les face cachée entre les deux camps opposés.</li>
-                <li>Placez la <strong>carte région de départ Héros</strong> à une extrémité de la ligne et la <strong>carte région de départ Compagnon</strong> à l'autre extrémité.</li>
+                <li>Installez les <strong>deux tapis de jeu</strong> face à face, en laissant de l'espace entre eux pour la rangée de cartes Aventure.</li>
+                <li>Placez la <strong>carte région de départ Héros</strong> à l'une des extrémités de cet espace et la <strong>carte région de départ Compagnon</strong> à l'extrémité opposée.</li>
+                <li>Mélangez les <strong>trois cartes Tumulte</strong> et alignez-les face cachée entre les deux cartes Région de départ.</li>
                 <li>Chacun·e place son <strong>marqueur Expédition Héros</strong> et son <strong>marqueur Expédition Compagnon</strong> sur les régions de départ correspondantes.</li>
-                <li>Installez les <strong>deux tapis de jeu</strong> face à face de chaque côté du Tumulte.</li>
                 <li>Chaque joueur·se place sa <strong>carte Héros ou Héroïne</strong> dans la zone Héros du tapis de jeu.</li>
                 <li>Déterminez au hasard qui commencera la partie, et placez le <strong>marqueur Premier Joueur</strong> sur sa carte Héros/Héroïne.</li>
                 <li>Chaque joueur·se mélange son deck et le place face cachée dans la zone Deck.</li>
@@ -649,7 +649,7 @@
               <ul>
                 <li>Les cartes dans la zone de Mana sont toujours <strong>face cachée</strong> et sont appelées <strong>Orbes de Mana</strong>.</li>
                 <li>Chaque Orbe de Mana donne <strong>1 Mana</strong> lorsqu'il est épuisé.</li>
-                <li>Redressez tous vos Orbes de Mana pendant la <strong>phase Matin</strong>.</li>
+                <li>Vos Orbes de Mana sont redressés au début de chaque <strong>Jour</strong> (voir <a href="#jour">§8</a>).</li>
                 <li>Une carte face cachée dans la zone de Mana y reste <strong>jusqu'à la fin de la partie</strong>.</li>
               </ul>
             </div>
@@ -739,7 +739,7 @@
                   <div class="zone-name">Mana</div>
                   <div class="zone-desc">
                     <p>La zone où sont placées les cartes utilisées comme <strong>Orbes de Mana</strong>. Une carte mise en Mana y reste <strong>face cachée jusqu’à la fin de la partie</strong>.</p>
-                    <p>Chaque Orbe de Mana fournit 1 Mana lorsqu’il est épuisé. Tous vos Orbes sont redressés pendant la phase Matin.</p>
+                    <p>Chaque Orbe de Mana fournit 1 Mana lorsqu’il est épuisé. Tous vos Orbes sont redressés au début de chaque Jour (voir <a href="#jour">§8</a>).</p>
                   </div>
                 </div>
               </div>
@@ -887,7 +887,7 @@
                     <img src="<?= CDN_URL ?>/cards/fr/ALIZE/ALT_ALIZE_B_BR_45_C.webp" alt="" loading="lazy" style="width: 160px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.25);">
                   </div>
                   <p>
-                    Lorsque vous jouez un Permanent d’Expédition, <strong>placez-le dans une de vos Expédition</strong>.
+                    Lorsque vous jouez un Permanent d’Expédition, <strong>placez-le dans une de vos Expéditions</strong>.
 					<strong>Au repos</strong>, contrairement à un Personnage, <strong>un Permanent d’Expédition
 					part en Réserve que si vous avez avancé sur cette Expédition.</strong>
                   </p>

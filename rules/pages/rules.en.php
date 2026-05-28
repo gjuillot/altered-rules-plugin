@@ -51,7 +51,7 @@
           </p>
 		  <p class="lead">
 			This page is an expanded transcription of the <em>“Altered TCG — Quick Rules 3.0”</em>
-			booklet published by Equinox (2025). <br />
+			booklet published by Equinox (2025). 
 			<a href="<?= BASE_URL ?>/plugins/rules/assets/Altered_Complete_Rules_5.0.pdf" target="_blank" rel="noopener">
 			  <i class="fa-solid fa-file-pdf"></i>
 			  Download the complete rules (PDF, v5.0) — English only
@@ -476,17 +476,17 @@
                     <!-- Rangée de cartes Aventure au-dessus du tapis -->
                     <div class="setup-adventures" style="position: relative;">
 
-                      <!-- Étape 1 : cadre + numéro autour des 3 Tumulte -->
-                      <div class="tumult-frame" style="top: 8%; left: 20%; right: 20%; bottom: 8%;"></div>
-                      <div class="step-marker" style="top: -16px; left: 50%; transform: translateX(-50%);">1</div>
-
                       <!-- Étape 2 : numéro dans les coins extérieurs des cartes Expédition -->
                       <div class="step-marker" style="top: 0%; left: 0; transform: translate(-30%, 0);">2</div>
                       <div class="step-marker" style="top: 0%; right: 0; transform: translate(30%, 0);">2</div>
 
-                      <!-- Étape 3 : marqueurs Expédition (entre Muna haut et Axiom bas) -->
-                      <div class="step-marker" style="top: 50%; left: 10%; transform: translate(-50%, -50%);">3</div>
-                      <div class="step-marker" style="top: 50%; left: 90%; transform: translate(-50%, -50%);">3</div>
+                      <!-- Étape 3 : cadre + numéro autour des 3 Tumulte -->
+                      <div class="tumult-frame" style="top: 8%; left: 20%; right: 20%; bottom: 8%;"></div>
+                      <div class="step-marker" style="top: -16px; left: 50%; transform: translateX(-50%);">3</div>
+
+                      <!-- Étape 4 : marqueurs Expédition (entre Muna haut et Axiom bas) -->
+                      <div class="step-marker" style="top: 50%; left: 10%; transform: translate(-50%, -50%);">4</div>
+                      <div class="step-marker" style="top: 50%; left: 90%; transform: translate(-50%, -50%);">4</div>
 
                       <div class="adv-wrap">
                         <img class="adv-hero-card"
@@ -531,9 +531,9 @@
                     <div class="setup-playmat">
                       <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Altered playmat">
 
-                      <!-- Étape 3 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
-                      <!-- Étape 4 : le tapis lui-même -->
-                      <div class="step-marker" style="top: 50%; left: -16px; transform: translateY(-50%);">4</div>
+                      <!-- Étape 4 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
+                      <!-- Étape 1 : le tapis lui-même -->
+                      <div class="step-marker" style="top: 50%; left: -16px; transform: translateY(-50%);">1</div>
 
                       <!-- Étape 5 : Sierra sur zone Héros -->
                       <div class="step-marker" style="top: 5%; left: 40%; transform: translate(0, -50%);">5</div>
@@ -602,10 +602,10 @@
               </figure>
 
               <ol>
-                <li>Shuffle the <strong>three Tumult cards</strong> and lay them face-down in a line between the two opposing sides.</li>
-                <li>Place the <strong>Hero starting region card</strong> at one end of the line and the <strong>Companion starting region card</strong> at the other end.</li>
+                <li>Set up the <strong>two playmats</strong> facing each other, leaving space between them for the Adventure card row.</li>
+                <li>Place the <strong>Hero starting region card</strong> at one end of that space and the <strong>Companion starting region card</strong> at the other end.</li>
+                <li>Shuffle the <strong>three Tumult cards</strong> and lay them face-down between the two starting region cards.</li>
                 <li>Each player places their <strong>Hero Expedition marker</strong> and <strong>Companion Expedition marker</strong> on the corresponding starting regions.</li>
-                <li>Set up the <strong>two playmats</strong> facing each other on either side of the Tumult.</li>
                 <li>Each player places their <strong>Hero or Heroine card</strong> in the Hero zone of their playmat.</li>
                 <li>Randomly determine who starts the game, and place the <strong>First Player marker</strong> on their Hero/Heroine card.</li>
                 <li>Each player shuffles their deck and places it face-down in the Deck zone.</li>
@@ -649,7 +649,7 @@
               <ul>
                 <li>Cards in the Mana zone are always <strong>face-down</strong> and are called <strong>Mana Orbs</strong>.</li>
                 <li>Each Mana Orb gives <strong>1 Mana</strong> when it is exhausted.</li>
-                <li>Ready all your Mana Orbs during the <strong>Morning phase</strong>.</li>
+                <li>Your Mana Orbs are readied at the start of each <strong>Day</strong> (see <a href="#jour">§8</a>).</li>
                 <li>A face-down card in the Mana zone stays there <strong>until the end of the game</strong>.</li>
               </ul>
             </div>
@@ -739,7 +739,7 @@
                   <div class="zone-name">Mana</div>
                   <div class="zone-desc">
                     <p>The zone where cards used as <strong>Mana Orbs</strong> are placed. A card put into Mana stays <strong>face-down until the end of the game</strong>.</p>
-                    <p>Each Mana Orb provides 1 Mana when it is exhausted. All your Orbs are readied during the Morning phase.</p>
+                    <p>Each Mana Orb provides 1 Mana when it is exhausted. All your Orbs are readied at the start of each Day (see <a href="#jour">§8</a>).</p>
                   </div>
                 </div>
               </div>
