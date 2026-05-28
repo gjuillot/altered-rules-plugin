@@ -35,6 +35,7 @@
             <li><a href="#fin-partie">Fin de la partie</a></li>
             <li><a href="#regles-sup">Règles supplémentaires</a></li>
             <li><a href="#marqueurs">Marqueurs &amp; icônes</a></li>
+            <li><a href="#mots-cles">Mots-clés</a></li>
           </ol>
         </nav>
       </aside>
@@ -84,6 +85,7 @@
                 <li><a href="#regles-sup">Règles supplémentaires</a></li>
                 <li><a href="#marqueurs">Marqueurs &amp; icônes</a></li>
                 <li><a href="#construction">Construction de deck</a></li>
+                <li><a href="#mots-cles">Mots-clés</a></li>
               </ol>
             </details>
           </div>
@@ -1754,7 +1756,7 @@
                   <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="Marqueur Fugace">
                   <div class="m-text">
                     <div class="m-label">Fugace</div>
-                    <div class="m-desc">Si une carte Fugace est envoyé en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu.</div>
+                    <div class="m-desc">Si une carte Fugace est envoyée en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu.</div>
                   </div>
                 </div>
                 <div class="marker-item">
@@ -1780,21 +1782,21 @@
                 <div class="marker-item">
                   <div class="ic-circle ic-bg-anywhere"><i class="fak fa-altered-j"></i></div>
                   <div class="m-text">
-                    <div class="m-label">Effet « de partout »</div>
+                    <div class="m-label">Effet «&nbsp;de partout&nbsp;»</div>
                     <div class="m-desc">Capacité active d'où que soit jouée la carte.</div>
                   </div>
                 </div>
                 <div class="marker-item">
                   <div class="ic-circle ic-bg-hand"><i class="fak fa-altered-h"></i></div>
                   <div class="m-text">
-                    <div class="m-label">Effet « depuis la main »</div>
+                    <div class="m-label">Effet «&nbsp;depuis la main&nbsp;»</div>
                     <div class="m-desc">Capacité active uniquement lorsque jouée de la main.</div>
                   </div>
                 </div>
                 <div class="marker-item">
                   <div class="ic-circle ic-bg-reserve"><i class="fak fa-altered-r"></i></div>
                   <div class="m-text">
-                    <div class="m-label">Effet « depuis la Réserve »</div>
+                    <div class="m-label">Effet «&nbsp;depuis la Réserve&nbsp;»</div>
                     <div class="m-desc">Capacité active uniquement lorsque jouée de la Réserve.</div>
                   </div>
                 </div>
@@ -1810,6 +1812,13 @@
                   <div class="m-text">
                     <div class="m-label">Soutien</div>
                     <div class="m-desc">Défausse la carte pour activer son effet de Soutien.</div>
+                  </div>
+                </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-permanent"><i class="fak fa-altered-i"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Soutien continu</div>
+                    <div class="m-desc">Indique une Capacité de Soutien qui s'applique en continu, sans avoir à défausser la carte.</div>
                   </div>
                 </div>
               </div>
@@ -1840,6 +1849,42 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          <!-- ========== 13. MOTS-CLÉS ========== -->
+          <section id="mots-cles">
+            <h2 class="section-title"><span>13. Mots-clés</span></h2>
+
+            <div class="rule-block">
+              <p>
+                Glossaire des mots-clés rencontrés sur les cartes des extensions&nbsp;1 à&nbsp;5.
+                Le terme anglais figurant sur les cartes est indiqué entre parenthèses.
+              </p>
+              <ul class="keywords-glossary">
+                <li id="seasoned"><strong>Aguerri</strong> <span class="kw-en">(Seasoned)</span> — Un Personnage Aguerri garde ses boosts lorsqu'il est envoyé en Réserve depuis la zone d'Expédition.</li>
+                <li id="augment"><strong>Amplifier</strong> <span class="kw-en">(Augment)</span> — Si la carte ciblée possède au moins un marqueur (Boost, etc.), elle en gagne un de plus. Les cartes Héros ne peuvent pas être ciblées.</li>
+                <li id="anchored"><strong>Ancré</strong> <span class="kw-en">(Anchored)</span> — Au Repos, un Personnage Ancré n'est pas envoyé en Réserve&nbsp;; il perd Ancré à la place.</li>
+                <li id="support-ability"><strong>Capacité de Soutien</strong> <span class="kw-en">(Support ability)</span> — Écrite au bas de certaines cartes, sur fond coloré, la Capacité de Soutien nécessite que la carte soit en Réserve. Elle peut nécessiter d'être défaussée (<i class="fak fa-altered-d"></i>) pour déclencher son effet, ou s'appliquer en continu (<i class="fak fa-altered-i"></i>).</li>
+                <li id="tough-x"><strong>Coriace X</strong> <span class="kw-en">(Tough X)</span> — Un adversaire ne peut pas choisir un objet Coriace X comme cible d'un effet qu'il contrôle à moins de payer X manas supplémentaires.</li>
+                <li id="defender"><strong>Défenseur</strong> <span class="kw-en">(Defender)</span> — Une Expédition contenant un Personnage avec Défenseur ne peut pas avancer au Crépuscule.</li>
+                <li id="gift"><strong>Don</strong> <span class="kw-en">(Gift)</span> — Vous faites un Don si, durant votre tour, un adversaire pioche une carte, Ravitaille ou reçoit un jeton grâce à un effet d'une carte que vous contrôlez.</li>
+                <li id="ascend"><strong>Élevé</strong> <span class="kw-en">(Ascend)</span> — Jusqu'au Repos, une Expédition Élevée peut avancer même en cas de statistiques égales à l'Expédition adverse sur les terrains de sa région. Elle ne peut toujours pas avancer avec des statistiques de&nbsp;0.</li>
+                <li id="in-contact"><strong>En Contact</strong> <span class="kw-en">(In Contact)</span> — Un Personnage est En Contact si une des Expéditions de l'adversaire est dans la région de ce Personnage.</li>
+                <li id="asleep"><strong>Endormi</strong> <span class="kw-en">(Asleep)</span> — Les statistiques d'un Personnage Endormi ne sont pas comptées au Crépuscule. Au Repos, un Personnage Endormi n'est pas envoyé en Réserve&nbsp;; il perd Endormi à la place.</li>
+                <li id="exhaust"><strong>Épuiser</strong> <span class="kw-en">(Exhaust)</span> — Une carte épuisée (tournée à 90°) en Réserve ne peut pas être jouée et n'a plus de capacités de Soutien.</li>
+                <li id="eternal"><strong>Éternel</strong> <span class="kw-en">(Eternal)</span> — Un Personnage Éternel n'est pas envoyé en Réserve au Repos.</li>
+                <li id="rush"><strong>Foncer</strong> <span class="kw-en">(Rush)</span> — Jouez immédiatement une autre carte.</li>
+                <li id="fleeting"><strong>Fugace</strong> <span class="kw-en">(Fleeting)</span> — Si une carte Fugace est envoyée en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu. Toutes les cartes jouées depuis la Réserve gagnent Fugace, à l'exception des Permanents Repère.</li>
+                <li id="gigantic"><strong>Gigantesque</strong> <span class="kw-en">(Gigantic)</span> — Un Personnage Gigantesque est présent dans vos deux Expéditions.</li>
+                <li id="cooldown"><strong>Rafraîchissement</strong> <span class="kw-en">(Cooldown)</span> — Si la carte part en Réserve après la résolution de son effet, épuisez-la.</li>
+                <li id="resupply"><strong>Ravitailler</strong> <span class="kw-en">(Resupply)</span> — Placez la carte du dessus de votre Deck dans votre Réserve.</li>
+                <li id="exhausted-resupply"><strong>Ravitailler épuisé</strong> <span class="kw-en">(Exhausted Resupply)</span> — Ravitaillez, puis épuisez la carte ravitaillée.</li>
+                <li id="scout-x"><strong>Repérage X</strong> <span class="kw-en">(Scout X)</span> — Cette carte peut être jouée depuis votre Main pour X manas avec l'effet supplémentaire <em><i class="fak fa-altered-h"></i> Envoyez-moi en Réserve</em>.</li>
+                <li id="sabotage"><strong>Saboter</strong> <span class="kw-en">(Sabotage)</span> — Défaussez une carte ciblée d'une Réserve.</li>
+                <li id="sacrifice"><strong>Sacrifier</strong> <span class="kw-en">(Sacrifice)</span> — Défaussez une carte ciblée d'une de vos Expéditions ou de votre zone Repère.</li>
+                <li id="defect"><strong>Trahir</strong> <span class="kw-en">(Defect)</span> — Un Personnage qui Trahit rejoint l'Expédition qui lui fait face et change de contrôleur (mais pas de propriétaire).</li>
+              </ul>
             </div>
           </section>
 

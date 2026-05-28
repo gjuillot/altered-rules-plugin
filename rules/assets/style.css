@@ -112,6 +112,24 @@
   .rule-block h3[id] {
     scroll-margin-top: 7rem;
   }
+  .keywords-glossary li[id] {
+    scroll-margin-top: 7rem;
+  }
+  /* Mise en valeur du mot-clé visé par une ancre URL (#anchored, #fleeting…) :
+     toute la définition passe en vert tant que l'ancre reste active, et un
+     bref pulse coloré sur le fond attire l'œil au moment du saut de scroll. */
+  .keywords-glossary li[id]:target {
+    color: #2ea043;
+    animation: kw-target-pulse 1.6s ease-out 1;
+    border-radius: 4px;
+  }
+  [data-theme="dark"] .keywords-glossary li[id]:target {
+    color: #4ade80;
+  }
+  @keyframes kw-target-pulse {
+    0%   { background-color: rgba(46, 160, 67, 0.35); }
+    100% { background-color: transparent; }
+  }
   section[id]:first-of-type {
     margin-top: 0;
   }
@@ -1664,4 +1682,23 @@
     height: 18px;
     vertical-align: -3px;
     margin-right: 0.3rem;
+  }
+
+  /* Correctif global pour l'icône Altered Font « infini » (fa-altered-i).
+     La base .fak (alteredicons.css) réserve width:1.25em à toutes les
+     icônes, ce qui suffit pour les glyphes carrés (t, d, h, r, j) mais
+     pas pour l'infini, qui est sensiblement plus large. On élargit le
+     conteneur de cette icône pour que le texte qui la suit ne chevauche
+     pas le glyphe. */
+  .fa-altered-i {
+    width: 2em;
+    margin: 0 0.2em;
+  }
+  /* À l'intérieur des cercles .ic-circle (marker-grid), pas de marge inline,
+     largeur ramenée à la base .fak, et taille réduite pour compenser le glyphe
+     infini qui est intrinsèquement plus large que les lettres (t/d/j/h/r). */
+  .ic-circle .fa-altered-i {
+    width: 1.25em;
+    margin: 0;
+    font-size: 0.55em;
   }

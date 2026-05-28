@@ -35,6 +35,7 @@
             <li><a href="#fin-partie">Ending the game</a></li>
             <li><a href="#regles-sup">Additional rules</a></li>
             <li><a href="#marqueurs">Markers &amp; icons</a></li>
+            <li><a href="#mots-cles">Keywords</a></li>
           </ol>
         </nav>
       </aside>
@@ -84,6 +85,7 @@
                 <li><a href="#regles-sup">Additional rules</a></li>
                 <li><a href="#marqueurs">Markers &amp; icons</a></li>
                 <li><a href="#construction">Deckbuilding</a></li>
+                <li><a href="#mots-cles">Keywords</a></li>
               </ol>
             </details>
           </div>
@@ -1813,6 +1815,13 @@
                     <div class="m-desc">Discard the card to activate its Support effect.</div>
                   </div>
                 </div>
+                <div class="marker-item">
+                  <div class="ic-circle ic-bg-permanent"><i class="fak fa-altered-i"></i></div>
+                  <div class="m-text">
+                    <div class="m-label">Continuous Support</div>
+                    <div class="m-desc">Marks a Support ability that applies continuously, without needing to discard the card.</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1841,6 +1850,42 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          <!-- ========== 13. KEYWORDS ========== -->
+          <section id="mots-cles">
+            <h2 class="section-title"><span>13. Keywords</span></h2>
+
+            <div class="rule-block">
+              <p>
+                Glossary of the keywords found on cards from Sets&nbsp;1 to&nbsp;5.
+                The French term printed on the cards is shown in parentheses.
+              </p>
+              <ul class="keywords-glossary">
+                <li id="seasoned"><strong>Seasoned</strong> <span class="kw-fr">(Aguerri)</span> — A Seasoned Character keeps its boosts when sent to the Reserve from the Expedition zone.</li>
+                <li id="augment"><strong>Augment</strong> <span class="kw-fr">(Amplifier)</span> — If the target card has at least one counter (Boost, etc.), it gains one more. Hero cards cannot be targeted.</li>
+                <li id="anchored"><strong>Anchored</strong> <span class="kw-fr">(Ancré)</span> — During Rest, an Anchored Character is not sent to the Reserve; it loses Anchored instead.</li>
+                <li id="support-ability"><strong>Support ability</strong> <span class="kw-fr">(Capacité de Soutien)</span> — Written at the bottom of some cards on a coloured background, a Support ability requires the card to be in the Reserve. It may need to be discarded (<i class="fak fa-altered-d"></i>) to trigger its effect, or apply continuously (<i class="fak fa-altered-i"></i>).</li>
+                <li id="tough-x"><strong>Tough X</strong> <span class="kw-fr">(Coriace X)</span> — An opponent cannot choose a Tough X object as the target of an effect they control unless they pay X additional mana.</li>
+                <li id="defender"><strong>Defender</strong> <span class="kw-fr">(Défenseur)</span> — An Expedition containing a Character with Defender cannot move forward during Dusk.</li>
+                <li id="gift"><strong>Gift</strong> <span class="kw-fr">(Don)</span> — You make a Gift if, during your turn, an opponent draws a card, Resupplies or receives a token via an effect of a card you control.</li>
+                <li id="ascend"><strong>Ascend</strong> <span class="kw-fr">(Élevé)</span> — Until Rest, an Ascended Expedition can move forward even with statistics equal to the opposing Expedition on the terrains of its region. It still cannot move forward with statistics of&nbsp;0.</li>
+                <li id="in-contact"><strong>In Contact</strong> <span class="kw-fr">(En Contact)</span> — A Character is In Contact if one of the opponent's Expeditions is in this Character's region.</li>
+                <li id="asleep"><strong>Asleep</strong> <span class="kw-fr">(Endormi)</span> — An Asleep Character's statistics are not counted during Dusk. During Rest, an Asleep Character is not sent to the Reserve; it loses Asleep instead.</li>
+                <li id="exhaust"><strong>Exhaust</strong> <span class="kw-fr">(Épuiser)</span> — An exhausted (90°-turned) card in the Reserve cannot be played and has no Support abilities.</li>
+                <li id="eternal"><strong>Eternal</strong> <span class="kw-fr">(Éternel)</span> — An Eternal Character is not sent to the Reserve during Rest.</li>
+                <li id="rush"><strong>Rush</strong> <span class="kw-fr">(Foncer)</span> — Immediately play another card.</li>
+                <li id="fleeting"><strong>Fleeting</strong> <span class="kw-fr">(Fugace)</span> — If a Fleeting card is sent to the Reserve, that card is discarded instead. This applies at Rest or due to an in-game effect. All cards played from the Reserve gain Fleeting, except Landmark Permanents.</li>
+                <li id="gigantic"><strong>Gigantic</strong> <span class="kw-fr">(Gigantesque)</span> — A Gigantic Character is present in both your Expeditions.</li>
+                <li id="cooldown"><strong>Cooldown</strong> <span class="kw-fr">(Rafraîchissement)</span> — If the card goes to the Reserve after its effect resolves, exhaust it.</li>
+                <li id="resupply"><strong>Resupply</strong> <span class="kw-fr">(Ravitailler)</span> — Place the top card of your Deck in your Reserve.</li>
+                <li id="exhausted-resupply"><strong>Exhausted Resupply</strong> <span class="kw-fr">(Ravitailler épuisé)</span> — Resupply, then exhaust the resupplied card.</li>
+                <li id="scout-x"><strong>Scout X</strong> <span class="kw-fr">(Repérage X)</span> — This card can be played from your Hand for X mana with the additional effect <em><i class="fak fa-altered-h"></i> Send me to the Reserve</em>.</li>
+                <li id="sabotage"><strong>Sabotage</strong> <span class="kw-fr">(Saboter)</span> — Discard a target card from a Reserve.</li>
+                <li id="sacrifice"><strong>Sacrifice</strong> <span class="kw-fr">(Sacrifier)</span> — Discard a target card from one of your Expeditions or your Landmark zone.</li>
+                <li id="defect"><strong>Defect</strong> <span class="kw-fr">(Trahir)</span> — A Character that Defects joins the Expedition facing it and changes controller (but not owner).</li>
+              </ul>
             </div>
           </section>
 
