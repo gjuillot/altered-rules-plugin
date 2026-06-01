@@ -2,7 +2,7 @@
 
 An **altered.re plugin** that serves the *Altered TCG Quick Rules v3.0* as a multi-language, richly illustrated reference page. Installable via **Admin → Plugins** on the host site.
 
-Live URL: `https://altered.gg/pages/rules`
+Live URL: `https://altered.re/pages/rules`
 
 ---
 
@@ -117,71 +117,71 @@ All code conventions (URL patterns via `BASE_URL` / `CDN_URL`, HTML structure, C
 
 ## Direct URLs — all anchors
 
-Section `id`s are identical across all language versions. The anchors below work on both `https://altered.gg/pages/rules` (French) and the English version.
+Section `id`s are identical across all language versions. The anchors below work on both `https://altered.re/pages/rules` (French) and the English version.
 
 ### Page sections
 
 | English — Français | URL |
 |--------------------|-----|
-| Additional rules — Règles supplémentaires | <https://altered.gg/pages/rules#regles-sup> |
-| Card types — Autres types de cartes | <https://altered.gg/pages/rules#types-cartes> |
-| Day of exploration — Un jour d'exploration | <https://altered.gg/pages/rules#jour> |
-| Ending the game — Fin de la partie | <https://altered.gg/pages/rules#fin-partie> |
-| Game zones — Les zones de jeu | <https://altered.gg/pages/rules#zones> |
-| Keywords — Mots-clés | <https://altered.gg/pages/rules#mots-cles> |
-| Mana Orbs — Orbes de Mana | <https://altered.gg/pages/rules#mana> |
-| Markers & icons — Marqueurs & icônes | <https://altered.gg/pages/rules#marqueurs> |
-| Materials — Matériel | <https://altered.gg/pages/rules#materiel> |
-| Parts of a card — Détail d'une carte | <https://altered.gg/pages/rules#carte> |
-| Presentation — Présentation | <https://altered.gg/pages/rules#presentation> |
-| Reserve — La Réserve | <https://altered.gg/pages/rules#reserve> |
-| Setup — Mise en place | <https://altered.gg/pages/rules#mise-en-place> |
+| Additional rules — Règles supplémentaires | <https://altered.re/pages/rules#regles-sup> |
+| Card types — Autres types de cartes | <https://altered.re/pages/rules#types-cartes> |
+| Day of exploration — Un jour d'exploration | <https://altered.re/pages/rules#jour> |
+| Ending the game — Fin de la partie | <https://altered.re/pages/rules#fin-partie> |
+| Game zones — Les zones de jeu | <https://altered.re/pages/rules#zones> |
+| Keywords — Mots-clés | <https://altered.re/pages/rules#mots-cles> |
+| Mana Orbs — Orbes de Mana | <https://altered.re/pages/rules#mana> |
+| Markers & icons — Marqueurs & icônes | <https://altered.re/pages/rules#marqueurs> |
+| Materials — Matériel | <https://altered.re/pages/rules#materiel> |
+| Parts of a card — Détail d'une carte | <https://altered.re/pages/rules#carte> |
+| Presentation — Présentation | <https://altered.re/pages/rules#presentation> |
+| Reserve — La Réserve | <https://altered.re/pages/rules#reserve> |
+| Setup — Mise en place | <https://altered.re/pages/rules#mise-en-place> |
 
 ### Day phases
 
 | English — Français | URL |
 |--------------------|-----|
-| Afternoon — Après-midi | <https://altered.gg/pages/rules#phase-apres-midi> |
-| Dusk — Crépuscule | <https://altered.gg/pages/rules#phase-crepuscule> |
-| Morning — Matin | <https://altered.gg/pages/rules#phase-matin> |
-| Night — Nuit | <https://altered.gg/pages/rules#phase-nuit> |
-| Noon — Midi | <https://altered.gg/pages/rules#phase-midi> |
+| Afternoon — Après-midi | <https://altered.re/pages/rules#phase-apres-midi> |
+| Dusk — Crépuscule | <https://altered.re/pages/rules#phase-crepuscule> |
+| Morning — Matin | <https://altered.re/pages/rules#phase-matin> |
+| Night — Nuit | <https://altered.re/pages/rules#phase-nuit> |
+| Noon — Midi | <https://altered.re/pages/rules#phase-midi> |
 
 ### Game zones (playmat)
 
 | English — Français | URL |
 |--------------------|-----|
-| Deck zone — Zone Deck | <https://altered.gg/pages/rules#zone-6> |
-| Discard zone — Zone Défausse | <https://altered.gg/pages/rules#zone-7> |
-| Expedition zones — Zones Expédition | <https://altered.gg/pages/rules#zone-2> |
-| Hero zone — Zone Héros | <https://altered.gg/pages/rules#zone-1> |
-| Landmarks zone — Zone Repères | <https://altered.gg/pages/rules#zone-4> |
-| Mana zone — Zone Mana | <https://altered.gg/pages/rules#zone-5> |
-| Reserve zone — Zone Réserve | <https://altered.gg/pages/rules#zone-3> |
+| Deck zone — Zone Deck | <https://altered.re/pages/rules#zone-6> |
+| Discard zone — Zone Défausse | <https://altered.re/pages/rules#zone-7> |
+| Expedition zones — Zones Expédition | <https://altered.re/pages/rules#zone-2> |
+| Hero zone — Zone Héros | <https://altered.re/pages/rules#zone-1> |
+| Landmarks zone — Zone Repères | <https://altered.re/pages/rules#zone-4> |
+| Mana zone — Zone Mana | <https://altered.re/pages/rules#zone-5> |
+| Reserve zone — Zone Réserve | <https://altered.re/pages/rules#zone-3> |
 
 ### Keywords glossary
 
 | English — Français | URL |
 |--------------------|-----|
-| Anchored — Ancré | <https://altered.gg/pages/rules#anchored> |
-| Ascend — Élevé | <https://altered.gg/pages/rules#ascend> |
-| Asleep — Endormi | <https://altered.gg/pages/rules#asleep> |
-| Augment — Amplifier | <https://altered.gg/pages/rules#augment> |
-| Contact — Contact | <https://altered.gg/pages/rules#contact> |
-| Cooldown — Rafraîchissement | <https://altered.gg/pages/rules#cooldown> |
-| Defect — Trahir | <https://altered.gg/pages/rules#defect> |
-| Defender — Défenseur | <https://altered.gg/pages/rules#defender> |
-| Eternal — Éternel | <https://altered.gg/pages/rules#eternal> |
-| Exhaust — Épuiser | <https://altered.gg/pages/rules#exhaust> |
-| Exhausted Resupply — Ravitailler épuisé | <https://altered.gg/pages/rules#exhausted-resupply> |
-| Fleeting — Fugace | <https://altered.gg/pages/rules#fleeting> |
-| Gift — Don | <https://altered.gg/pages/rules#gift> |
-| Gigantic — Gigantesque | <https://altered.gg/pages/rules#gigantic> |
-| Resupply — Ravitailler | <https://altered.gg/pages/rules#resupply> |
-| Rush — Foncer | <https://altered.gg/pages/rules#rush> |
-| Sabotage — Saboter | <https://altered.gg/pages/rules#sabotage> |
-| Sacrifice — Sacrifier | <https://altered.gg/pages/rules#sacrifice> |
-| Scout X — Repérage X | <https://altered.gg/pages/rules#scout-x> |
-| Seasoned — Aguerri | <https://altered.gg/pages/rules#seasoned> |
-| Support ability — Capacité de Soutien | <https://altered.gg/pages/rules#support-ability> |
-| Tough X — Coriace X | <https://altered.gg/pages/rules#tough-x> |
+| Anchored — Ancré | <https://altered.re/pages/rules#anchored> |
+| Ascend — Élevé | <https://altered.re/pages/rules#ascend> |
+| Asleep — Endormi | <https://altered.re/pages/rules#asleep> |
+| Augment — Amplifier | <https://altered.re/pages/rules#augment> |
+| Contact — Contact | <https://altered.re/pages/rules#contact> |
+| Cooldown — Rafraîchissement | <https://altered.re/pages/rules#cooldown> |
+| Defect — Trahir | <https://altered.re/pages/rules#defect> |
+| Defender — Défenseur | <https://altered.re/pages/rules#defender> |
+| Eternal — Éternel | <https://altered.re/pages/rules#eternal> |
+| Exhaust — Épuiser | <https://altered.re/pages/rules#exhaust> |
+| Exhausted Resupply — Ravitailler épuisé | <https://altered.re/pages/rules#exhausted-resupply> |
+| Fleeting — Fugace | <https://altered.re/pages/rules#fleeting> |
+| Gift — Don | <https://altered.re/pages/rules#gift> |
+| Gigantic — Gigantesque | <https://altered.re/pages/rules#gigantic> |
+| Resupply — Ravitailler | <https://altered.re/pages/rules#resupply> |
+| Rush — Foncer | <https://altered.re/pages/rules#rush> |
+| Sabotage — Saboter | <https://altered.re/pages/rules#sabotage> |
+| Sacrifice — Sacrifier | <https://altered.re/pages/rules#sacrifice> |
+| Scout X — Repérage X | <https://altered.re/pages/rules#scout-x> |
+| Seasoned — Aguerri | <https://altered.re/pages/rules#seasoned> |
+| Support ability — Capacité de Soutien | <https://altered.re/pages/rules#support-ability> |
+| Tough X — Coriace X | <https://altered.re/pages/rules#tough-x> |
