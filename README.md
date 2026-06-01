@@ -1,96 +1,188 @@
-# Altered Quick Rules — plugin altered.re
+# Altered TCG Quick Rules — altered.re plugin
 
-Plugin servant la référence des **règles rapides v3.0** du jeu de cartes Altered TCG comme page multilingue, à installer sur [altered.re](https://altered.re/) via *Admin → Plugins*.
+An **altered.re plugin** that serves the *Altered TCG Quick Rules v3.0* as a multi-language, richly illustrated reference page. Installable via **Admin → Plugins** on the host site.
 
-Architecture conforme aux conventions [AlteredCore Plugin Development](https://altered.re/plugins/README.html). v1 livrée en français ; toute langue non disponible retombe automatiquement sur la version française avec un bandeau bilingue d'avertissement.
+Live URL: `https://altered.gg/pages/rules`
 
 ---
 
-## Démarrage rapide
+## What it is
 
-Deux scripts à la racine du dépôt :
+An expanded transcription of the official *"Altered TCG — Quick Rules 3.0"* booklet (Equinox, 2025), structured as a navigable single-page reference with:
 
-| Commande | Effet |
-|---|---|
-| `.\dev-start.cmd` | Lance le serveur PHP local sur <http://localhost:8765/> et ouvre la page dans le navigateur. `Ctrl+C` pour arrêter. |
-| `.\dist-zip.cmd` | Produit `dist\rules-{version}.zip`, prêt à uploader sur altered.re via *Admin → Plugins → Install plugin*. |
+- Sticky sidebar table of contents (desktop) and collapsible mobile ToC
+- Illustrated setup diagram, playmat zone map, card anatomy, Dusk example, and phase overview
+- Full keyword glossary (Sets 1–5)
+- Download link to the complete rulebook PDF (v5.0)
 
-Chaque commande existe aussi en `.ps1`. Les variantes `.cmd` contournent l'`ExecutionPolicy` PowerShell pour fonctionner sans réglage préalable. Si tu préfères assouplir la policy une fois pour toutes :
+---
 
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+## Languages
+
+| Code | File | Status |
+|------|------|--------|
+| `fr` | `rules/pages/rules.fr.php` | French — reference source for all translations |
+| `en` | `rules/pages/rules.en.php` | English |
+
+The dispatcher (`pages/rules.php`) looks for `pages/rules.{getUiLang()}.php`, includes it if present, and falls back to English with a bilingual notice ("Translation pending — Traduction en cours").
+
+**Adding a new language:** copy `rules.fr.php` → `rules.{lang}.php`, translate prose and visible text, swap card-image URLs (`/cards/fr/…` → `/cards/{lang}/…`), and you're done — no manifest change needed.
+
+---
+
+## Plugin structure
+
+```
+rules/
+├── plugin.json                    ← manifest (id "rules", slug "rules", version)
+├── pages/
+│   ├── rules.php                  ← language dispatcher (fallback to EN)
+│   ├── rules.fr.php               ← French content (reference source)
+│   ├── rules.en.php               ← English content
+│   └── rules.{lang}.php           ← future translations (drop-in)
+└── assets/
+    ├── style.css                  ← plugin-specific styles
+    ├── playmat.jpg                ← background for setup illustrations
+    ├── KA_ARKASTER.jpg            ← playmat artwork
+    ├── zones layout FR.png        ← playmat zone overlay (French labels)
+    ├── zones layout EN.png        ← playmat zone overlay (English labels)
+    ├── F.webp                     ← Forest biome icon
+    ├── M.webp                     ← Mountain biome icon
+    ├── O.webp                     ← Water biome icon
+    └── Altered_Complete_Rules_5.0.pdf  ← complete rulebook (EN only)
 ```
 
-…après quoi `.\dev-start.ps1` et `.\dist-zip.ps1` fonctionnent directement.
+Per-language partials output **body content only** — no `<html>`, `<head>`, `<body>`, or outer wrapper. The site injects header/footer and its own container.
+
+External dependencies (Bootstrap 5.3.3, Font Awesome 6.5.1, Altered Icons font, Azure theme) are loaded globally by the site — the plugin does not include them.
 
 ---
 
-## Prérequis pour le dev local
+## Local development
 
-**PHP 8.4** installé via winget en mode utilisateur (pas d'admin requis) :
+### Prerequisites
+
+**PHP 8.4** (no admin required on Windows):
 
 ```powershell
 winget install --id PHP.PHP.8.4 --scope user --accept-package-agreements --accept-source-agreements
 ```
 
-**Pas de MySQL nécessaire.** Le plugin n'utilise aucune base de données ; `inc_dev.php` rend la connexion MySQL non bloquante (avertissement console seulement).
-
-Si PHP affiche une erreur de DLL au lancement, installer aussi le Visual C++ Redistributable :
+If PHP reports a DLL error on launch, also install:
 
 ```powershell
 winget install --id Microsoft.VCRedist.2015+.x64
 ```
 
----
+**No database required.** The plugin is purely static; `inc_dev.php` makes the MySQL connection non-blocking.
 
-## Structure du dépôt
+### Start the dev server
 
-```
-rules/                     ← contenu du plugin (= ce qui finit dans le ZIP)
-  plugin.json              ← manifeste (id, version, slug, assets)
-  pages/
-    rules.php              ← dispatcher (choix de langue + fallback FR)
-    rules.fr.php           ← contenu français
-    rules.{lang}.php       ← futures traductions
-  assets/
-    style.css              ← styles du plugin
-    playmat.jpg            ← illustration locale (tapis de jeu)
-  inc_dev.php              ← bootstrap dev (NON inclus dans le ZIP)
-
-dev-start.ps1  / .cmd      ← serveur de dev local
-dist-zip.ps1   / .cmd      ← packaging du plugin pour déploiement
-altered-regles.html        ← page HTML d'origine, conservée comme source
-illus/                     ← anciennes illustrations source (non distribuées)
-CLAUDE.md                  ← guide détaillé du projet (conventions, URL patterns, etc.)
+```powershell
+.\dev-start.cmd        # bypasses ExecutionPolicy, no config needed
+.\dev-start.ps1        # PowerShell version
 ```
 
----
+Serves on <http://localhost:8765/>. PHP re-reads files on every request — no restart needed after edits. The dev toolbar at the top of the page lets you switch between `fr` and `en` to test the language fallback.
 
-## Cycle de développement
-
-1. Lancer `.\dev-start.cmd`.
-2. Modifier `rules/pages/rules.fr.php`, `rules/assets/style.css`, etc.
-3. Recharger la page — PHP relit les fichiers à chaque requête, aucun redémarrage du serveur nécessaire.
-4. La barre noire en haut (`⚙ dev`) permet de basculer entre `en` (testera le fallback) et `fr` (français pur, sans bandeau).
-
-### Ajouter une langue
-
-Déposer `rules/pages/rules.{lang}.php` (copie de `rules.fr.php` traduite). Aucun changement de manifeste ou de dispatcher requis — la détection se fait par présence du fichier.
-
-Dans la nouvelle langue, remplacer `<?= CDN_URL ?>/cards/fr/...` par `<?= CDN_URL ?>/cards/{lang}/...` pour que le texte sur les cartes corresponde à la langue. Les marqueurs et icônes de biome sont neutres et restent identiques.
+**Do not ship `inc_dev.php` in the deployment ZIP.**
 
 ---
 
-## Déploiement
+## Deployment
 
-1. Bumper le champ `version` dans [rules/plugin.json](rules/plugin.json) (semver) si c'est une mise à jour.
-2. Lancer `.\dist-zip.cmd`. Sortie : `dist\rules-{version}.zip`.
-3. Sur altered.re : *Admin → Plugins → Install plugin*, sélectionner le ZIP, puis *Activate*. Les versions ultérieures (numéro supérieur) écrasent automatiquement l'installation existante.
+### Build the ZIP
 
-Le ZIP exclut `inc_dev.php`, `.DS_Store`, `Thumbs.db`, `__MACOSX/`, `.git/`, `.svn/` conformément aux règles documentées par la plateforme.
+```powershell
+.\dist-zip.cmd
+```
+
+Reads `version` from [`rules/plugin.json`](rules/plugin.json) and produces `dist/rules-{version}.zip`. The archive excludes `inc_dev.php`, `.DS_Store`, `Thumbs.db`, `__MACOSX/`, `.git/`, `.svn/`.
+
+### Release checklist
+
+1. Bump `"version"` in [`rules/plugin.json`](rules/plugin.json).
+2. Run `.\dist-zip.cmd`.
+3. Upload `dist/rules-{version}.zip` via **Admin → Plugins → Install plugin**.
+4. First install: activate the plugin to expose `/pages/rules`. Updates: the installer auto-detects the version bump and replaces files.
+
+The ZIP is flat — plugin contents sit at the root of the archive with no enclosing `rules/` directory.
 
 ---
 
-## Documentation détaillée
+## Detailed documentation
 
-Toutes les conventions de code (URLs via `BASE_URL` / `CDN_URL`, structure HTML, classes CSS, pattern pour les illustrations de tapis, dépendances héritées globalement du site, etc.) sont dans [CLAUDE.md](CLAUDE.md).
+All code conventions (URL patterns via `BASE_URL` / `CDN_URL`, HTML structure, CSS classes, playmat illustration patterns, globally-inherited dependencies, dark-mode selectors, etc.) are documented in [CLAUDE.md](CLAUDE.md).
+
+---
+
+## Direct URLs — all anchors
+
+Section `id`s are identical across all language versions. The anchors below work on both `https://altered.gg/pages/rules` (French) and the English version.
+
+### Page sections
+
+| English — Français | URL |
+|--------------------|-----|
+| Additional rules — Règles supplémentaires | <https://altered.gg/pages/rules#regles-sup> |
+| Card types — Autres types de cartes | <https://altered.gg/pages/rules#types-cartes> |
+| Day of exploration — Un jour d'exploration | <https://altered.gg/pages/rules#jour> |
+| Ending the game — Fin de la partie | <https://altered.gg/pages/rules#fin-partie> |
+| Game zones — Les zones de jeu | <https://altered.gg/pages/rules#zones> |
+| Keywords — Mots-clés | <https://altered.gg/pages/rules#mots-cles> |
+| Mana Orbs — Orbes de Mana | <https://altered.gg/pages/rules#mana> |
+| Markers & icons — Marqueurs & icônes | <https://altered.gg/pages/rules#marqueurs> |
+| Materials — Matériel | <https://altered.gg/pages/rules#materiel> |
+| Parts of a card — Détail d'une carte | <https://altered.gg/pages/rules#carte> |
+| Presentation — Présentation | <https://altered.gg/pages/rules#presentation> |
+| Reserve — La Réserve | <https://altered.gg/pages/rules#reserve> |
+| Setup — Mise en place | <https://altered.gg/pages/rules#mise-en-place> |
+
+### Day phases
+
+| English — Français | URL |
+|--------------------|-----|
+| Afternoon — Après-midi | <https://altered.gg/pages/rules#phase-apres-midi> |
+| Dusk — Crépuscule | <https://altered.gg/pages/rules#phase-crepuscule> |
+| Morning — Matin | <https://altered.gg/pages/rules#phase-matin> |
+| Night — Nuit | <https://altered.gg/pages/rules#phase-nuit> |
+| Noon — Midi | <https://altered.gg/pages/rules#phase-midi> |
+
+### Game zones (playmat)
+
+| English — Français | URL |
+|--------------------|-----|
+| Deck zone — Zone Deck | <https://altered.gg/pages/rules#zone-6> |
+| Discard zone — Zone Défausse | <https://altered.gg/pages/rules#zone-7> |
+| Expedition zones — Zones Expédition | <https://altered.gg/pages/rules#zone-2> |
+| Hero zone — Zone Héros | <https://altered.gg/pages/rules#zone-1> |
+| Landmarks zone — Zone Repères | <https://altered.gg/pages/rules#zone-4> |
+| Mana zone — Zone Mana | <https://altered.gg/pages/rules#zone-5> |
+| Reserve zone — Zone Réserve | <https://altered.gg/pages/rules#zone-3> |
+
+### Keywords glossary
+
+| English — Français | URL |
+|--------------------|-----|
+| Anchored — Ancré | <https://altered.gg/pages/rules#anchored> |
+| Ascend — Élevé | <https://altered.gg/pages/rules#ascend> |
+| Asleep — Endormi | <https://altered.gg/pages/rules#asleep> |
+| Augment — Amplifier | <https://altered.gg/pages/rules#augment> |
+| Contact — Contact | <https://altered.gg/pages/rules#contact> |
+| Cooldown — Rafraîchissement | <https://altered.gg/pages/rules#cooldown> |
+| Defect — Trahir | <https://altered.gg/pages/rules#defect> |
+| Defender — Défenseur | <https://altered.gg/pages/rules#defender> |
+| Eternal — Éternel | <https://altered.gg/pages/rules#eternal> |
+| Exhaust — Épuiser | <https://altered.gg/pages/rules#exhaust> |
+| Exhausted Resupply — Ravitailler épuisé | <https://altered.gg/pages/rules#exhausted-resupply> |
+| Fleeting — Fugace | <https://altered.gg/pages/rules#fleeting> |
+| Gift — Don | <https://altered.gg/pages/rules#gift> |
+| Gigantic — Gigantesque | <https://altered.gg/pages/rules#gigantic> |
+| Resupply — Ravitailler | <https://altered.gg/pages/rules#resupply> |
+| Rush — Foncer | <https://altered.gg/pages/rules#rush> |
+| Sabotage — Saboter | <https://altered.gg/pages/rules#sabotage> |
+| Sacrifice — Sacrifier | <https://altered.gg/pages/rules#sacrifice> |
+| Scout X — Repérage X | <https://altered.gg/pages/rules#scout-x> |
+| Seasoned — Aguerri | <https://altered.gg/pages/rules#seasoned> |
+| Support ability — Capacité de Soutien | <https://altered.gg/pages/rules#support-ability> |
+| Tough X — Coriace X | <https://altered.gg/pages/rules#tough-x> |

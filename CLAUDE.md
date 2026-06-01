@@ -110,6 +110,8 @@ The 12 sections (in order): `#presentation`, `#materiel`, `#mise-en-place`, `#ca
 
 A mobile-only collapsible ToC (`<details class="rule-block">`) mirrors the sidebar.
 
+**Keeping README.md in sync.** Whenever a section `id`, zone `id`, phase anchor (`#phase-*`), or keyword `id` (on a `<li>` in the glossary) is added, renamed, or removed from the PHP files, update the matching row in the **"Direct URLs — all anchors"** tables in [README.md](README.md). Maintain alphabetical order by English term within each table.
+
 ## Key CSS component classes
 
 - `.rule-block` — standard content card (sand background + border)
