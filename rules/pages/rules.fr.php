@@ -1,8 +1,8 @@
 
-<!-- En-tête article -->
-    <div class="news-detail-header">
-      <h1 class="news-detail-title">Règles rapides du jeu Altered TCG</h1>
-    </div>
+<div class="container py-4">
+
+    <!-- En-tête article -->
+    <div class="section-title mb-4"><span>Règles rapides</span></div>
 
     <div class="row">
 
@@ -42,7 +42,6 @@
 
       <!-- Contenu principal -->
       <div class="col-lg-9">
-        <div class="news-detail-content">
 
           <p class="lead">
             Bienvenue dans <strong>Altered</strong>, un jeu de cartes à collectionner où vous menez
@@ -89,6 +88,8 @@
               </ol>
             </details>
           </div>
+
+          <br />
 
           <!-- ========== 1. PRÉSENTATION ========== -->
           <section id="presentation">
@@ -920,7 +921,7 @@
             </div>
           </section>
 
-          <!-- ========== 6. UN JOUR D'EXPLORATION ========== -->
+          <!-- ========== 8. UN JOUR D'EXPLORATION ========== -->
           <section id="jour">
             <h2 class="section-title"><span>8. Un jour d'exploration</span></h2>
 
@@ -1419,6 +1420,7 @@
 			  </p>
 			  <p>
 				Mettez de côté, et non en Réserve, les <strong>cartes jetons</strong> de vos Expéditions.
+			  </p>
 
               <h4>Nettoyage</h4>
               <ul>
@@ -1441,7 +1443,7 @@
             </div>
           </section>
 
-          <!-- ========== 6. LA RÉSERVE ========== -->
+          <!-- ========== 9. LA RÉSERVE ========== -->
           <section id="reserve">
             <h2 class="section-title"><span>9. La Réserve</span></h2>
 
@@ -1655,7 +1657,7 @@
             </div>
           </section>
 
-          <!-- ========== 9. RÈGLES SUPPLÉMENTAIRES ========== -->
+          <!-- ========== 11. RÈGLES SUPPLÉMENTAIRES ========== -->
           <section id="regles-sup">
             <h2 class="section-title"><span>11. Règles supplémentaires</span></h2>
 
@@ -1751,7 +1753,7 @@
             </div>
           </section>
 
-          <!-- ========== 10. MARQUEURS & ICÔNES ========== -->
+          <!-- ========== 12. MARQUEURS & ICÔNES ========== -->
           <section id="marqueurs">
             <h2 class="section-title"><span>12. Marqueurs &amp; icônes</span></h2>
 
@@ -1884,10 +1886,6 @@
             <h2 class="section-title"><span>13. Mots-clés</span></h2>
 
             <div class="rule-block">
-              <p>
-                Glossaire des mots-clés rencontrés sur les cartes des extensions&nbsp;1 à&nbsp;5.
-                Le terme anglais figurant sur les cartes est indiqué entre parenthèses.
-              </p>
               <ul class="keywords-glossary">
                 <li id="seasoned"><strong>Aguerri</strong> — Un Personnage Aguerri garde ses boosts lorsqu'il est envoyé en Réserve depuis la zone d'Expédition.</li>
                 <li id="augment"><strong>Amplifier</strong> — Si la carte ciblée possède au moins un marqueur (Boost, etc.), elle en gagne un de plus. Les cartes Héros ne peuvent pas être ciblées.</li>
@@ -1922,7 +1920,7 @@
             </a>
           </div>
 
+        </div>
     </div>
-  </div>
 </div>
 

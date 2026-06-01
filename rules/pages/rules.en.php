@@ -1,8 +1,8 @@
 
-<!-- En-tête article -->
-    <div class="news-detail-header">
-      <h1 class="news-detail-title">Altered TCG Quick Rules</h1>
-    </div>
+<div class="container py-4">
+
+    <!-- En-tête article -->
+    <div class="section-title mb-4"><span>Quick rules</span></div>
 
     <div class="row">
 
@@ -42,7 +42,6 @@
 
       <!-- Contenu principal -->
       <div class="col-lg-9">
-        <div class="news-detail-content">
 
           <p class="lead">
             Welcome to <strong>Altered</strong>, a trading card game in which you lead
@@ -89,6 +88,8 @@
               </ol>
             </details>
           </div>
+
+          <br />
 
           <!-- ========== 1. PRÉSENTATION ========== -->
           <section id="presentation">
@@ -920,7 +921,7 @@
             </div>
           </section>
 
-          <!-- ========== 6. UN JOUR D'EXPLORATION ========== -->
+          <!-- ========== 8. UN JOUR D'EXPLORATION ========== -->
           <section id="jour">
             <h2 class="section-title"><span>8. A day of exploration</span></h2>
 
@@ -1442,7 +1443,7 @@
             </div>
           </section>
 
-          <!-- ========== 6. LA RÉSERVE ========== -->
+          <!-- ========== 9. LA RÉSERVE ========== -->
           <section id="reserve">
             <h2 class="section-title"><span>9. The Reserve</span></h2>
 
@@ -1656,7 +1657,7 @@
             </div>
           </section>
 
-          <!-- ========== 9. RÈGLES SUPPLÉMENTAIRES ========== -->
+          <!-- ========== 11. RÈGLES SUPPLÉMENTAIRES ========== -->
           <section id="regles-sup">
             <h2 class="section-title"><span>11. Additional rules</span></h2>
 
@@ -1752,7 +1753,7 @@
             </div>
           </section>
 
-          <!-- ========== 10. MARQUEURS & ICÔNES ========== -->
+          <!-- ========== 12. MARQUEURS & ICÔNES ========== -->
           <section id="marqueurs">
             <h2 class="section-title"><span>12. Markers &amp; icons</span></h2>
 
@@ -1885,10 +1886,6 @@
             <h2 class="section-title"><span>13. Keywords</span></h2>
 
             <div class="rule-block">
-              <p>
-                Glossary of the keywords found on cards from Sets&nbsp;1 to&nbsp;5.
-                The French term printed on the cards is shown in parentheses.
-              </p>
               <ul class="keywords-glossary">
                 <li id="anchored"><strong>Anchored</strong> — During Rest, an Anchored Character is not sent to the Reserve; it loses Anchored instead.</li>
                 <li id="ascend"><strong>Ascend</strong> — Until Rest, an Ascended Expedition can move forward even with statistics equal to the opposing Expedition on the terrains of its region. It still cannot move forward with statistics of&nbsp;0.</li>
@@ -1923,6 +1920,6 @@
             </a>
           </div>
 
+        </div>
     </div>
-  </div>
 </div>
