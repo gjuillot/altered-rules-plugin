@@ -15,7 +15,7 @@
           </h6>
           <ol>
             <li><a href="#presentation">Presentation</a></li>
-            <li><a href="#materiel">Material</a></li>
+            <li><a href="#materiel">Materials</a></li>
             <li><a href="#mise-en-place">Setup</a></li>
             <li><a href="#mana">Mana Orbs</a></li>
             <li><a href="#zones">Game zones</a></li>
@@ -64,7 +64,7 @@
               <summary class="fw-bold" style="cursor:pointer;">📑 View contents</summary>
               <ol class="mt-3 mb-0">
                 <li><a href="#presentation">Presentation</a></li>
-                <li><a href="#materiel">Material</a></li>
+                <li><a href="#materiel">Materials</a></li>
                 <li><a href="#mise-en-place">Setup</a></li>
                 <li><a href="#mana">Mana Orbs</a></li>
                 <li><a href="#zones">Game zones</a></li>
@@ -211,11 +211,11 @@
 
           <!-- ========== 2. MATÉRIEL ========== -->
           <section id="materiel">
-            <h2 class="section-title"><span>2. Material</span></h2>
+            <h2 class="section-title"><span>2. Materials</span></h2>
 
             <p>
-              Here is everything included in an Altered starter box. Click each item
-              with a thumbnail to see the full illustration.
+              Here is a list of game items you might see while playing.
+              Depending on your deck, not every item is required.
             </p>
 
             <!-- ===== Groupe 1 : Pour chaque joueur ===== -->
@@ -404,7 +404,10 @@
                     </div>
                     <div class="item-text">
                       <div class="item-title">Token cards</div>
-                      <div class="item-desc">Brassbugs, soldiers, etc. — created by other cards during play.</div>
+                      <div class="item-desc">
+                        Brassbugs, soldiers, etc. — created by other cards during play.<br />
+                        <i>Depends on the decks played</i>
+                      </div>
                     </div>
                     <i class="fa-solid fa-chevron-down item-chevron"></i>
                   </summary>
@@ -441,7 +444,10 @@
                 </div>
                 <div class="item-text">
                   <div class="item-title">Card markers</div>
-                  <div class="item-desc">Boost +1, Boost +2, Fleeting, Anchored and Asleep — placed on Characters according to effects.</div>
+                  <div class="item-desc">
+                    Boost +1, Boost +2, Fleeting, Anchored and Asleep — placed on Characters according to effects.<br />
+                    <i>Depends on the decks played</i>
+                  </div>
                 </div>
               </div>
 
@@ -457,7 +463,10 @@
                 </div>
                 <div class="item-text">
                   <div class="item-title">Terrain markers</div>
-                  <div class="item-desc">Forest, Mountain and Water — to modify a region's terrains during play.</div>
+                  <div class="item-desc">
+                    Forest, Mountain and Water — to modify a region's terrain types during play.<br />
+                    <i>Depends on the decks played</i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -807,7 +816,7 @@
 
               <h4>On Character cards only</h4>
               <p>
-				<strong>H —</strong> Characters have <strong>statistics</strong> corresponding to the three terrains&nbsp;:&nbsp;
+				<strong>H —</strong> Characters have <strong>statistics</strong> corresponding to the three terrain types&nbsp;:&nbsp;
                 <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forest</span>
                 <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Mountain</span>
                 <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Water</span>
@@ -1079,7 +1088,7 @@
                 <div class="flow-step">
                   <div class="step-badge">A</div>
                   <div class="step-title">Check the terrains</div>
-                  <div class="step-text">Identify the terrain(s)
+                  <div class="step-text">Identify the terrain type(s)
                     (<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forest" class="biome-ic">
                     <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Mountain" class="biome-ic">
                     <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Water" class="biome-ic">)
@@ -1088,7 +1097,7 @@
                 <div class="flow-step">
                   <div class="step-badge">B</div>
                   <div class="step-title">Add up</div>
-                  <div class="step-text">For each terrain, add up the matching statistics of the Characters in that Expedition.</div>
+                  <div class="step-text">For each terrain type, add up the matching statistics of the Characters in that Expedition.</div>
                 </div>
                 <div class="flow-step">
                   <div class="step-badge">C</div>
@@ -1611,8 +1620,8 @@
               </figure>
               <p>
                 Otherwise, play an <strong>extra Day in the Arena</strong> to break
-                the tie. The Arena is on the back of the Companion starting region card:
-                place it in the center of the table, put both sides' Expedition markers on it,
+                the tie. The Arena is on the back of the Companion starting region card.
+                Place it in the center of the table, put both sides' Expedition markers on it,
                 and remove the other Adventure cards from the game.
               </p>
               <p>
@@ -1648,7 +1657,7 @@
                 <div class="rule-block h-100">
                   <h3>Targeting</h3>
                   <p>
-                    Card abilities target <strong>cards in play</strong> by default:
+                    Card abilities target <strong>cards in play</strong> by default —
                     Characters in an Expedition or Permanents in the Landmarks zone.
                   </p>
                   <p class="mb-0">
@@ -1717,8 +1726,8 @@
                     Token cards don't start in your deck but are <strong>created by other cards</strong>.
                   </p>
                   <p class="mb-0">
-                    When a token leaves its associated zone, it is <strong>removed from the game</strong>, even
-                    if a card tells you to do something else with it!
+                    When a token card leaves its associated zone, it is <strong>removed from the game</strong> —
+                    a token card is never send to the Reserve or to the Discard pile.
                   </p>
                 </div>
               </div>
@@ -1757,7 +1766,7 @@
                   <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="Fleeting marker">
                   <div class="m-text">
                     <div class="m-label">Fleeting</div>
-                    <div class="m-desc">If a Fleeting card would be sent to the Reserve, that card is discarded instead. This applies at Rest or due to an in-game effect.</div>
+                    <div class="m-desc">If a Fleeting card would be sent to the Reserve, that card is discarded instead. This applies at Rest or because of a card ability.</div>
                   </div>
                 </div>
                 <div class="marker-item">
@@ -1791,14 +1800,14 @@
                   <div class="ic-circle ic-bg-hand"><i class="fak fa-altered-h"></i></div>
                   <div class="m-text">
                     <div class="m-label">“From hand” effect</div>
-                    <div class="m-desc">Ability active only when played from the hand.</div>
+                    <div class="m-desc">Ability active only when played from hand.</div>
                   </div>
                 </div>
                 <div class="marker-item">
                   <div class="ic-circle ic-bg-reserve"><i class="fak fa-altered-r"></i></div>
                   <div class="m-text">
                     <div class="m-label">“From Reserve” effect</div>
-                    <div class="m-desc">Ability active only when played from the Reserve.</div>
+                    <div class="m-desc">Ability active only when played from Reserve.</div>
                   </div>
                 </div>
                 <div class="marker-item">

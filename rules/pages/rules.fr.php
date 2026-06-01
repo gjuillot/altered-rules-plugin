@@ -214,8 +214,8 @@
             <h2 class="section-title"><span>2. Matériel</span></h2>
 
             <p>
-              Voici tous les éléments fournis dans une boîte de démarrage Altered. Cliquez sur
-              chaque élément avec une vignette pour voir l'illustration en grand.
+              Voici les éléments de jeu que vous pourrez voir au cours d'une partie.
+              Selon votre deck, tous les éléments ne sont pas nécessaires.
             </p>
 
             <!-- ===== Groupe 1 : Pour chaque joueur ===== -->
@@ -404,7 +404,10 @@
                     </div>
                     <div class="item-text">
                       <div class="item-title">Cartes jeton</div>
-                      <div class="item-desc">Scarabots, soldats, etc. — créées par d'autres cartes en cours de partie.</div>
+                      <div class="item-desc">
+                        Scarabots, soldats, etc. — créées par d'autres cartes en cours de partie.<br />
+                        <i>Dépend des decks joués</i>.
+                      </div>
                     </div>
                     <i class="fa-solid fa-chevron-down item-chevron"></i>
                   </summary>
@@ -441,7 +444,10 @@
                 </div>
                 <div class="item-text">
                   <div class="item-title">Marqueurs Cartes</div>
-                  <div class="item-desc">Boost +1, Boost +2, Fugace, Ancré et Endormi — à poser sur les Personnages selon les effets.</div>
+                  <div class="item-desc">
+                    Boost +1, Boost +2, Fugace, Ancré et Endormi — à poser sur les Personnages selon les effets.<br />
+                    <i>Dépend des decks joués</i>.
+                  </div>
                 </div>
               </div>
 
@@ -457,7 +463,10 @@
                 </div>
                 <div class="item-text">
                   <div class="item-title">Marqueurs Terrains</div>
-                  <div class="item-desc">Forêt, Montagne et Eau — pour modifier les terrains d'une région en cours de partie.</div>
+                  <div class="item-desc">
+                    Forêt, Montagne et Eau — pour modifier les terrains d'une région en cours de partie.<br />
+                    <i>Dépend des decks joués</i>.
+                  </div>
                 </div>
               </div>
             </div>
@@ -807,7 +816,7 @@
 
               <h4>Sur les cartes Personnage uniquement</h4>
               <p>
-				<strong>H —</strong> Les Personnages ont des <strong>statistiques</strong> correspondant aux trois terrains&nbsp;:&nbsp;
+				<strong>H —</strong> Les Personnages ont des <strong>statistiques</strong> correspondant aux trois types de terrain&nbsp;:&nbsp;
                 <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="">Forêt</span>
                 <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="">Montagne</span>
                 <span class="terrain-badge"><img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="">Eau</span>
@@ -1079,7 +1088,7 @@
                 <div class="flow-step">
                   <div class="step-badge">A</div>
                   <div class="step-title">Vérifier les terrains</div>
-                  <div class="step-text">Identifiez le ou les terrains
+                  <div class="step-text">Identifiez le ou les types de terrain
                     (<img src="<?= BASE_URL ?>/plugins/rules/assets/F.webp" alt="Forêt" class="biome-ic">
                     <img src="<?= BASE_URL ?>/plugins/rules/assets/M.webp" alt="Montagne" class="biome-ic">
                     <img src="<?= BASE_URL ?>/plugins/rules/assets/O.webp" alt="Eau" class="biome-ic">)
@@ -1088,7 +1097,7 @@
                 <div class="flow-step">
                   <div class="step-badge">B</div>
                   <div class="step-title">Additionner</div>
-                  <div class="step-text">Pour chaque terrain, additionnez les statistiques correspondantes des Personnages de cette Expédition.</div>
+                  <div class="step-text">Pour chaque type de terrain, additionnez les statistiques correspondantes des Personnages de cette Expédition.</div>
                 </div>
                 <div class="flow-step">
                   <div class="step-badge">C</div>
@@ -1610,8 +1619,8 @@
               </figure>
               <p>
                 Dans le cas contraire, jouez un <strong>Jour supplémentaire dans l'Arène</strong> pour
-                les départager. L'Arène se trouve au dos de la carte région de départ Compagnon :
-                posez-la au centre de la table, placez-y les marqueurs Expédition des deux camps,
+                les départager. L'Arène se trouve au dos de la carte région de départ Compagnon.
+                Posez-la au centre de la table, placez-y les marqueurs Expédition des deux camps,
                 et retirez du jeu les autres cartes Aventure.
               </p>
               <p>
@@ -1647,7 +1656,7 @@
                 <div class="rule-block h-100">
                   <h3>Cibler</h3>
                   <p>
-                    Les capacités des cartes ciblent par défaut <strong>les cartes en jeu</strong> :
+                    Les capacités des cartes ciblent par défaut <strong>les cartes en jeu</strong> —
                     Personnages dans une Expédition ou Permanents dans la zone des Repères.
                   </p>
                   <p class="mb-0">
@@ -1716,8 +1725,8 @@
                     Les cartes jetons ne démarrent pas dans votre deck mais sont <strong>créés par d'autres cartes</strong>.
                   </p>
                   <p class="mb-0">
-                    Lorsqu'un jeton quitte la zone associée, il est <strong>retiré du jeu</strong>, même
-                    si une carte vous dit d'en faire autre chose&nbsp;!
+                    Lorsqu'une carte jeton quitte la zone associée, elle est <strong>retiré du jeu</strong> —
+                    une carte jeton ne part jamais en Réserve ou dans la Défausse.
                   </p>
                 </div>
               </div>
@@ -1756,7 +1765,7 @@
                   <img src="<?= CDN_URL ?>/marketing/game_assets/markers/ALT_Fleeting_Marker.png" alt="Marqueur Fugace">
                   <div class="m-text">
                     <div class="m-label">Fugace</div>
-                    <div class="m-desc">Si une carte Fugace est envoyée en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou suite à un effet en cours de jeu.</div>
+                    <div class="m-desc">Si une carte Fugace est envoyée en Réserve, alors cette carte est défaussée à la place. Cela s'applique pour le Repos ou à cause d'un effet de carte.</div>
                   </div>
                 </div>
                 <div class="marker-item">
