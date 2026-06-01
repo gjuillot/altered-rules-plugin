@@ -22,7 +22,9 @@ rules/
     rules.{lang}.php       ← future translations (drop one in to enable a new language)
   assets/
     style.css              ← rules-specific styles, extracted from the original <style> block
-    playmat.jpg            ← background image for setup composition illustrations
+    KA_ARKASTER.jpg        ← playmat artwork (city of Arkaster), used as the bg layer
+    zones-layout-fr.png    ← transparent FR zone-outline overlay (stacked over the art)
+    zones-layout-en.png    ← transparent EN zone-outline overlay
     F.webp, M.webp, O.webp ← biome icons (Forêt, Montagne, Eau)
 ```
 
@@ -94,7 +96,8 @@ Files bundled with the plugin:
 
 | Path | Purpose |
 |---|---|
-| `assets/playmat.jpg` | Background for the setup composition illustrations. Referenced via `<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg`. |
+| `assets/KA_ARKASTER.jpg` | Arkaster city artwork — bottom layer of the playmat composite. Referenced via `<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg`. |
+| `assets/zones-layout-{fr,en}.png` | Transparent PNG with the playmat zone outlines + labels in the matching language. Stacked over `KA_ARKASTER.jpg` by the `.playmat-stack` pattern. The partial picks the file matching its language (`rules.fr.php` → `zones-layout-fr.png`, etc.). |
 | `assets/Altered_Complete_Rules_5.0.pdf` | Official complete rulebook (v5.0). Linked from a download button in the article header. The page itself is the Quick Rules v3.0 transcription — the PDF is offered as a deeper reference. |
 | `assets/F.webp`, `assets/M.webp`, `assets/O.webp` | Biome icons (Forêt, Montagne, Eau). Bundled locally because the host site's biome asset paths have moved in the past. Referenced via `<?= BASE_URL ?>/plugins/rules/assets/{F,M,O}.webp`. |
 
@@ -321,7 +324,10 @@ Le pattern `setup-composition` sert à composer une illustration pédagogique in
 
       <!-- 2. Tapis avec éléments posés dessus -->
       <div class="setup-playmat">
-        <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Tapis de jeu Altered">
+        <div class="playmat-bg playmat-stack">
+          <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Tapis de jeu Altered">
+          <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+        </div>
         <!-- éléments posés en position: absolute ici -->
       </div>
     </div>
@@ -356,6 +362,22 @@ Grille CSS de 5 colonnes égales. Chaque cellule est un `.adv-wrap` (carré aspe
 ```
 
 Classes de rotation disponibles : `adv-hero-card` (−90°), `adv-tumult-card` (+90°), `adv-companion-card` (+90°).
+
+### Le composite tapis (`.playmat-stack`)
+
+L'illustration du tapis n'est pas une seule image : c'est une pile composée de `KA_ARKASTER.jpg` (artwork de fond) + `zones-layout-{lang}.png` (overlay transparent avec les contours et libellés des zones dans la langue du partial). Un voile sombre semi-transparent (`::before` à `rgba(0,0,0,0.25)`) est intercalé entre les deux pour assombrir l'art et faire ressortir l'overlay, complété par un fin halo sombre (`drop-shadow`) sur les lignes blanches.
+
+```html
+<div class="playmat-bg playmat-stack">
+  <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Tapis de jeu Altered">
+  <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+</div>
+```
+
+- L'URL de l'overlay zones doit matcher la langue du partial : `zones-layout-fr.png` dans `rules.fr.php`, `zones-layout-en.png` dans `rules.en.php`, etc.
+- Le wrapper porte `playmat-stack` (CSS du composite). Quand le composite remplace l'ancien `<img class="playmat-bg">` (contextes `.setup-playmat`, `.cleanup-playmat`, `.play-character-illus`), il porte aussi `playmat-bg` — c'est cette classe que les CSS spécifiques à ces contextes ciblent pour le dimensionnement (`width`, `border-radius`, etc.).
+- Hors de ces contextes (thumbnails, illustration annotée `.playmat-annotated`), seule la classe `playmat-stack` suffit.
+- Les deux `<img>` internes sont neutralisées contre les styles du thème Azure (`background: transparent; box-shadow: none; border: none; border-radius: 0`) par la règle `.playmat-stack > img` dans `assets/style.css`. Sans cette neutralisation, l'overlay PNG transparent serait masqué par le fond blanc que le thème applique aux images.
 
 ### Éléments posés sur le tapis (`.setup-playmat`)
 
@@ -403,7 +425,7 @@ Largeur standard d'une carte sur le tapis : **`width: 10%`** (10 % de la largeur
 
 Espacement standard entre cartes adjacentes dans une même zone : **11 % d'écart entre les valeurs de `left`** — ça laisse une marge visible d'environ 1 % entre deux cartes de 10 % de large. Pour les zones qui doivent contenir 3 cartes (cas d'excédent en Réserve ou Repères), on utilise le même écart, les cartes débordent légèrement de leur rectangle mais l'effet « excédent » reste lisible.
 
-Positions calibrées contre les rectangles imprimés sur `assets/playmat.jpg` :
+Positions calibrées contre les rectangles dessinés par l'overlay `zones-layout-{lang}.png` posé sur `KA_ARKASTER.jpg` :
 
 | Zone | `top` | `left` par carte | Capacité |
 |---|---|---|---|

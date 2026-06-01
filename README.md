@@ -42,10 +42,9 @@ rules/
 │   └── rules.{lang}.php           ← future translations (drop-in)
 └── assets/
     ├── style.css                  ← plugin-specific styles
-    ├── playmat.jpg                ← background for setup illustrations
-    ├── KA_ARKASTER.jpg            ← playmat artwork
-    ├── zones layout FR.png        ← playmat zone overlay (French labels)
-    ├── zones layout EN.png        ← playmat zone overlay (English labels)
+    ├── KA_ARKASTER.jpg            ← playmat artwork (bottom layer of the composite)
+    ├── zones-layout-fr.png        ← transparent playmat zone overlay (French labels)
+    ├── zones-layout-en.png        ← transparent playmat zone overlay (English labels)
     ├── F.webp                     ← Forest biome icon
     ├── M.webp                     ← Mountain biome icon
     ├── O.webp                     ← Water biome icon

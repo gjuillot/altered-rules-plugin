@@ -230,7 +230,10 @@
                 <details>
                   <summary>
                     <div class="item-thumb">
-                      <img src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="" loading="lazy">
+                      <div class="playmat-stack">
+                        <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="" loading="lazy">
+                        <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+                      </div>
                     </div>
                     <div class="item-text">
                       <div class="item-title">1 tapis de jeu <span class="badge-optional">optionnel</span></div>
@@ -239,7 +242,10 @@
                     <i class="fa-solid fa-chevron-down item-chevron"></i>
                   </summary>
                   <div class="item-detail">
-                    <img src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Tapis de jeu Altered avec ses zones">
+                    <div class="playmat-stack">
+                      <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Tapis de jeu Altered avec ses zones">
+                      <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+                    </div>
                     <div class="detail-caption">Le tapis de jeu et toutes ses zones.</div>
                   </div>
                 </details>
@@ -538,7 +544,10 @@
 
                     <!-- Tapis avec carte Héros et dos de carte sur la zone Deck -->
                     <div class="setup-playmat">
-                      <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Tapis de jeu Altered">
+                      <div class="playmat-bg playmat-stack">
+                        <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Tapis de jeu Altered">
+                        <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+                      </div>
 
                       <!-- Étape 4 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
                       <!-- Étape 1 : le tapis lui-même -->
@@ -675,22 +684,25 @@
 
             <figure class="rule-figure">
               <div class="playmat-annotated">
-                <img src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Tapis de jeu Altered avec les zones numérotées de 1 à 7">
+                <div class="playmat-stack">
+                  <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Tapis de jeu Altered avec les zones numérotées de 1 à 7">
+                  <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+                </div>
                 <a href="#zone-1" class="zone-pin" style="top: 11%; left: 50%;"
                    aria-label="Zone Héros">1</a>
                 <a href="#zone-2" class="zone-pin" style="top: 14%; left: 12%;"
                    aria-label="Zone Expédition Héros">2</a>
                 <a href="#zone-2" class="zone-pin" style="top: 14%; left: 88%;"
                    aria-label="Zone Expédition Compagnon">2</a>
-                <a href="#zone-3" class="zone-pin" style="top: 47%; left: 17%;"
+                <a href="#zone-3" class="zone-pin" style="top: 40%; left: 5%;"
                    aria-label="Zone Réserve">3</a>
-                <a href="#zone-4" class="zone-pin" style="top: 47%; left: 75%;"
+                <a href="#zone-4" class="zone-pin" style="top: 40%; left: 95%;"
                    aria-label="Zone Repères">4</a>
-                <a href="#zone-5" class="zone-pin" style="top: 78%; left: 17%;"
+                <a href="#zone-5" class="zone-pin" style="top: 75%; left: 15%;"
                    aria-label="Zone Mana">5</a>
-                <a href="#zone-6" class="zone-pin" style="top: 82%; left: 78%;"
+                <a href="#zone-6" class="zone-pin" style="top: 71%; left: 81%;"
                    aria-label="Zone Deck">6</a>
-                <a href="#zone-7" class="zone-pin" style="top: 82%; left: 92%;"
+                <a href="#zone-7" class="zone-pin" style="top: 71%; left: 92.5%;"
                    aria-label="Zone Défausse">7</a>
               </div>
               <figcaption>Les 7 zones du tapis de jeu, numérotées dans l’ordre des descriptions ci-dessous.</figcaption>
@@ -1024,7 +1036,10 @@
 				  <figure class="rule-figure" style="max-width: 380px; margin: 0.5rem auto 1.25rem;">
 					<div class="play-character-illus" role="img"
 						 aria-label="Jouer un Personnage : la carte peut rejoindre l'Expédition Héros ou l'Expédition Compagnon.">
-					  <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="" loading="lazy">
+					  <div class="playmat-bg playmat-stack">
+						<img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="" loading="lazy">
+						<img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+					  </div>
 					  <img class="pc-card pc-hero"
 						   src="<?= CDN_URL ?>/cards/fr/CORE/ALT_CORE_B_AX_01_C.webp"
 						   alt="Carte Héros Sierra & Oddball" loading="lazy">
@@ -1266,7 +1281,10 @@
                      aria-label="Phase Nuit : pendant le Repos, les Personnages quittent les Expéditions pour rejoindre la Réserve (ou la défausse s'ils sont Fugaces) ; pendant le Nettoyage, l'excédent de la Réserve et des Repères est défaussé pour ne garder que 2 cartes par zone.">
 
                   <div class="cleanup-playmat">
-                    <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Tapis de jeu Altered">
+                    <div class="playmat-bg playmat-stack">
+                      <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Tapis de jeu Altered">
+                      <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-fr.png" alt="" loading="lazy">
+                    </div>
 
                     <!-- Expédition gauche : 2 Personnages épuisés -->
                     <img class="cleanup-card cl-exp-l1 cleanup-grayed"

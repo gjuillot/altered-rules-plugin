@@ -230,7 +230,10 @@
                 <details>
                   <summary>
                     <div class="item-thumb">
-                      <img src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="" loading="lazy">
+                      <div class="playmat-stack">
+                        <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="" loading="lazy">
+                        <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-en.png" alt="" loading="lazy">
+                      </div>
                     </div>
                     <div class="item-text">
                       <div class="item-title">1 playmat <span class="badge-optional">optional</span></div>
@@ -239,7 +242,10 @@
                     <i class="fa-solid fa-chevron-down item-chevron"></i>
                   </summary>
                   <div class="item-detail">
-                    <img src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Altered playmat with its zones">
+                    <div class="playmat-stack">
+                      <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Altered playmat with its zones">
+                      <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-en.png" alt="" loading="lazy">
+                    </div>
                     <div class="detail-caption">The playmat and all its zones.</div>
                   </div>
                 </details>
@@ -538,7 +544,10 @@
 
                     <!-- Tapis avec carte Héros et dos de carte sur la zone Deck -->
                     <div class="setup-playmat">
-                      <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Altered playmat">
+                      <div class="playmat-bg playmat-stack">
+                        <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Altered playmat">
+                        <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-en.png" alt="" loading="lazy">
+                      </div>
 
                       <!-- Étape 4 : marqueurs Expédition (déjà visibles sur les cartes Aventure plus haut) -->
                       <!-- Étape 1 : le tapis lui-même -->
@@ -675,22 +684,25 @@
 
             <figure class="rule-figure">
               <div class="playmat-annotated">
-                <img src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Altered playmat with zones numbered 1 to 7">
+                <div class="playmat-stack">
+                  <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Altered playmat with zones numbered 1 to 7">
+                  <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-en.png" alt="" loading="lazy">
+                </div>
                 <a href="#zone-1" class="zone-pin" style="top: 11%; left: 50%;"
                    aria-label="Hero zone">1</a>
                 <a href="#zone-2" class="zone-pin" style="top: 14%; left: 12%;"
                    aria-label="Hero Expedition zone">2</a>
                 <a href="#zone-2" class="zone-pin" style="top: 14%; left: 88%;"
                    aria-label="Companion Expedition zone">2</a>
-                <a href="#zone-3" class="zone-pin" style="top: 47%; left: 17%;"
+                <a href="#zone-3" class="zone-pin" style="top: 40%; left: 5%;"
                    aria-label="Reserve zone">3</a>
-                <a href="#zone-4" class="zone-pin" style="top: 47%; left: 75%;"
+                <a href="#zone-4" class="zone-pin" style="top: 40%; left: 95%;"
                    aria-label="Landmarks zone">4</a>
-                <a href="#zone-5" class="zone-pin" style="top: 78%; left: 17%;"
+                <a href="#zone-5" class="zone-pin" style="top: 75%; left: 15%;"
                    aria-label="Mana zone">5</a>
-                <a href="#zone-6" class="zone-pin" style="top: 82%; left: 78%;"
+                <a href="#zone-6" class="zone-pin" style="top: 71%; left: 81%;"
                    aria-label="Deck zone">6</a>
-                <a href="#zone-7" class="zone-pin" style="top: 82%; left: 92%;"
+                <a href="#zone-7" class="zone-pin" style="top: 71%; left: 92.5%;"
                    aria-label="Discard zone">7</a>
               </div>
               <figcaption>The 7 zones of the playmat, numbered in the order of the descriptions below.</figcaption>
@@ -1024,7 +1036,10 @@
 				  <figure class="rule-figure" style="max-width: 380px; margin: 0.5rem auto 1.25rem;">
 					<div class="play-character-illus" role="img"
 						 aria-label="Playing a Character: the card can join the Hero Expedition or the Companion Expedition.">
-					  <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="" loading="lazy">
+					  <div class="playmat-bg playmat-stack">
+						<img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="" loading="lazy">
+						<img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-en.png" alt="" loading="lazy">
+					  </div>
 					  <img class="pc-card pc-hero"
 						   src="<?= CDN_URL ?>/cards/en/CORE/ALT_CORE_B_AX_01_C.webp"
 						   alt="Sierra & Oddball Hero card" loading="lazy">
@@ -1266,7 +1281,10 @@
                      aria-label="Night phase: during Rest, Characters leave the Expeditions for the Reserve (or the discard if Fleeting); during Cleanup, the excess from the Reserve and Landmarks is discarded to keep only 2 cards per zone.">
 
                   <div class="cleanup-playmat">
-                    <img class="playmat-bg" src="<?= BASE_URL ?>/plugins/rules/assets/playmat.jpg" alt="Altered playmat">
+                    <div class="playmat-bg playmat-stack">
+                      <img class="playmat-art" src="<?= BASE_URL ?>/plugins/rules/assets/KA_ARKASTER.jpg" alt="Altered playmat">
+                      <img class="playmat-zones" src="<?= BASE_URL ?>/plugins/rules/assets/zones-layout-en.png" alt="" loading="lazy">
+                    </div>
 
                     <!-- Expédition gauche : 2 Personnages épuisés -->
                     <img class="cleanup-card cl-exp-l1 cleanup-grayed"
